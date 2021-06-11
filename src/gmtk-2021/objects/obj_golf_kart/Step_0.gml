@@ -8,7 +8,8 @@ if mouse_check_button_pressed(mb_left) {
 
 // Variables for direction
 dir_goal = point_direction(x, y, goal[0], goal[1]);
-dir_vector = vector_make_from_direction(dir_goal);
+dir_goal_vector = vector_make_from_direction(dir_goal);
+dir_vector = vector_multiply(vector_add(dir_goal_vector, dir_vector), 0.5);
 
 // Increment speed and
 var old_vector_speed = vector_speed;
