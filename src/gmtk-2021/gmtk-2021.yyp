@@ -1,10 +1,9 @@
 {
   "resources": [
-    {"id":{"name":"rm_unit_tests","path":"rooms/rm_unit_tests/rm_unit_tests.yy",},"order":1,},
-    {"id":{"name":"new_keyboard","path":"scripts/new_keyboard/new_keyboard.yy",},"order":0,},
-    {"id":{"name":"vector","path":"scripts/vector/vector.yy",},"order":1,},
-    {"id":{"name":"assert","path":"scripts/assert/assert.yy",},"order":2,},
-    {"id":{"name":"obj_unit_tests","path":"objects/obj_unit_tests/obj_unit_tests.yy",},"order":0,},
+    {"id":{"name":"sayoris_job","path":"objects/sayoris_job/sayoris_job.yy",},"order":0,},
+    {"id":{"name":"obj_menu_controller","path":"objects/obj_menu_controller/obj_menu_controller.yy",},"order":1,},
+    {"id":{"name":"spr_logo","path":"sprites/spr_logo/spr_logo.yy",},"order":0,},
+    {"id":{"name":"rom_menu","path":"rooms/rom_menu/rom_menu.yy",},"order":1,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [
@@ -25,8 +24,8 @@
     "children": [],
   },
   "RoomOrderNodes": [
+    {"roomId":{"name":"rom_menu","path":"rooms/rom_menu/rom_menu.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
-    {"roomId":{"name":"rm_unit_tests","path":"rooms/rm_unit_tests/rm_unit_tests.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":1,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
