@@ -1,6 +1,9 @@
 {
   "resources": [
     {"id":{"name":"sayoris_job","path":"objects/sayoris_job/sayoris_job.yy",},"order":0,},
+    {"id":{"name":"obj_menu_controller","path":"objects/obj_menu_controller/obj_menu_controller.yy",},"order":1,},
+    {"id":{"name":"spr_logo","path":"sprites/spr_logo/spr_logo.yy",},"order":0,},
+    {"id":{"name":"rom_menu","path":"rooms/rom_menu/rom_menu.yy",},"order":1,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [
@@ -21,6 +24,7 @@
     "children": [],
   },
   "RoomOrderNodes": [
+    {"roomId":{"name":"rom_menu","path":"rooms/rom_menu/rom_menu.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "Folders": [
