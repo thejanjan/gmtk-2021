@@ -21,11 +21,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "physics",
+    "path": "folders/Objects/physics.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_staticparent",
+  "name": "obj_ball",
   "tags": [],
   "resourceType": "GMObject",
 }
