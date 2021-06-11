@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"spr_crosshair","path":"sprites/spr_crosshair/spr_crosshair.yy",},"order":4,},
     {"id":{"name":"gui_bars","path":"objects/gui_bars/gui_bars.yy",},"order":0,},
     {"id":{"name":"obj_dynamicparent","path":"objects/obj_dynamicparent/obj_dynamicparent.yy",},"order":0,},
     {"id":{"name":"obj_golf_kart","path":"objects/obj_golf_kart/obj_golf_kart.yy",},"order":2,},
