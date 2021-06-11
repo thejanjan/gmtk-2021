@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"gui_bars","path":"objects/gui_bars/gui_bars.yy",},"order":0,},
+<<<<<<< Updated upstream
     {"id":{"name":"obj_dynamicparent","path":"objects/obj_dynamicparent/obj_dynamicparent.yy",},"order":0,},
     {"id":{"name":"obj_golf_kart","path":"objects/obj_golf_kart/obj_golf_kart.yy",},"order":2,},
     {"id":{"name":"obj_menu_button_game_end","path":"objects/obj_menu_button_game_end/obj_menu_button_game_end.yy",},"order":3,},
@@ -9,6 +10,13 @@
     {"id":{"name":"obj_unit_tests","path":"objects/obj_unit_tests/obj_unit_tests.yy",},"order":5,},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},"order":2,},
     {"id":{"name":"sayoris_job","path":"objects/sayoris_job/sayoris_job.yy",},"order":6,},
+=======
+    {"id":{"name":"obj_golf_kart","path":"objects/obj_golf_kart/obj_golf_kart.yy",},"order":1,},
+    {"id":{"name":"obj_menu_button_game_end","path":"objects/obj_menu_button_game_end/obj_menu_button_game_end.yy",},"order":2,},
+    {"id":{"name":"obj_old_useless_menu_controller","path":"objects/obj_old_useless_menu_controller/obj_old_useless_menu_controller.yy",},"order":3,},
+    {"id":{"name":"obj_unit_tests","path":"objects/obj_unit_tests/obj_unit_tests.yy",},"order":4,},
+    {"id":{"name":"sayoris_job","path":"objects/sayoris_job/sayoris_job.yy",},"order":5,},
+>>>>>>> Stashed changes
     {"id":{"name":"gameplay_testing","path":"rooms/gameplay_testing/gameplay_testing.yy",},"order":0,},
     {"id":{"name":"rm_unit_tests","path":"rooms/rm_unit_tests/rm_unit_tests.yy",},"order":1,},
     {"id":{"name":"rom_menu","path":"rooms/rom_menu/rom_menu.yy",},"order":2,},
@@ -19,7 +27,10 @@
     {"id":{"name":"spr_golf_kart","path":"sprites/spr_golf_kart/spr_golf_kart.yy",},"order":0,},
     {"id":{"name":"spr_logo","path":"sprites/spr_logo/spr_logo.yy",},"order":1,},
     {"id":{"name":"spr_menu_button","path":"sprites/spr_menu_button/spr_menu_button.yy",},"order":2,},
+<<<<<<< Updated upstream
     {"id":{"name":"spr_square","path":"sprites/spr_square/spr_square.yy",},"order":3,},
+=======
+>>>>>>> Stashed changes
   ],
   "Options": [
     {"name":"Android","path":"options/android/options_android.yy",},
@@ -46,7 +57,10 @@
   ],
   "Folders": [
     {"folderPath":"folders/Objects.yy","order":0,"resourceVersion":"1.0","name":"Objects","tags":[],"resourceType":"GMFolder",},
+<<<<<<< Updated upstream
     {"folderPath":"folders/Objects/physics.yy","order":1,"resourceVersion":"1.0","name":"physics","tags":[],"resourceType":"GMFolder",},
+=======
+>>>>>>> Stashed changes
     {"folderPath":"folders/Rooms.yy","order":1,"resourceVersion":"1.0","name":"Rooms","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts.yy","order":2,"resourceVersion":"1.0","name":"Scripts","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites.yy","order":3,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
