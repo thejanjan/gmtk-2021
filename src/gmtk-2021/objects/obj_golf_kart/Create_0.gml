@@ -14,4 +14,5 @@ turn_speed = 8;
 max_speed = speed_range[0];
 
 dir_goal = -1;
+dir_goal_vector = [0, 0];
 dir_vector = [0, 0];
