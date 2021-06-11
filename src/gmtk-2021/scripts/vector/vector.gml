@@ -39,3 +39,7 @@ function vector_normalize(_vec) {
 function vector_dot(_vec1, _vec2) {
 	return _vec1[0] * _vec2[0] + _vec1[1] * _vec2[1];
 }
+
+function vector_make_from_direction(_dir) {
+	
+}
