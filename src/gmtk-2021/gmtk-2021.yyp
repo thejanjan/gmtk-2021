@@ -1,5 +1,7 @@
 {
   "resources": [
+    {"id":{"name":"gameplay_testing","path":"rooms/gameplay_testing/gameplay_testing.yy",},"order":1,},
+    {"id":{"name":"gui_bars","path":"objects/gui_bars/gui_bars.yy",},"order":1,},
     {"id":{"name":"sayoris_job","path":"objects/sayoris_job/sayoris_job.yy",},"order":0,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
@@ -21,6 +23,7 @@
     "children": [],
   },
   "RoomOrderNodes": [
+    {"roomId":{"name":"gameplay_testing","path":"rooms/gameplay_testing/gameplay_testing.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "Folders": [
