@@ -32,7 +32,7 @@ function vector_magnitude(_vec) {
 }
 
 function vector_normalize(_vec) {
-	divisor = 1 / vector_magnitude(_vec);
+	var divisor = 1 / vector_magnitude(_vec);
 	return [_vec[0] * divisor, _vec[1] * divisor];
 }
 
@@ -40,10 +40,14 @@ function vector_dot(_vec1, _vec2) {
 	return _vec1[0] * _vec2[0] + _vec1[1] * _vec2[1];
 }
 
-function vector_make_from_direction(_dir) {
-	return [cos(degtorad(_dir)), -sin(degtorad(_dir))];
+function vector_scale(_vec, _scale_factor) {
+	return [_vec[0] * _scale_factor, _vec[1] * _scale_factor];	
 }
 
-function vector_multiply(_vec, _num) {
-	return [_vec[0] * _num, _vec[1] * _num];	
+function vector_heading_to(_start, _end) {
+	return vector_normalize(vector_subtract(_end, _start));
+}
+
+function vector_make_from_direction(_dir) {
+	return [cos(degtorad(_dir)), -sin(degtorad(_dir))];
 }

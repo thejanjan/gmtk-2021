@@ -6,20 +6,20 @@ if mouse_check_button_pressed(mb_left) {
 	goal[1] = mouse_y;
 }
 
-// Variables for direction
-dir_goal = point_direction(x, y, goal[0], goal[1]);
-dir_vector = vector_make_from_direction(dir_goal);
+// Variable for direction
+dir_vector = vector_heading_to([x, y], goal);
 
 // Increment speed and
-var old_vector_speed = vector_speed;
-vector_speed = vector_add(vector_speed, vector_multiply(dir_vector, acceleration));
-if vector_magnitude(vector_speed) > max_speed
-	vector_speed = old_vector_speed;
+var old_velocity = velocity;
+var vector_acceleration = vector_scale(dir_vector, acceleration);
+velocity = vector_add(velocity, vector_acceleration);
+if vector_magnitude(velocity) > max_speed
+	velocity = old_velocity;
 
-// Handle speed logic
-current_direction = point_direction(x, y, x + vector_speed[0], y + vector_speed[1]);
-x += vector_speed[0];
-y += vector_speed[1];
+// Handle velocity logic
+current_direction = point_direction(x, y, x + velocity[0], y + velocity[1]);
+x += velocity[0];
+y += velocity[1];
 
 /*
 speed_range = [5, 8]
