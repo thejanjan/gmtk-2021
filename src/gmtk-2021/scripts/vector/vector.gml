@@ -41,5 +41,9 @@ function vector_dot(_vec1, _vec2) {
 }
 
 function vector_make_from_direction(_dir) {
-	
+	return [cos(degtorad(_dir)), -sin(degtorad(_dir))];
+}
+
+function vector_multiply(_vec, _num) {
+	return [_vec[0] * _num, _vec[1] * _num];	
 }

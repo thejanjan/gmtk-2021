@@ -2,8 +2,9 @@
 
 function kart_sprite_index() {
 	slice = 360 / 16;
-	direction_val = round(((direction + (slice / 2)) mod 360) / slice);
-	draw_text(300,20,string(direction)+", "+string(direction_val));
+	direction_val = round(((current_direction + (slice / 2)) mod 360) / slice);
+	draw_text(300,20,string(current_direction)+", "+string(direction_val));
+	draw_text(300,40,string(dir_vector[0])+", "+string(dir_vector[1]));
 	// 0 is right, 4 is up, 8 is left, 12 is down
 	switch (direction_val) {
 		case 0:
@@ -39,13 +40,16 @@ function kart_sprite_index() {
 
 function kart_xscale() {
 	slice = 360 / 16;
-	direction_val = round(((direction + (slice / 2)) mod 360) / slice);
+	direction_val = round(((current_direction + (slice / 2)) mod 360) / slice);
 	// 0 is right, 4 is up, 8 is left, 12 is down
 	if direction_val >= 5 and direction_val <= 11
 		return -1;
 	return 1;
 }
 
-if mouse_check_button(mb_left) direction -= 4;
-else direction += 4;
 draw_sprite_ext(sprite_index, kart_sprite_index(), x, y, kart_xscale(), 1, 0, c_white, 1);
+
+// DEBUG: shows the vector to the crosshair
+var vector_draw_dist = 60;
+draw_line(x, y, x + (dir_vector[0] * vector_draw_dist), y + (dir_vector[1] * vector_draw_dist));
+draw_sprite(spr_crosshair, 0, goal[0], goal[1]);
