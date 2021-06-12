@@ -6,7 +6,7 @@ if other.current_speed < current_speed {
 	hp_deal_damage(1);
 } else {
 	// Damage self.
-	hp -= other.current_speed;
+	hp -= other.current_speed * other.damage_multiplier;
 	if hp <= 0 {
 		instance_destroy();
 	}
