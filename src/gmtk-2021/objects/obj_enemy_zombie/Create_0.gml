@@ -1,5 +1,10 @@
 /// @description Insert description here
 
+// event_inherited();  // jk you can't unbind physics fixtures! lol!!!
+previous_pos = [x, y];
+current_pos = [x, y];
+current_speed = 0;
+
 var fixture = physics_fixture_create();
 physics_fixture_set_box_shape(fixture, sprite_width / 2, sprite_height / 2);
 physics_fixture_set_collision_group(fixture, collision_groups.never);
@@ -28,7 +33,4 @@ wander_to_y = 0;
 lunch_start = -1;
 lunch_duration = 2000;
 
-fMod = .75;  // i had to
 hp = 50;
-last_hit_time = current_time;
-min_time_per_hit = 200;
