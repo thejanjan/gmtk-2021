@@ -34,3 +34,20 @@ function nearest_active_hole() {
 	// Return our answer
 	return nearest;
 }
+
+function enemy_take_damage(_amount) {
+	hp -= _amount;
+	if hp <= 0 {
+		event_perform(ev_other, ev_user10);  // Execute before death, if we need
+		instance_destroy();
+	}
+}
+
+function debug_string(_array) {
+	var retstr = "";
+	for (var i = 0; i < array_length(_array); i++) {
+		retstr = retstr + string(_array[i]) + ", ";
+	}
+	clipboard_set_text(retstr);
+	show_message(retstr);
+}

@@ -66,12 +66,13 @@ function vector_make_from_direction(_dir) {
 }
 
 function vector_between(_vec1, _vec2, _amount) {
-	return vector_random_between(_vec1, _vec2, _amount, _amount);
+	var vector_dist = vector_subtract(_vec2, _vec1);
+	return [_vec1[0] + (vector_dist[0] * _amount), _vec1[1] + (vector_dist[1] * _amount)]
 }
 
 function vector_random_between(_vec1, _vec2, min_dist, max_dist) {
 	var vector_dist = vector_subtract(_vec2, _vec1);
-	return [_vec1[0] + (vector_dist[0] * random_range(min_dist, max_dist)), _vec1[1] + (vector_dist[1] * random_range(min_dist, max_dist)),]
+	return [_vec1[0] + (vector_dist[0] * random_range(min_dist, max_dist)), _vec1[1] + (vector_dist[1] * random_range(min_dist, max_dist))]
 }
 
 function vector_repr(_vec) {
