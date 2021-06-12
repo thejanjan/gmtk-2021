@@ -29,10 +29,6 @@ dir_goal = -1;
 dir_goal_vector = [0, 0];
 dir_vector = [0, 0];
 
-// sound
-sound = audio_play_sound(snd_engine, 0, true);
-pitch_factor = 1;
-
 // Set up cart's physics.
 var half_sprite_width = sprite_width / 2;
 var half_sprite_height = sprite_height / 2;
