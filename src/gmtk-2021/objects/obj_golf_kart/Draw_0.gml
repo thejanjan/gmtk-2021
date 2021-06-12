@@ -13,13 +13,13 @@ function kart_sprite_index() {
 			return 4;
 		case 1:
 		case 7:
-			return 5;
+			return 4;
 		case 2:
 		case 6:
-			return 6;
+			return 5;
 		case 3:
 		case 5:
-			return 7;
+			return 8;
 		case 4:
 			return 8;
 		case 9:
@@ -27,10 +27,10 @@ function kart_sprite_index() {
 			return 3;
 		case 10:
 		case 14:
-			return 2;
+			return 3;
 		case 11:
 		case 13:
-			return 1;
+			return 0;
 		case 12:
 			return 0;
 	}
