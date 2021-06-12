@@ -15,6 +15,10 @@ function vector_equal(_vec1, _vec2) {
 	return true;
 }
 
+function vector_distance(_vec1, _vec2) {
+	return vector_magnitude(vector_subtract(_vec1, _vec2));
+}
+
 function vector_add(_vec1, _vec2) {
 	return [_vec1[0] + _vec2[0], _vec1[1] + _vec2[1]];
 }

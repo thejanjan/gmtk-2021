@@ -6,6 +6,7 @@ global.binding_down = ord("S");
 global.binding_right = ord("D");
 global.binding_left = ord("A");
 global.binding_debug = ord("P");
+global.binding_debug_two = ord("L");
 
 function new_keyboard_check_pressed(_code) {
 	return keyboard_check_pressed(_code);
