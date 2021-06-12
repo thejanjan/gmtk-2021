@@ -7,6 +7,7 @@
     {"id":{"name":"obj_menu_button_game_end","path":"objects/obj_menu_button_game_end/obj_menu_button_game_end.yy",},"order":3,},
     {"id":{"name":"spr_flag","path":"sprites/spr_flag/spr_flag.yy",},"order":5,},
     {"id":{"name":"obj_old_useless_menu_controller","path":"objects/obj_old_useless_menu_controller/obj_old_useless_menu_controller.yy",},"order":4,},
+    {"id":{"name":"spr_player_drag","path":"sprites/spr_player_drag/spr_player_drag.yy",},"order":7,},
     {"id":{"name":"obj_staticparent","path":"objects/obj_staticparent/obj_staticparent.yy",},"order":1,},
     {"id":{"name":"obj_phys_control","path":"objects/obj_phys_control/obj_phys_control.yy",},"order":4,},
     {"id":{"name":"spr_chain","path":"sprites/spr_chain/spr_chain.yy",},"order":6,},
