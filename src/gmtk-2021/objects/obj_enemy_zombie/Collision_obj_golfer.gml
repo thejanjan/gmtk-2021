@@ -1,5 +1,10 @@
 /// @description die if hit by golfer fast
 if other.current_speed > 10 {
+	if current_state == state.eating {
+		with(obj_ball) {
+			event_perform(ev_other, ev_user0);  // respawn ball
+		}
+	}
 	current_state = state.dying;  // TODO: death anim!!
 	instance_destroy();
 }
