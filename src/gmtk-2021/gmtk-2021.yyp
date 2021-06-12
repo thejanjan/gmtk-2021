@@ -36,6 +36,7 @@
     {"id":{"name":"hp_bar","path":"objects/hp_bar/hp_bar.yy",},"order":9,},
     {"id":{"name":"obj_golfer","path":"objects/obj_golfer/obj_golfer.yy",},"order":5,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":3,},
+    {"id":{"name":"mask_golf_club","path":"sprites/mask_golf_club/mask_golf_club.yy",},"order":16,},
     {"id":{"name":"assert","path":"scripts/assert/assert.yy",},"order":0,},
     {"id":{"name":"new_keyboard","path":"scripts/new_keyboard/new_keyboard.yy",},"order":1,},
     {"id":{"name":"vector","path":"scripts/vector/vector.yy",},"order":2,},
