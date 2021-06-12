@@ -26,20 +26,20 @@ var half_sprite_width = sprite_width / 2;
 var half_sprite_height = sprite_height / 2;
 
 var fixture = physics_fixture_create();
-physics_fixture_set_box_shape(fixture, half_sprite_width, half_sprite_height);
+physics_fixture_set_box_shape(fixture, half_sprite_width / 2, half_sprite_height / 2);
 physics_fixture_bind(fixture, id);
 physics_fixture_delete(fixture);
 
 // Set up linked physics objects.
-var golfer = instance_create_layer(x, y+max_golfer_rope_length, layer, obj_golfer);
 var chain_link_count = 16;
 var chain_link_sprite_length = 10;
+var golfer = instance_create_layer(x, y+chain_link_count*chain_link_sprite_length, layer, obj_golfer);
 var chain_link;
 for (var i=0; i<chain_link_count; i++) {
 	chain_link[i] = instance_create_layer(x, y+half_sprite_height+i*chain_link_sprite_length, layer, obj_chain_link);
 }
 create_physics_link(id, chain_link[0], chain_link_sprite_length);
-for (var i=1; i<chain_link_count-1; i++) {
+for (var i=1; i<chain_link_count; i++) {
 	create_physics_link(chain_link[i-1], chain_link[i], chain_link_sprite_length);
 }
 create_physics_link(chain_link[chain_link_count-1], golfer, chain_link_sprite_length);
