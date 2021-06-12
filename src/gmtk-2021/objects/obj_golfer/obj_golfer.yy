@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_square",
-    "path": "sprites/spr_square/spr_square.yy",
+    "name": "spr_player_drag",
+    "path": "sprites/spr_player_drag/spr_player_drag.yy",
   },
   "solid": false,
   "visible": true,
@@ -25,6 +25,7 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
