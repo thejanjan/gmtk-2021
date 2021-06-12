@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_enemy_base",
+    "path": "sprites/spr_enemy_base/spr_enemy_base.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
