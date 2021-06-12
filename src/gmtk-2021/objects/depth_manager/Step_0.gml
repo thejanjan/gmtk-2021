@@ -14,6 +14,9 @@ with (all) {
 		case gui_bars:
 			depth = -100000;
 			fuck;
+		case hp_bar:
+			depth = -100000;
+			fuck;
 		default:
 			depth = -y;
 			fuck;
