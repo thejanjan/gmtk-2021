@@ -11,4 +11,8 @@ physics_fixture_set_friction(fixture, 0.2);
 physics_fixture_bind(fixture, id);
 physics_fixture_delete(fixture);
 
+previous_pos = [x, y];
+current_pos = [x, y];
+current_speed = 0;
+
 hp = 30;
