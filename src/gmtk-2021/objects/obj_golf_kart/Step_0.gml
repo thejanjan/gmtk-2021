@@ -1,6 +1,6 @@
 /// @description Directional logic, move to goal
 
-
+/*
 if mouse_check_button_pressed(mb_left) {
 	goal[0] = mouse_x;
 	goal[1] = mouse_y;
@@ -17,11 +17,33 @@ if vector_magnitude(velocity) > max_speed
 	velocity = old_velocity;
 
 // Handle velocity logic
-current_direction = point_direction(x, y, x + velocity[0], y + velocity[1]);
 //x += velocity[0];
 //y += velocity[1];
 phy_speed_x = velocity[0];
 phy_speed_y = velocity[1];
+
+current_direction = point_direction(x, y, x + velocity[0], y + velocity[1]);
+*/
+
+var control_vector = [0, 0];
+if new_keyboard_check(global.binding_right) {
+	control_vector[0] += 1;
+}
+if new_keyboard_check(global.binding_left) {
+	control_vector[0] -= 1;
+}
+if new_keyboard_check(global.binding_up) {
+	control_vector[1] -= 1;
+}
+if new_keyboard_check(global.binding_down) {
+	control_vector[1] += 1;
+}
+control_vector = vector_normalize(control_vector); // Don't make the same mistake as Marble Blast...
+
+var acceleration_vector = vector_scale(control_vector, acceleration_magnitude);
+physics_apply_impulse(x, y, acceleration_vector[0], acceleration_vector[1]);
+
+current_direction = point_direction(x, y, x + phy_speed_x, y + phy_speed_y);
 
 /*
 speed_range = [5, 8]

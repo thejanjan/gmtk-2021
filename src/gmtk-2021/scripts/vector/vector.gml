@@ -32,8 +32,13 @@ function vector_magnitude(_vec) {
 }
 
 function vector_normalize(_vec) {
-	var divisor = 1 / vector_magnitude(_vec);
-	return [_vec[0] * divisor, _vec[1] * divisor];
+	var magnitude = vector_magnitude(_vec);
+	if magnitude == 0 {
+		return _vec;
+	} else {
+		var divisor = 1 / vector_magnitude(_vec);
+		return [_vec[0] * divisor, _vec[1] * divisor];
+	}
 }
 
 function vector_dot(_vec1, _vec2) {
