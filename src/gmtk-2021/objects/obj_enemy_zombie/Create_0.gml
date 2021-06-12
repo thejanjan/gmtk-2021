@@ -18,6 +18,7 @@ enum state {
 }
 
 current_state = state.idle;
+target_ball = -1;
 
 path = path_add();
 alarm[0] = room_speed;
