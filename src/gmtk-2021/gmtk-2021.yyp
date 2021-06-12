@@ -14,6 +14,7 @@
     {"id":{"name":"spr_player_drag","path":"sprites/spr_player_drag/spr_player_drag.yy",},"order":7,},
     {"id":{"name":"spr_fragile_wall","path":"sprites/spr_fragile_wall/spr_fragile_wall.yy",},"order":9,},
     {"id":{"name":"obj_staticparent","path":"objects/obj_staticparent/obj_staticparent.yy",},"order":1,},
+    {"id":{"name":"spr_enemy_base","path":"sprites/spr_enemy_base/spr_enemy_base.yy",},"order":1,},
     {"id":{"name":"spr_hp","path":"sprites/spr_hp/spr_hp.yy",},"order":10,},
     {"id":{"name":"obj_phys_control","path":"objects/obj_phys_control/obj_phys_control.yy",},"order":4,},
     {"id":{"name":"spr_chain","path":"sprites/spr_chain/spr_chain.yy",},"order":6,},
