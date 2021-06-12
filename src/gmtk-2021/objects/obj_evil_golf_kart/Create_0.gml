@@ -41,7 +41,7 @@ physics_fixture_delete(fixture);
 */
 
 var fixture = physics_fixture_create();
-physics_fixture_set_collision_group(fixture, collision_groups.never);
+//physics_fixture_set_collision_group(fixture, collision_groups.never);
 physics_fixture_set_box_shape(fixture, half_sprite_width / 2, half_sprite_height / 2);
 physics_fixture_set_density(fixture, 0.8);
 physics_fixture_set_restitution(fixture, 0.9);
