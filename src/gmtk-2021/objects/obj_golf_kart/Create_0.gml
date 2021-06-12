@@ -43,4 +43,7 @@ create_physics_link(id, chain_link[0], chain_link_sprite_length);
 for (var i=1; i<chain_link_count; i++) {
 	create_physics_link(chain_link[i], chain_link[i-1], chain_link_sprite_length);
 }
+if chain_link_count > 1 {
+	chain_link[chain_link_count-1].attachment_target = chain_link[chain_link_count-2];
+}
 create_physics_link(chain_link[chain_link_count-1], golfer, chain_link_sprite_length);
