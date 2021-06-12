@@ -33,6 +33,7 @@
     {"id":{"name":"obj_enemy_zombie","path":"objects/obj_enemy_zombie/obj_enemy_zombie.yy",},"order":10,},
     {"id":{"name":"sayoris_job","path":"objects/sayoris_job/sayoris_job.yy",},"order":6,},
     {"id":{"name":"spr_tree","path":"sprites/spr_tree/spr_tree.yy",},"order":8,},
+    {"id":{"name":"path_manager","path":"objects/path_manager/path_manager.yy",},"order":0,},
     {"id":{"name":"misc","path":"scripts/misc/misc.yy",},"order":5,},
     {"id":{"name":"gameplay_testing","path":"rooms/gameplay_testing/gameplay_testing.yy",},"order":0,},
     {"id":{"name":"rm_unit_tests","path":"rooms/rm_unit_tests/rm_unit_tests.yy",},"order":1,},
@@ -86,6 +87,7 @@
     {"folderPath":"folders/Sounds.yy","order":5,"resourceVersion":"1.0","name":"Sounds","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/enemies.yy","order":13,"resourceVersion":"1.0","name":"enemies","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/enemies.yy","order":13,"resourceVersion":"1.0","name":"enemies","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/level generation.yy","order":16,"resourceVersion":"1.0","name":"level generation","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
