@@ -5,6 +5,7 @@ function kart_sprite_index() {
 	direction_val = round((current_direction mod 360) / slice);
 	draw_text(300,20,string(current_direction)+", "+string(direction_val));
 	draw_text(300,40,string(dir_vector[0])+", "+string(dir_vector[1]));
+	// draw_text(300,60,"speed: " + string(phy_speed_x) + ", " + string(phy_speed_y));
 	// 0 is right, 4 is up, 8 is left, 12 is down
 	switch (direction_val) {
 		case 0:

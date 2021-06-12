@@ -43,7 +43,12 @@ control_vector = vector_normalize(control_vector); // Don't make the same mistak
 var acceleration_vector = vector_scale(control_vector, acceleration_magnitude);
 physics_apply_impulse(x, y, acceleration_vector[0], acceleration_vector[1]);
 
-current_direction = point_direction(x, y, x + phy_speed_x, y + phy_speed_y);
+// Only update the cart direction if it's moving significantly fast
+// This stops it completely changing direction due to micro-adjustments in small numbers as it slows to a stop
+if (abs(phy_speed_x) > 0.8 and abs(phy_speed_y) > 0.8) {
+    current_direction = point_direction(x, y, x + phy_speed_x, y + phy_speed_y);
+}
+
 
 /*
 speed_range = [5, 8]
