@@ -7,7 +7,12 @@ if mouse_check_button(mb_left) {
 
 var hole = instance_nearest(x, y, obj_hole);
 var distohole = point_distance(x, y, hole.x, hole.y);
-if distohole < 15
+if distohole < 7
+{
+    instance_destroy();
+    hole.flamming = true;
+}
+else if distohole < 15
 {
 	var dir = vector_heading_to([x, y], [hole.x, hole.y]);
 	dir = vector_scale(dir, 2);

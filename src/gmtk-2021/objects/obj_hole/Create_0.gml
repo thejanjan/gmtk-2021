@@ -1,4 +1,4 @@
 /// @description Insert description here
 // You can write your code in this editor
-flamming = true;
+flamming = false;
 flip = false;
