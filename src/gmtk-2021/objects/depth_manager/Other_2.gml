@@ -1,0 +1,3 @@
+/// @description Randomize
+
+randomize();
