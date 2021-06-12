@@ -34,3 +34,11 @@ function nearest_active_hole() {
 	// Return our answer
 	return nearest;
 }
+
+function enemy_take_damage(_amount) {
+	hp -= _amount;
+	if hp <= 0 {
+		event_perform(ev_other, ev_user10);  // Execute before death, if we need
+		instance_destroy();
+	}
+}
