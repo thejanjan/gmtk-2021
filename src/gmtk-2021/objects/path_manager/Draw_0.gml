@@ -8,5 +8,7 @@ for (var i = 0; i < array_length(TOTAL_PATH) - 1; i++) {
 
 draw_circle_color(START_VECTOR[0], START_VECTOR[1], 30, c_lime, c_white, false);
 draw_circle_color(GOAL_VECTOR[0], GOAL_VECTOR[1], 30, c_red, c_white, false);
+if FURTHEST_EXISTS
+draw_circle_color(FURTHEST_VECTOR[0], FURTHEST_VECTOR[1], 30, c_blue, c_white, false);
 
 if new_keyboard_check_pressed(global.binding_debug_two) room_restart();
