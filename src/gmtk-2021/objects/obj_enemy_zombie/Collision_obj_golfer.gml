@@ -2,7 +2,7 @@
 if other.current_speed > 10 {
 	if current_state == state.eating {
 		with(obj_ball) {
-			event_perform(ev_other, ev_user0);  // respawn ball
+			obj_ball.visible = true;
 		}
 	}
 	current_state = state.dying;  // TODO: death anim!!
@@ -12,6 +12,11 @@ else if other.current_speed > 5 * fMod and current_time - last_hit_time >= min_t
 	hp -= 1;
 	last_hit_time = current_time;
 	if hp <= 0 {
+		if current_state == state.eating {
+			with(obj_ball) {
+				obj_ball.visible = true;
+			}
+		}
 		instance_destroy();
 	}
 }
