@@ -88,11 +88,26 @@ var true_curve_offset = min(floor(CURVES_OFFSET + (CURRENT_HOLE * CURVES_OFFSET_
 var curve_climb_dist = 1 / true_curve_count;
 for (var i = array_length(TOTAL_PATH) - 1; i > 0; i--) {
 	for (var o = 1; o < true_curve_count; o++) {
-		var path_vector = vector_between(TOTAL_PATH[i - 1], TOTAL_PATH[i + (o - 1)], o * curve_climb_dist);
+		var path_vector = vector_between(TOTAL_PATH[i + (o - 1)], TOTAL_PATH[i - 1], o * curve_climb_dist);
 		path_vector = vector_add(path_vector, [choose(-1, 1) * irandom(true_curve_offset), choose(-1, 1) * irandom(true_curve_offset)]);
 		path_add_vector(condense_vector(path_vector), i);
 	}
 }
+
+// find furthest point
+START_VECTOR = TOTAL_PATH[0];
+/*CURRENT_DIST = 0;
+BEST_INDEX = 0;
+for (var i = 1; i < array_length(TOTAL_PATH); i++) {
+	var dist = vector_distance(START_VECTOR, TOTAL_PATH[i])
+	if dist > CURRENT_DIST {
+		CURRENT_DIST = dist;
+		BEST_INDEX = i;
+	}
+}
+GOAL_VECTOR = TOTAL_PATH[BEST_INDEX];*/
+GOAL_VECTOR = TOTAL_PATH[array_length(TOTAL_PATH) - 1];
+
 /*
 CURVES_COUNT = 3;
 CURVES_PER_HOLE = 0.4;
