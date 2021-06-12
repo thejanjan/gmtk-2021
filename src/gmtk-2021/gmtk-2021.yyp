@@ -35,6 +35,7 @@
     {"id":{"name":"vector","path":"scripts/vector/vector.yy",},"order":2,},
     {"id":{"name":"obj_hole","path":"objects/obj_hole/obj_hole.yy",},"order":7,},
     {"id":{"name":"spr_golf_kart","path":"sprites/spr_golf_kart/spr_golf_kart.yy",},"order":0,},
+    {"id":{"name":"obj_grid","path":"objects/obj_grid/obj_grid.yy",},"order":11,},
     {"id":{"name":"spr_logo","path":"sprites/spr_logo/spr_logo.yy",},"order":1,},
     {"id":{"name":"spr_menu_button","path":"sprites/spr_menu_button/spr_menu_button.yy",},"order":2,},
     {"id":{"name":"health_scripts","path":"scripts/health_scripts/health_scripts.yy",},"order":3,},
