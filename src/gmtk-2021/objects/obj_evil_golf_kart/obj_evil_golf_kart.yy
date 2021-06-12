@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_golf_kart",
-    "path": "sprites/spr_golf_kart/spr_golf_kart.yy",
+    "name": "spr_evil_golf_kart",
+    "path": "sprites/spr_evil_golf_kart/spr_evil_golf_kart.yy",
   },
   "solid": false,
   "visible": true,
