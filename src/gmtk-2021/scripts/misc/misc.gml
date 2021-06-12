@@ -42,3 +42,12 @@ function enemy_take_damage(_amount) {
 		instance_destroy();
 	}
 }
+
+function debug_string(_array) {
+	var retstr = "";
+	for (var i = 0; i < array_length(_array); i++) {
+		retstr = retstr + string(_array[i]) + ", ";
+	}
+	clipboard_set_text(retstr);
+	show_message(retstr);
+}
