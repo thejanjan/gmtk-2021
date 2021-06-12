@@ -9,7 +9,7 @@ if debug {
 }
 
 // Adjustment variables
-var extra_dist = 8;
+var extra_dist = 16;
 var rise_increase = 4;
 var invulnerable_offset_width = 2;
 var dist_between_my_golf_orbs = 28;
@@ -21,8 +21,8 @@ if invulnerable invulnerable--;
 
 // Calculate position
 if visible y_increase /= rise_increase;
-var ypos = view_yport[0] + view_hport[0] + y_increase - extra_dist;
-var xpos = view_xport[0] + gui_bars.bar_width + extra_dist;
+var ypos = camera_get_view_y(view_camera[0]) + view_hport[0] + y_increase - extra_dist;
+var xpos = camera_get_view_x(view_camera[0]) + gui_bars.bar_width + extra_dist;
 var invulnerable_offset = (invulnerable / invulnerable_length) * invulnerable_offset_width;
 invulnerable_offset *= sign( (invulnerable mod 2) - 0.5 );
 xpos += invulnerable_offset;
