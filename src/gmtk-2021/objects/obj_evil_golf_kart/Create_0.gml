@@ -1,5 +1,11 @@
 /// @description initiate golf kart variables
 
+previous_pos = [x, y];
+current_pos = [x, y];
+current_speed = 0;
+
+hp = 50;
+
 function create_physics_link(_obj1, _obj2, _off1, _off2, _length) {
 	// _obj2.attachment_target = _obj1;
 	physics_joint_rope_create(_obj1, _obj2, _obj1.x+_off1[0], _obj1.y+_off1[1], _obj2.x+_off2[0], _obj2.y+_off2[1], _length, true);

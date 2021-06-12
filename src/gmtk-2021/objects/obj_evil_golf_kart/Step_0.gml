@@ -25,13 +25,22 @@ phy_speed_y = velocity[1];
 current_direction = point_direction(x, y, x + velocity[0], y + velocity[1]);
 */
 
-var dir = vector_heading_to([my_stinky_golfer.x, my_stinky_golfer.y], [obj_golfer.x, obj_golfer.y]);
+event_inherited();
+
+var from_instance;
+if instance_exists(my_stinky_golfer) {
+	from_instance = my_stinky_golfer;
+} else {
+	from_instance = self;
+}
+
+var dir = vector_heading_to([from_instance.x, from_instance.y], [obj_golfer.x, obj_golfer.y]);
 var acceleration_vector = vector_scale(dir, acceleration_magnitude);
 physics_apply_impulse(x, y, acceleration_vector[0], acceleration_vector[1]);
 
 // Only update the cart direction if it's moving significantly fast
 // This stops it completely changing direction due to micro-adjustments in small numbers as it slows to a stop
-if (abs(phy_speed_x) > 0.8 or abs(phy_speed_y) > 0.8 and keyboard_check(vk_anykey)) {
+if abs(phy_speed_x) > 0.8 or abs(phy_speed_y) > 0.8 {
     current_direction = point_direction(x, y, x + phy_speed_x, y + phy_speed_y);
 }
 

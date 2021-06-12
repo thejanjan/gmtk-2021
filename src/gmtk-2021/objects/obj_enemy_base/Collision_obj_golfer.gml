@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description Determine who takes damage.
 // You can write your code in this editor
 
 if other.current_speed < current_speed {
