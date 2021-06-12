@@ -45,7 +45,7 @@ physics_apply_impulse(x, y, acceleration_vector[0], acceleration_vector[1]);
 
 // Only update the cart direction if it's moving significantly fast
 // This stops it completely changing direction due to micro-adjustments in small numbers as it slows to a stop
-if (abs(phy_speed_x) > 0.8 and abs(phy_speed_y) > 0.8 and keyboard_check(vk_anykey)) {
+if (abs(phy_speed_x) > 0.8 or abs(phy_speed_y) > 0.8 and keyboard_check(vk_anykey)) {
     current_direction = point_direction(x, y, x + phy_speed_x, y + phy_speed_y);
 }
 
