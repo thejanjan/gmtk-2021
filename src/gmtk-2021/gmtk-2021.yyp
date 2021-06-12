@@ -25,6 +25,7 @@
     {"id":{"name":"gameplay_testing","path":"rooms/gameplay_testing/gameplay_testing.yy",},"order":0,},
     {"id":{"name":"rm_unit_tests","path":"rooms/rm_unit_tests/rm_unit_tests.yy",},"order":1,},
     {"id":{"name":"rom_menu","path":"rooms/rom_menu/rom_menu.yy",},"order":2,},
+    {"id":{"name":"hp_bar","path":"objects/hp_bar/hp_bar.yy",},"order":9,},
     {"id":{"name":"obj_golfer","path":"objects/obj_golfer/obj_golfer.yy",},"order":5,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":3,},
     {"id":{"name":"assert","path":"scripts/assert/assert.yy",},"order":0,},
@@ -34,6 +35,7 @@
     {"id":{"name":"spr_golf_kart","path":"sprites/spr_golf_kart/spr_golf_kart.yy",},"order":0,},
     {"id":{"name":"spr_logo","path":"sprites/spr_logo/spr_logo.yy",},"order":1,},
     {"id":{"name":"spr_menu_button","path":"sprites/spr_menu_button/spr_menu_button.yy",},"order":2,},
+    {"id":{"name":"health_scripts","path":"scripts/health_scripts/health_scripts.yy",},"order":3,},
     {"id":{"name":"spr_square","path":"sprites/spr_square/spr_square.yy",},"order":3,},
   ],
   "Options": [
