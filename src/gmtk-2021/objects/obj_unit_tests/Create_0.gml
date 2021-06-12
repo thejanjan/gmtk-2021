@@ -14,6 +14,4 @@ assert_equal("test_vector_dot_product", vector_dot([2, 3], [5, 6]), 28);
 // Keyboard bindings.
 assert_equal("test_binding_name", new_keyboard_get_name(global.binding_up), ord("W"));
 
-// Wave generator.
-
 // Dude, we're done here.
