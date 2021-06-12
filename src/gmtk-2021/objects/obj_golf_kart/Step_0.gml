@@ -18,8 +18,10 @@ if vector_magnitude(velocity) > max_speed
 
 // Handle velocity logic
 current_direction = point_direction(x, y, x + velocity[0], y + velocity[1]);
-x += velocity[0];
-y += velocity[1];
+//x += velocity[0];
+//y += velocity[1];
+phy_speed_x = velocity[0];
+phy_speed_y = velocity[1];
 
 /*
 speed_range = [5, 8]

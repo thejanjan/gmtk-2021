@@ -1,5 +1,5 @@
-/// @description set up physics properties
-
+/// @description Set up physics
+// You can write your code in this editor
 var fixture = physics_fixture_create();
 physics_fixture_set_circle_shape(fixture, 6);
 physics_fixture_set_density(fixture, 0.8);
@@ -9,5 +9,3 @@ physics_fixture_set_angular_damping(fixture, 0.6);
 physics_fixture_set_friction(fixture, 0.2);
 physics_fixture_bind(fixture, id);
 physics_fixture_delete(fixture);
-
-impulse_force = 5;

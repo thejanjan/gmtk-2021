@@ -16,3 +16,15 @@ max_speed = speed_range[0];
 dir_goal = -1;
 dir_goal_vector = [0, 0];
 dir_vector = [0, 0];
+
+// Set up cart's physics.
+var fixture = physics_fixture_create();
+physics_fixture_set_box_shape(fixture, sprite_width / 2, sprite_height / 2);
+physics_fixture_bind(fixture, id);
+physics_fixture_delete(fixture);
+
+// Set up link with golfer.
+var max_golfer_rope_length = 160;
+var golfer = instance_create_layer(x, y+max_golfer_rope_length, layer, obj_golfer);
+
+physics_joint_rope_create(id, golfer, x, y, golfer.x, golfer.y, max_golfer_rope_length, true);
