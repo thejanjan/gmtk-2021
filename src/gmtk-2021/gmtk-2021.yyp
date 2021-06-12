@@ -38,7 +38,7 @@
     {"id":{"name":"spr_enemy_zombie","path":"sprites/spr_enemy_zombie/spr_enemy_zombie.yy",},"order":14,},
     {"id":{"name":"obj_unit_tests","path":"objects/obj_unit_tests/obj_unit_tests.yy",},"order":5,},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},"order":2,},
-    {"id":{"name":"obj_enemy_zombie","path":"objects/obj_enemy_zombie/obj_enemy_zombie.yy",},"order":10,},
+    {"id":{"name":"obj_enemy_zombie","path":"objects/obj_enemy_zombie/obj_enemy_zombie.yy",},"order":4,},
     {"id":{"name":"sayoris_job","path":"objects/sayoris_job/sayoris_job.yy",},"order":6,},
     {"id":{"name":"spr_tree","path":"sprites/spr_tree/spr_tree.yy",},"order":8,},
     {"id":{"name":"obj_wavegen","path":"objects/obj_wavegen/obj_wavegen.yy",},"order":2,},

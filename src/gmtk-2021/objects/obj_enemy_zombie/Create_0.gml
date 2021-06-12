@@ -29,6 +29,6 @@ lunch_start = -1;
 lunch_duration = 2000;
 
 fMod = .75;  // i had to
-hp = 3;
+hp = 50;
 last_hit_time = current_time;
 min_time_per_hit = 200;

@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "obj_staticparent",
-    "path": "objects/obj_staticparent/obj_staticparent.yy",
+    "name": "obj_enemy_base",
+    "path": "objects/obj_enemy_base/obj_enemy_base.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -34,8 +34,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "enemies",
+    "path": "folders/Objects/enemies.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_enemy_zombie",
