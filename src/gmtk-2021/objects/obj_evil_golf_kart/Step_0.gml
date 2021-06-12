@@ -51,7 +51,7 @@ var speed_percent = (pspeed / (max_speed * max_speed));
 // audio
 // if the sound failed to play initially, play it
 if (sound == -1) {
-	sound = audio_play_sound(snd_engine, 0, true);
+	//sound = audio_play_sound(snd_engine, 0, true);
 }
 audio_sound_pitch(sound, .65 + speed_percent * pitch_factor);  
 
