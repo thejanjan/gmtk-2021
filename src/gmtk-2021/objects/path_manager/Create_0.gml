@@ -1,14 +1,21 @@
 /// @description Build the path array
 
+CURRENT_HOLE++;
+
 if !instance_exists(obj_phys_control)
 	instance_create_layer(0, 0, layer, obj_phys_control);
 
-audio_stop_all();
+audio_stop_sound(snd_engine);
+
+// music handler
+if CURRENT_HOLE = 1 {
+	if !audio_is_playing(mus_early_holes)
+	audio_play_sound(mus_early_holes, 1, true);
+}
 
 // adjustment variables
 HOLE_MULTIPLY = 2; // Overall per hole multiplier
 BORDER = 800;
-CURRENT_HOLE++;
 MINIMUM_LENGTH = 1500;
 LENGTH_PER_HOLE = 500 * HOLE_MULTIPLY;
 TWISTS = 1;
