@@ -64,3 +64,12 @@ function vector_heading_to(_start, _end) {
 function vector_make_from_direction(_dir) {
 	return [cos(degtorad(_dir)), -sin(degtorad(_dir))];
 }
+
+function vector_midpoint(_vec1, _vec2) {
+	return [0.5 * (_vec1[0] + _vec2[0]), 0.5 * (_vec1[1] + _vec2[1])]
+}
+
+function vector_random_between(_vec1, _vec2, min_dist, max_dist) {
+	var vector_dist = vector_subtract(_vec2, _vec1);
+	return [_vec1[0] + (vector_dist[0] * random_range(min_dist, max_dist)), _vec1[1] + (vector_dist[1] * random_range(min_dist, max_dist)),]
+}
