@@ -8,7 +8,7 @@ if hit_by_club() {
 		var nearest_hole = instance_nearest(x, y, obj_hole);
 		dir = vector_heading_to([x, y], [nearest_hole.x, nearest_hole.y]);
 	}
-	club_apply_impulse(dir);
+	club_apply_impulse(dir, 1.0);
 	//dir = vector_scale(dir, impulse_force);
 	//physics_apply_impulse(x, y, dir[0], dir[1]);
 }

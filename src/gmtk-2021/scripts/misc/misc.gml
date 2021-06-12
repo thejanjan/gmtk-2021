@@ -5,8 +5,8 @@ function hit_by_club() {
 	return place_meeting(x, y, obj_golf_club) && obj_golf_club.swing;
 }
 
-function club_apply_impulse(_vector_direction) {
-	var base_impulse_force = 24;
+function club_apply_impulse(_vector_direction, _impulse_multiplier) {
+	var base_impulse_force = 24 * _impulse_multiplier;
 	
 	//var raw_impulse = vector_scale(_vector_direction, base_impulse_force);
 	//var impulse_from_golfer = obj_golfer.current_velocity;
