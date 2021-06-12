@@ -1,15 +1,15 @@
 {
   "spriteId": {
-    "name": "spr_player_drag",
-    "path": "sprites/spr_player_drag/spr_player_drag.yy",
+    "name": "spr_evil_golfer",
+    "path": "sprites/spr_evil_golfer/spr_evil_golfer.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "obj_dynamicparent",
-    "path": "objects/obj_dynamicparent/obj_dynamicparent.yy",
+    "name": "obj_enemy_base",
+    "path": "objects/obj_enemy_base/obj_enemy_base.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

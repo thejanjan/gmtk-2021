@@ -53,7 +53,7 @@ physics_fixture_delete(fixture);
 var chain_link_count = 4;
 var chain_link_sprite_length = 40;
 var chain_link_length = 3;
-var golfer = instance_create_layer(x, y+chain_link_count*chain_link_sprite_length, layer, obj_golfer);
+my_stinky_golfer = instance_create_layer(x, y+chain_link_count*chain_link_sprite_length, layer, obj_evil_golfer);
 var chain_link;
 for (var i=0; i<chain_link_count; i++) {
 	chain_link[i] = instance_create_layer(x, y+half_sprite_height+i*chain_link_sprite_length, layer, obj_chain_link);
@@ -69,4 +69,4 @@ if chain_link_count > 1 {
 	// chain_link[chain_link_count-1].attachment_target = chain_link[chain_link_count-2];
 }
 // link last chain to golfer
-create_physics_link(chain_link[chain_link_count-1], golfer, [0, 10], [0, 0], 40);
+create_physics_link(chain_link[chain_link_count-1], my_stinky_golfer, [0, 10], [0, 0], 40);
