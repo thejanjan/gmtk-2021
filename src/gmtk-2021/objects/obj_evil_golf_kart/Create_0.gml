@@ -4,7 +4,7 @@ previous_pos = [x, y];
 current_pos = [x, y];
 current_speed = 0;
 
-hp = 50;
+hp = 40;
 
 function create_physics_link(_obj1, _obj2, _off1, _off2, _length) {
 	// _obj2.attachment_target = _obj1;
