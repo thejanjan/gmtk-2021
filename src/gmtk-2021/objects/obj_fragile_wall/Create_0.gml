@@ -7,3 +7,8 @@ physics_fixture_set_restitution(fixture, 0.1);
 physics_fixture_set_friction(fixture, 0.2);
 physics_fixture_bind(fixture, id);
 physics_fixture_delete(fixture);
+
+fMod = .75;  // i had to
+hp = 3;
+last_hit_time = current_time;
+min_time_per_hit = 500;
