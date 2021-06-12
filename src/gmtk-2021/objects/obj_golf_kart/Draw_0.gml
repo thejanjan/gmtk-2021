@@ -25,7 +25,7 @@ function kart_sprite_index() {
 			return 8;
 		case 9:
 		case 15:
-			return 3;
+			return 6;
 		case 10:
 		case 14:
 			return 3;
