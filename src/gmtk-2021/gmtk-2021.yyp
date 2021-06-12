@@ -3,6 +3,7 @@
     {"id":{"name":"spr_crosshair","path":"sprites/spr_crosshair/spr_crosshair.yy",},"order":4,},
     {"id":{"name":"gui_bars","path":"objects/gui_bars/gui_bars.yy",},"order":0,},
     {"id":{"name":"obj_dynamicparent","path":"objects/obj_dynamicparent/obj_dynamicparent.yy",},"order":0,},
+    {"id":{"name":"depth_manager","path":"objects/depth_manager/depth_manager.yy",},"order":15,},
     {"id":{"name":"obj_golf_kart","path":"objects/obj_golf_kart/obj_golf_kart.yy",},"order":2,},
     {"id":{"name":"spr_enemy_wimp","path":"sprites/spr_enemy_wimp/spr_enemy_wimp.yy",},"order":0,},
     {"id":{"name":"obj_fragile_wall","path":"objects/obj_fragile_wall/obj_fragile_wall.yy",},"order":8,},
