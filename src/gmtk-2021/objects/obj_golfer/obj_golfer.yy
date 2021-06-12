@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_square",
-    "path": "sprites/spr_square/spr_square.yy",
+    "name": "spr_player_drag",
+    "path": "sprites/spr_player_drag/spr_player_drag.yy",
   },
   "solid": false,
   "visible": true,
