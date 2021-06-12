@@ -24,6 +24,7 @@
     {"id":{"name":"spr_bggreen","path":"sprites/spr_bggreen/spr_bggreen.yy",},"order":0,},
     {"id":{"name":"spr_player_drag","path":"sprites/spr_player_drag/spr_player_drag.yy",},"order":9,},
     {"id":{"name":"spr_fragile_wall","path":"sprites/spr_fragile_wall/spr_fragile_wall.yy",},"order":11,},
+    {"id":{"name":"pregame_init","path":"objects/pregame_init/pregame_init.yy",},"order":17,},
     {"id":{"name":"obj_staticparent","path":"objects/obj_staticparent/obj_staticparent.yy",},"order":1,},
     {"id":{"name":"spr_enemy_base","path":"sprites/spr_enemy_base/spr_enemy_base.yy",},"order":1,},
     {"id":{"name":"spr_hp","path":"sprites/spr_hp/spr_hp.yy",},"order":12,},

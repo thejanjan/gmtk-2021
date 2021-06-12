@@ -73,3 +73,7 @@ function vector_random_between(_vec1, _vec2, min_dist, max_dist) {
 	var vector_dist = vector_subtract(_vec2, _vec1);
 	return [_vec1[0] + (vector_dist[0] * random_range(min_dist, max_dist)), _vec1[1] + (vector_dist[1] * random_range(min_dist, max_dist)),]
 }
+
+function vector_repr(_vec) {
+	return "[" + string(_vec[0]) + ", " + string(_vec[1]) +"]";	
+}
