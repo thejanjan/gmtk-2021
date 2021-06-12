@@ -84,3 +84,8 @@ if pspeed >= 40
 	dir += longangle;
 	part_particles_create(trail_particle_system, x+lengthdir_x(dis, dir), y+lowering+lengthdir_y(dis, dir), trail_particle_type, 1);
 };
+if obj_golfer.phy_speed >= 0
+{
+	var lowering = 10;
+	part_particles_create(trail_particle_system, obj_golfer.x, obj_golfer.y+lowering, hudson_dirt_face_particle_type, 1);
+};
