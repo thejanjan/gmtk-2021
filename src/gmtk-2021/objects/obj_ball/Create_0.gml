@@ -1,6 +1,7 @@
 /// @description set up physics properties
 
 var fixture = physics_fixture_create();
+physics_fixture_set_collision_group(fixture, collision_groups.never);
 physics_fixture_set_circle_shape(fixture, 6);
 physics_fixture_set_density(fixture, 0.8);
 physics_fixture_set_restitution(fixture, 0.9);

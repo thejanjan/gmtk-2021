@@ -5,6 +5,11 @@ physics_world_gravity(0, 0);                    //No gravity
 physics_world_update_iterations(20);            //iterations per step
 physics_world_update_speed(60);                 //Update speed
 
+// collision group enum
+enum collision_groups {
+	never = -1
+}
+
 // seal the edges
 var edge_fix = physics_fixture_create();
 physics_fixture_set_chain_shape(edge_fix, true);
