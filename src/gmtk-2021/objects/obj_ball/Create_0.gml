@@ -11,4 +11,4 @@ physics_fixture_set_friction(fixture, 0.2);
 physics_fixture_bind(fixture, id);
 physics_fixture_delete(fixture);
 
-impulse_force = 5;
+impulse_force = 24;
