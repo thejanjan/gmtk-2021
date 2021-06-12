@@ -1,8 +1,7 @@
 /// @description Draw golfer facing the nearest chain
 
 function golfer_get_index() {
-	// TODO: ANGLE TOWARDS CLOSEST CHAIN, NOT TOWARDS CART
-	var direction_facing = point_direction(x, y, obj_golf_kart.x, obj_golf_kart.y) mod 360;
+	var direction_facing = point_direction(x, y, attachment_target.x, attachment_target.y) mod 360;
 	var slice = 360 / 8;
 	var segment = round((direction_facing / slice));
 	draw_text(400, 20, string(segment) + ", " + string(slice) + ", ");

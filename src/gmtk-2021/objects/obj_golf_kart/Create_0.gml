@@ -1,6 +1,7 @@
 /// @description initiate golf kart variables
 
 function create_physics_link(_obj1, _obj2, _length) {
+	_obj2.attachment_target = _obj1;
 	physics_joint_rope_create(_obj1, _obj2, _obj1.x, _obj1.y, _obj2.x, _obj2.y, _length, true);
 }
 
@@ -31,8 +32,8 @@ physics_fixture_bind(fixture, id);
 physics_fixture_delete(fixture);
 
 // Set up linked physics objects.
-var chain_link_count = 16;
-var chain_link_sprite_length = 10;
+var chain_link_count = 4;
+var chain_link_sprite_length = 40;
 var golfer = instance_create_layer(x, y+chain_link_count*chain_link_sprite_length, layer, obj_golfer);
 var chain_link;
 for (var i=0; i<chain_link_count; i++) {
@@ -40,6 +41,9 @@ for (var i=0; i<chain_link_count; i++) {
 }
 create_physics_link(id, chain_link[0], chain_link_sprite_length);
 for (var i=1; i<chain_link_count; i++) {
-	create_physics_link(chain_link[i-1], chain_link[i], chain_link_sprite_length);
+	create_physics_link(chain_link[i], chain_link[i-1], chain_link_sprite_length);
+}
+if chain_link_count > 1 {
+	chain_link[chain_link_count-1].attachment_target = chain_link[chain_link_count-2];
 }
 create_physics_link(chain_link[chain_link_count-1], golfer, chain_link_sprite_length);
