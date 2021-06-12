@@ -1,5 +1,9 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Initiate world settings
+
+// create necessary managers
+if !instance_exists(depth_manager) instance_create_layer(0, 0, layer, depth_manager);
+
+// define physics constants
 physics_world_create(0.1);                      //Pixel to meters scale
 physics_world_gravity(0, 0);                    //No gravity
 physics_world_update_iterations(20);            //iterations per step

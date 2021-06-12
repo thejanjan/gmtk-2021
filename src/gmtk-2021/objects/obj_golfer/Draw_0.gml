@@ -1,7 +1,7 @@
 /// @description Draw golfer sprite (STOP VANISHING)
 
 // todo: flicker
-var facing = image_angle;
+facing = image_angle;
 var slices = 16; // Round the facing by this amount
 if attachment_target = -1 {
 	if instance_exists(obj_chain_link) {
