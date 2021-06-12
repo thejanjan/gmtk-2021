@@ -7,7 +7,13 @@ function hit_by_club() {
 
 function club_apply_impulse(_vector_direction) {
 	var base_impulse_force = 24;
-	impulse = vector_scale(_vector_direction, base_impulse_force);
+	
+	//var raw_impulse = vector_scale(_vector_direction, base_impulse_force);
+	//var impulse_from_golfer = obj_golfer.current_velocity;
+	//var final_impulse = vector_add(raw_impulse, impulse_from_golfer);
+	//physics_apply_impulse(x, y, final_impulse[0], final_impulse[1]);
+	
+	var impulse = vector_scale(_vector_direction, base_impulse_force + obj_golfer.current_speed);
 	physics_apply_impulse(x, y, impulse[0], impulse[1]);
 }
 
