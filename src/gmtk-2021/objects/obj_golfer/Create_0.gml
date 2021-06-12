@@ -9,3 +9,5 @@ physics_fixture_set_angular_damping(fixture, 0.6);
 physics_fixture_set_friction(fixture, 0.2);
 physics_fixture_bind(fixture, id);
 physics_fixture_delete(fixture);
+
+attachment_target = -1;
