@@ -2,7 +2,9 @@
   "resources": [
     {"id":{"name":"spr_crosshair","path":"sprites/spr_crosshair/spr_crosshair.yy",},"order":4,},
     {"id":{"name":"spr_bgsand","path":"sprites/spr_bgsand/spr_bgsand.yy",},"order":3,},
+    {"id":{"name":"spr_evil_golfer","path":"sprites/spr_evil_golfer/spr_evil_golfer.yy",},"order":20,},
     {"id":{"name":"gui_bars","path":"objects/gui_bars/gui_bars.yy",},"order":0,},
+    {"id":{"name":"obj_evil_golfer","path":"objects/obj_evil_golfer/obj_evil_golfer.yy",},"order":7,},
     {"id":{"name":"obj_dynamicparent","path":"objects/obj_dynamicparent/obj_dynamicparent.yy",},"order":0,},
     {"id":{"name":"main_game","path":"rooms/main_game/main_game.yy",},"order":4,},
     {"id":{"name":"depth_manager","path":"objects/depth_manager/depth_manager.yy",},"order":15,},
@@ -31,7 +33,7 @@
     {"id":{"name":"obj_enemy_base","path":"objects/obj_enemy_base/obj_enemy_base.yy",},"order":0,},
     {"id":{"name":"wavegen","path":"scripts/wavegen/wavegen.yy",},"order":4,},
     {"id":{"name":"obj_ball","path":"objects/obj_ball/obj_ball.yy",},"order":3,},
-    {"id":{"name":"obj_evil_golf_kart","path":"objects/obj_evil_golf_kart/obj_evil_golf_kart.yy",},"order":17,},
+    {"id":{"name":"obj_evil_golf_kart","path":"objects/obj_evil_golf_kart/obj_evil_golf_kart.yy",},"order":3,},
     {"id":{"name":"spr_enemy_zombie","path":"sprites/spr_enemy_zombie/spr_enemy_zombie.yy",},"order":14,},
     {"id":{"name":"obj_unit_tests","path":"objects/obj_unit_tests/obj_unit_tests.yy",},"order":5,},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},"order":2,},
