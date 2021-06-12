@@ -49,6 +49,16 @@ if (abs(phy_speed_x) > 0.8 or abs(phy_speed_y) > 0.8 and keyboard_check(vk_anyke
     current_direction = point_direction(x, y, x + phy_speed_x, y + phy_speed_y);
 }
 
+// phy_speed was annoying so screw it just do it live
+// max speed probably needs adjusting
+var pspeed = vector_magnitude_squared([phy_speed_x, phy_speed_y]);
+var speed_percent = (pspeed / (max_speed * max_speed));
+// audio
+// if the sound failed to play initially, play it
+if (sound == -1) {
+	sound = audio_play_sound(snd_engine, 0, true);
+}
+audio_sound_pitch(sound, .65 + speed_percent * pitch_factor);  
 
 /*
 speed_range = [5, 8]
