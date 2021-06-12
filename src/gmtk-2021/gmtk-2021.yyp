@@ -31,6 +31,7 @@
     {"id":{"name":"obj_enemy_zombie","path":"objects/obj_enemy_zombie/obj_enemy_zombie.yy",},"order":10,},
     {"id":{"name":"sayoris_job","path":"objects/sayoris_job/sayoris_job.yy",},"order":6,},
     {"id":{"name":"spr_tree","path":"sprites/spr_tree/spr_tree.yy",},"order":8,},
+    {"id":{"name":"misc","path":"scripts/misc/misc.yy",},"order":5,},
     {"id":{"name":"gameplay_testing","path":"rooms/gameplay_testing/gameplay_testing.yy",},"order":0,},
     {"id":{"name":"spr_golf_club","path":"sprites/spr_golf_club/spr_golf_club.yy",},"order":15,},
     {"id":{"name":"rm_unit_tests","path":"rooms/rm_unit_tests/rm_unit_tests.yy",},"order":1,},
