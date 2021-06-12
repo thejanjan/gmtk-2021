@@ -14,7 +14,7 @@ proposed_direction = current_direction;
 lag_direction = current_direction;
 
 //acceleration = 1;
-acceleration_magnitude = 30;
+acceleration_magnitude = 150;
 
 turn_speed = 8;
 max_speed = speed_range[0];
@@ -39,7 +39,7 @@ physics_fixture_set_collision_group(fixture, collision_groups.never);
 physics_fixture_set_box_shape(fixture, half_sprite_width / 2, half_sprite_height / 2);
 physics_fixture_set_density(fixture, 0.8);
 physics_fixture_set_restitution(fixture, 0.9);
-physics_fixture_set_linear_damping(fixture, 0.6);
+physics_fixture_set_linear_damping(fixture, 5);
 physics_fixture_set_angular_damping(fixture, 0.6);
 physics_fixture_set_friction(fixture, 0.2);
 physics_fixture_bind(fixture, id);
