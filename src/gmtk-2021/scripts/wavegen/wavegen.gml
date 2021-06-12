@@ -19,8 +19,10 @@ function get_enemy_from_difficulty(_difficulty) {
 	// The highest case should also have the default case so that higher difficulties spawn that enemy.
 	switch _difficulty {
 		case 1:
-			return obj_enemy_wimp;
+			return obj_enemy_zombie;
 		case 2:
+			return obj_enemy_wimp;
+		case 3:
 		default:
 			return obj_evil_golf_kart;
 	}
