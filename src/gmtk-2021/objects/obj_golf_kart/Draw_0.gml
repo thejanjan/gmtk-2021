@@ -2,7 +2,7 @@
 
 function kart_sprite_index() {
 	slice = 360 / 16;
-	direction_val = round(((current_direction + (slice / 2)) mod 360) / slice);
+	direction_val = round((current_direction mod 360) / slice);
 	draw_text(300,20,string(current_direction)+", "+string(direction_val));
 	draw_text(300,40,string(dir_vector[0])+", "+string(dir_vector[1]));
 	// 0 is right, 4 is up, 8 is left, 12 is down
