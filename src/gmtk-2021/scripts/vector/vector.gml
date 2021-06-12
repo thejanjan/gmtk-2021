@@ -44,8 +44,12 @@ function vector_scale(_vec, _scale_factor) {
 	return [_vec[0] * _scale_factor, _vec[1] * _scale_factor];	
 }
 
+function vector_delta_to(_start, _end) {
+	return vector_subtract(_end, _start);
+}
+
 function vector_heading_to(_start, _end) {
-	return vector_normalize(vector_subtract(_end, _start));
+	return vector_normalize(vector_delta_to(_start, _end));
 }
 
 function vector_make_from_direction(_dir) {
