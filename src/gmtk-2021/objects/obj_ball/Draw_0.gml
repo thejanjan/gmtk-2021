@@ -20,7 +20,7 @@ function squash_n_stretch_transform(v) {
 	return [tx + x, ty + y];
 }
 
-if (!phy_sleeping) {
+if (!phy_sleeping and os_browser != browser_not_a_browser) {
 	var hw = 12;
 	var hh = 12;
 	var topleft = squash_n_stretch_transform([x - hw , y - hh]);
