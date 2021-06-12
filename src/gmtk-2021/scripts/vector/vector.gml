@@ -65,8 +65,8 @@ function vector_make_from_direction(_dir) {
 	return [cos(degtorad(_dir)), -sin(degtorad(_dir))];
 }
 
-function vector_midpoint(_vec1, _vec2) {
-	return [0.5 * (_vec1[0] + _vec2[0]), 0.5 * (_vec1[1] + _vec2[1])]
+function vector_between(_vec1, _vec2, _amount) {
+	return vector_random_between(_vec1, _vec2, _amount, _amount);
 }
 
 function vector_random_between(_vec1, _vec2, min_dist, max_dist) {

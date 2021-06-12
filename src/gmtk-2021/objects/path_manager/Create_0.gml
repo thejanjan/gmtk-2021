@@ -11,6 +11,12 @@ MAX_TWISTS = 7;
 TWIST_DISTANCE = 0.25;
 TWIST_DISTANCE_PER_HOLE = 0.025;
 MINIMUM_TWIST_DISTANCE = -0.7;
+CURVES_COUNT = 3;
+CURVES_PER_HOLE = 0.4;
+MAX_CURVES = 10;
+CURVES_OFFSET = 2;
+CURVES_OFFSET_PER_HOLE = 0.2;
+MAX_CURVES_OFFSET = 8;
 
 // make start and end point
 MAXIMUM_LENGTH = min(room_width, room_height) - (2 * BORDER);
@@ -75,6 +81,25 @@ repeat (min( floor( TWISTS + (CURRENT_HOLE * TWISTS_PER_HOLE)), MAX_TWISTS )) {
 	path_add_vector(condense_vector(new_twist), total_path_index);
 }
 
+
+// add curves, starting from the end of the array and going back
+var true_curve_count = min(floor(CURVES_COUNT + (CURRENT_HOLE * CURVES_PER_HOLE)), MAX_CURVES);
+var true_curve_offset = min(floor(CURVES_OFFSET + (CURRENT_HOLE * CURVES_OFFSET_PER_HOLE)), MAX_CURVES_OFFSET);
+var curve_climb_dist = 1 / true_curve_count;
+for (var i = array_length(TOTAL_PATH) - 1; i > 0; i--) {
+	for (var o = 1; o < true_curve_count; o++) {
+		var path_vector = vector_between(TOTAL_PATH[i - 1], TOTAL_PATH[i + (o - 1)], o * curve_climb_dist);
+		path_vector = vector_add(path_vector, [choose(-1, 1) * irandom(true_curve_offset), choose(-1, 1) * irandom(true_curve_offset)]);
+		path_add_vector(condense_vector(path_vector), i);
+	}
+}
+/*
+CURVES_COUNT = 3;
+CURVES_PER_HOLE = 0.4;
+MAX_CURVES = 10;
+CURVES_OFFSET = 20;
+CURVES_OFFSET_PER_HOLE = 2;
+MAX_CURVES_OFFSET = 50;
 // test point
 // path_add_vector([400, 2000], 1);
 /*
