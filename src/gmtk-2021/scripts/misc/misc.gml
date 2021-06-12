@@ -2,10 +2,13 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
 function hit_by_club() {
-	if place_meeting(x, y, obj_golf_club)
-	if obj_golf_club.swing
-		return true
-	return false
+	return place_meeting(x, y, obj_golf_club) && obj_golf_club.swing;
+}
+
+function club_apply_impulse(_vector_direction) {
+	var base_impulse_force = 24;
+	impulse = vector_scale(_vector_direction, base_impulse_force);
+	physics_apply_impulse(x, y, impulse[0], impulse[1]);
 }
 
 function nearest_active_hole() {
