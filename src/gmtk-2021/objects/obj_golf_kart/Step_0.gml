@@ -66,4 +66,21 @@ goal = [room_width / 2, room_height / 2];
 vector_speed = [0, 0];
 current_direction = point_direction(x, y, goal[0], goal[1]);
 
-acceleration = 0.1;
+acceleration = 0.1;*/
+
+// Draw trails
+if pspeed >= 40
+{
+	var shortangle = 90-0; // Turns out this sucked
+	var longangle = 180-shortangle;
+	var lowering = 22;
+	var dis = 25;
+	var dir = -phy_rotation+(shortangle/2);
+	part_particles_create(trail_particle_system, x+lengthdir_x(dis, dir), y+lowering+lengthdir_y(dis, dir), trail_particle_type, 1);
+	dir += longangle;
+	part_particles_create(trail_particle_system, x+lengthdir_x(dis, dir), y+lowering+lengthdir_y(dis, dir), trail_particle_type, 1);
+	dir += shortangle;
+	part_particles_create(trail_particle_system, x+lengthdir_x(dis, dir), y+lowering+lengthdir_y(dis, dir), trail_particle_type, 1);
+	dir += longangle;
+	part_particles_create(trail_particle_system, x+lengthdir_x(dis, dir), y+lowering+lengthdir_y(dis, dir), trail_particle_type, 1);
+};
