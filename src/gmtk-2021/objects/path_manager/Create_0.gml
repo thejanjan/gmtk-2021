@@ -6,11 +6,11 @@ if !instance_exists(obj_phys_control)
 audio_stop_all();
 
 // adjustment variables
-HOLE_MULTIPLY = 3; // Overall per hole multiplier
+HOLE_MULTIPLY = 2; // Overall per hole multiplier
 BORDER = 800;
 CURRENT_HOLE++;
-MINIMUM_LENGTH = 800;
-LENGTH_PER_HOLE = 100 * HOLE_MULTIPLY;
+MINIMUM_LENGTH = 1500;
+LENGTH_PER_HOLE = 500 * HOLE_MULTIPLY;
 TWISTS = 1;
 TWISTS_PER_HOLE = 0.2 * HOLE_MULTIPLY;
 MAX_TWISTS = 7;
