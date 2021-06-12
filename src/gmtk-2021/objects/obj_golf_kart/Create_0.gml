@@ -25,6 +25,6 @@ physics_fixture_delete(fixture);
 
 // Set up link with golfer.
 var max_golfer_rope_length = 160;
-var golfer = instance_create_layer(x, y+160, layer, obj_golfer);
+var golfer = instance_create_layer(x, y+max_golfer_rope_length, layer, obj_golfer);
 
 physics_joint_rope_create(id, golfer, x, y, golfer.x, golfer.y, max_golfer_rope_length, true);
