@@ -2,7 +2,7 @@
 
 // adjustment variables
 BORDER = 200;
-CURRENT_HOLE = 1;
+CURRENT_HOLE++;
 MINIMUM_LENGTH = 800;
 LENGTH_PER_HOLE = 100;
 
@@ -12,24 +12,26 @@ CURRENT_HOLE_LENGTH = min(MINIMUM_LENGTH + (CURRENT_HOLE * LENGTH_PER_HOLE), MAX
 
 TRUE_WIDTH = room_width - (2 * BORDER);
 TRUE_HEIGHT = room_height - (2 * BORDER);
-ROOM_CENTER = [room_width / 2, room_height / 2];
+// ROOM_CENTER = [room_width / 2, room_height / 2];
 AXIS_CHOOSE = choose(0, 1);
 FLIP_SIDE = choose(0, 1);
 if AXIS_CHOOSE { // top or bottom side
 	var offset = BORDER;
-	if FLIP_SIDE offset = room_height - BORDER;
+	var o_offset = room_height - BORDER;
+	if FLIP_SIDE {offset = o_offset; o_offset = BORDER;}
 	
 	MAXIMUM_LENGTH = TRUE_WIDTH;
 	START_POINT = [BORDER + irandom(TRUE_WIDTH), offset];
-	var direction_vector = vector_heading_to(START_POINT, ROOM_CENTER);
+	var direction_vector = vector_heading_to(START_POINT, [BORDER + irandom(TRUE_WIDTH), o_offset]);
 	END_POINT = vector_add(START_POINT, vector_scale(direction_vector, CURRENT_HOLE_LENGTH));
 } else { // left or right side
 	var offset = BORDER;
-	if FLIP_SIDE offset = room_width - BORDER;
+	var o_offset = room_width - BORDER;
+	if FLIP_SIDE {offset = o_offset; o_offset = BORDER;}
 	
 	MAXIMUM_LENGTH = TRUE_WIDTH;
 	START_POINT = [offset, BORDER + irandom(TRUE_HEIGHT)];
-	var direction_vector = vector_heading_to(START_POINT, ROOM_CENTER);
+	var direction_vector = vector_heading_to(START_POINT, [o_offset, BORDER + irandom(TRUE_HEIGHT)]);
 	END_POINT = vector_add(START_POINT, vector_scale(direction_vector, CURRENT_HOLE_LENGTH));
 }
 

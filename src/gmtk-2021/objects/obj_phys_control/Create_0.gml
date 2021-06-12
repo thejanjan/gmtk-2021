@@ -1,7 +1,8 @@
 /// @description Initiate world settings
 
-// create necessary managers
+// create necessary and information
 if !instance_exists(depth_manager) instance_create_layer(0, 0, layer, depth_manager);
+globalvar CURRENT_HOLE; CURRENT_HOLE = 0;
 
 // define physics constants
 physics_world_create(0.1);                      //Pixel to meters scale
