@@ -4,5 +4,5 @@ depth = 1;
 timer = 0;
 duration = 60;
 direction = random(360);
-speed = random_range(0.01, 0.02);
+speed = 5;
 
