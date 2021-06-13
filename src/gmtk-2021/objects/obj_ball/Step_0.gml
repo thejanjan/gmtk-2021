@@ -82,6 +82,9 @@ if distohole < 7 {
 		create_aoe_damage([x, y], 256, hole_damage);
 	}
 	CURRENT_FLAGS++;
+	if CURRENT_FLAGS >= instance_number(obj_hole) {
+		// Put it right here	
+	}
 	instance_destroy();
 } /* else if distohole < bring_distance {
 	var dir = vector_heading_to([x, y], [hole.x, hole.y]);
