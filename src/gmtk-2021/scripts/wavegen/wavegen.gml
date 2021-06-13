@@ -23,7 +23,9 @@ function get_enemy_from_difficulty(_difficulty) {
 		case 2:
 			return obj_enemy_wimp;
 		case 3:
-		default:
 			return obj_evil_golf_kart;
+		case 4:
+		default:
+			return obj_enemy_charger;
 	}
 }
