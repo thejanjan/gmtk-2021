@@ -63,8 +63,14 @@ if flags >= max_flags symbol = "#";
 var draw_str = string(flags)+"/"+string(max_flags)+symbol;
 var left_slide = string_length(draw_str) * kerning
 
-draw_text_new(xpos - left_slide, ypos, draw_str, c_white, 0, scale, kerning);
+// draw_text_new(xpos - left_slide, ypos, draw_str, c_white, 0, scale, kerning);
 
+for (var i = 0; i < string_length(draw_str); i++) {
+	var bounce_offset = round(bounce_size * sin(degtorad( ((i + 1) * index_bounce_offset) + round(get_timer() / bounce_speed) )));
+	var char = string_char_at(draw_str, i + 1);
+	
+	draw_text_new(round(xpos - left_slide + (i * kerning)), round(ypos + bounce_offset), char, c_white, 0, scale, 0);
+}
 
 /*
 y_increase = 64;
