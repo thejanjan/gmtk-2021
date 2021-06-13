@@ -71,6 +71,7 @@
     {"id":{"name":"tileset_dark2","path":"tilesets/tileset_dark2/tileset_dark2.yy",},"order":10,},
     {"id":{"name":"obj_explosion","path":"objects/obj_explosion/obj_explosion.yy",},"order":22,},
     {"id":{"name":"spr_evil_golf_kart","path":"sprites/spr_evil_golf_kart/spr_evil_golf_kart.yy",},"order":2,},
+    {"id":{"name":"spr_drone","path":"sprites/spr_drone/spr_drone.yy",},"order":3,},
     {"id":{"name":"misc","path":"scripts/misc/misc.yy",},"order":5,},
     {"id":{"name":"tileset_light","path":"tilesets/tileset_light/tileset_light.yy",},"order":4,},
     {"id":{"name":"gameplay_testing","path":"rooms/gameplay_testing/gameplay_testing.yy",},"order":0,},
