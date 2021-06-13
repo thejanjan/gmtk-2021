@@ -30,6 +30,7 @@
     {"id":{"name":"spr_fragile_wall","path":"sprites/spr_fragile_wall/spr_fragile_wall.yy",},"order":11,},
     {"id":{"name":"snd_golf3","path":"sounds/snd_golf3/snd_golf3.yy",},"order":7,},
     {"id":{"name":"pregame_init","path":"objects/pregame_init/pregame_init.yy",},"order":17,},
+    {"id":{"name":"obj_trail_drawer","path":"objects/obj_trail_drawer/obj_trail_drawer.yy",},"order":18,},
     {"id":{"name":"obj_staticparent","path":"objects/obj_staticparent/obj_staticparent.yy",},"order":1,},
     {"id":{"name":"snd_swing1","path":"sounds/snd_swing1/snd_swing1.yy",},"order":2,},
     {"id":{"name":"spr_enemy_base","path":"sprites/spr_enemy_base/spr_enemy_base.yy",},"order":1,},
