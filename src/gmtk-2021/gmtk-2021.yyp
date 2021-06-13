@@ -83,6 +83,7 @@
     {"id":{"name":"spr_golf_kart","path":"sprites/spr_golf_kart/spr_golf_kart.yy",},"order":0,},
     {"id":{"name":"obj_grid","path":"objects/obj_grid/obj_grid.yy",},"order":5,},
     {"id":{"name":"spr_logo","path":"sprites/spr_logo/spr_logo.yy",},"order":1,},
+    {"id":{"name":"mus_late_holes_2","path":"sounds/mus_late_holes_2/mus_late_holes_2.yy",},"order":13,},
     {"id":{"name":"spr_menu_button","path":"sprites/spr_menu_button/spr_menu_button.yy",},"order":2,},
     {"id":{"name":"health_scripts","path":"scripts/health_scripts/health_scripts.yy",},"order":3,},
     {"id":{"name":"spr_square","path":"sprites/spr_square/spr_square.yy",},"order":3,},
