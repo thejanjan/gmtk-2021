@@ -8,6 +8,7 @@ if weak and ((spd < 0.5 and spd != 0) or image_alpha != 1) {
 		instance_destroy();
 }
 
+
 var hole = nearest_active_hole();
 var enemy = nearest_alive_enemy();
 instance_activate_all();
@@ -44,9 +45,16 @@ if hit_by_club() and not weak {
 		phy_speed_x = 0;
 		phy_speed_y = 0;
 	}
-	club_apply_impulse(dir, hitting);
+	var powered = club_apply_impulse(dir, hitting);
 	if hit_timer = 0 {
 		var shots = global.additional_shots;
+		real_yspeed = -powered / 2;
+		if hole {
+			var distohole = point_distance(x, y, hole.x, hole.y);
+			if distohole < 140 {
+				real_yspeed /= 5;	
+			}
+		}
 		if not weak and shots {
 			var shift = 0.35;
 			repeat shots {
@@ -68,10 +76,20 @@ if hit_by_club() and not weak {
 if hit_timer > 0
 	hit_timer--;
 
+real_y -= real_yspeed;
+if real_y < 0 {
+	real_yspeed = -abs(real_yspeed / 3);
+	real_y = 0;
+} if real_y != 0 or real_yspeed != 0 {
+	real_yspeed += real_gravity;
+	var cap = 8;
+	real_yspeed = median(-cap, real_yspeed, cap);
+}
+
 if not hole or weak or image_alpha != 1 exit;
 
 var distohole = point_distance(x, y, hole.x, hole.y);
-var bring_distance = 30;
+var bring_distance = 70;
 
 if distohole < 7 {
     // image_alpha = 0.3;
@@ -87,10 +105,21 @@ if distohole < 7 {
 		audio_play_sound(snd_got_last_flag, 0, false);
 	}
 	instance_destroy();
-} /* else if distohole < bring_distance {
+} else if distohole < bring_distance {
+	if real_y != 0 or real_yspeed != 0 {
+		real_yspeed += real_gravity * 0.25;
+		real_y -= real_yspeed * 1.25;
+		if real_y < 0 {
+			real_yspeed = -abs(real_yspeed / 6);
+			real_y = 0;
+		} 
+		var cap = 8;
+		real_yspeed = median(-cap, real_yspeed, cap);
+	}
+}
+	/*
 	var dir = vector_heading_to([x, y], [hole.x, hole.y]);
 	dir = vector_scale(dir, 2);
 	physics_apply_impulse(x, y, dir[0], dir[1]);
 	phy_speed_x /= 1+0.5*(1-(distohole/bring_distance));
-	phy_speed_y /= 1+0.5*(1-(distohole/bring_distance));
-}
+	phy_speed_y /= 1+0.5*(1-(distohole/bring_distance));*/

@@ -19,5 +19,8 @@ instance_layer = layer;
 vanish_duration = 30;
 
 weak = 0; // Weak is used for split balls
+real_y = 0;
+real_yspeed = 0;
+real_gravity = 0.37;
 
 init_current_velocity();

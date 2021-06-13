@@ -34,11 +34,11 @@ if (!phy_sleeping and os_browser != browser_not_a_browser) {
 	var bottomright = squash_n_stretch_transform([x + hw , y + hh]);
 	var bottomleft = squash_n_stretch_transform([x - hw, y + hh]);
 
-	draw_sprite_pos(sprite_index, -1, topleft[0], topleft[1], 
-									  topright[0], topright[1], 
-									  bottomright[0], bottomright[1],
-									  bottomleft[0], bottomleft[1], 1);								  
+	draw_sprite_pos(sprite_index, -1, topleft[0], topleft[1] - real_y, 
+									  topright[0], topright[1] - real_y, 
+									  bottomright[0], bottomright[1] - real_y,
+									  bottomleft[0], bottomleft[1] - real_y, 1);								  
 }
 else {
-	draw_sprite_ext(sprite_index, -1, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
+	draw_sprite_ext(sprite_index, -1, x, y - real_y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
 }

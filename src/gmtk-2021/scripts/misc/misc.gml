@@ -15,6 +15,7 @@ function club_apply_impulse(_vector_direction, _impulse_multiplier) {
 	
 	var impulse = vector_scale(_vector_direction, base_impulse_force + obj_golfer.current_speed);
 	physics_apply_impulse(x, y, impulse[0], impulse[1]);
+	return obj_golfer.current_speed;
 }
 
 function nearest_active_hole() {
