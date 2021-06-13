@@ -9,6 +9,7 @@
     {"id":{"name":"obj_dynamicparent","path":"objects/obj_dynamicparent/obj_dynamicparent.yy",},"order":0,},
     {"id":{"name":"snd_flame1","path":"sounds/snd_flame1/snd_flame1.yy",},"order":10,},
     {"id":{"name":"main_game","path":"rooms/main_game/main_game.yy",},"order":4,},
+    {"id":{"name":"spr_powerup","path":"sprites/spr_powerup/spr_powerup.yy",},"order":21,},
     {"id":{"name":"depth_manager","path":"objects/depth_manager/depth_manager.yy",},"order":15,},
     {"id":{"name":"tileset_dark","path":"tilesets/tileset_dark/tileset_dark.yy",},"order":5,},
     {"id":{"name":"spr_golf_club","path":"sprites/spr_golf_club/spr_golf_club.yy",},"order":18,},
