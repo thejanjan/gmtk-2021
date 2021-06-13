@@ -20,6 +20,10 @@ dir_goal = -1;
 dir_goal_vector = [0, 0];
 dir_vector = [0, 0];
 
+next_level_timer = 60;
+transition_timer = 0;
+y_offset = 0;
+
 // sound
 sound = audio_play_sound(snd_engine, 0, true);
 pitch_factor = 1;

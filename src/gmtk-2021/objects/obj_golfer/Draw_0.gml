@@ -14,4 +14,4 @@ if attachment_target = -1 {
 
 facing = round(facing / slices) * slices;
 
-draw_sprite_ext(sprite_index, 1, x, y, 1, 1, facing, c_white, 1);
+draw_sprite_ext(sprite_index, 1, x, y, 1, 1, facing, image_blend, 1);

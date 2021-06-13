@@ -49,7 +49,7 @@ function kart_xscale() {
 	return 1;
 }
 
-draw_sprite_ext(sprite_index, kart_sprite_index(), x, y, kart_xscale(), 1, 0, c_white, 1);
+draw_sprite_ext(sprite_index, kart_sprite_index(), x, y + y_offset, kart_xscale(), 1, 0, image_blend, 1);
 
 // DEBUG: shows the vector to the crosshair
 // var vector_draw_dist = 60;
