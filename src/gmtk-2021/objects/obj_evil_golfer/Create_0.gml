@@ -14,6 +14,7 @@ attachment_target = -1;
 previous_pos = [x, y];
 current_pos = [x, y];
 current_speed = 0;
+instance_layer = layer;
 
 //club = instance_create_layer(x, y, layer, obj_golf_club);
 facing = image_angle;

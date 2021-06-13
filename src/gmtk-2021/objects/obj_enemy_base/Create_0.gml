@@ -14,5 +14,6 @@ physics_fixture_delete(fixture);
 previous_pos = [x, y];
 current_pos = [x, y];
 current_speed = 0;
+instance_layer = layer;
 
 enemy_set_starting_hp(30);
