@@ -3,13 +3,20 @@
 update_current_velocity();
 
 var hole = nearest_active_hole();
+var enemy = nearest_alive_enemy();
 
 if hit_by_club() {
 	var dir = vector_heading_to([obj_golfer.x, obj_golfer.y], [x, y]);
-	if hole {
-		var nearest_hole = instance_nearest(x, y, obj_hole);
-		dir = vector_heading_to([x, y], [nearest_hole.x, nearest_hole.y]);
-	}
+	var hole_dist = 100000;
+	var enemy_dist = 100000;
+	if hole
+		hole_dist = vector_magnitude(vector_subtract([x, y], [hole.x, hole.y]))
+	if enemy
+		enemy_dist = vector_magnitude(vector_subtract([x, y], [enemy.x, enemy.y]))
+	if hole_dist < enemy_dist
+		dir = vector_heading_to([x, y], [hole.x, hole.y]); 
+	if enemy_dist < hole_dist
+		dir = vector_heading_to([x, y], [enemy.x, enemy.y]); 
 	club_apply_impulse(dir, 1.0);
 	if hit_timer == 0 {
 		audio_play_sound(choose(snd_golf1, snd_golf2, snd_golf3), 0, false);
