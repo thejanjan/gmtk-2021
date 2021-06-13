@@ -11,10 +11,7 @@ physics_fixture_bind(fixture, id);
 physics_fixture_delete(fixture);
 
 attachment_target = -1;
-previous_pos = [x, y];
-current_pos = [x, y];
-current_speed = 0;
-current_velocity = [0, 0];
+init_current_velocity();
 
 club_base_damage = 5;
 

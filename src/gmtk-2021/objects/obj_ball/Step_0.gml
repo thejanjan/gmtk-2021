@@ -1,5 +1,7 @@
 /// @description physics controls
 
+update_current_velocity();
+
 var hole = nearest_active_hole();
 
 if hit_by_club() {

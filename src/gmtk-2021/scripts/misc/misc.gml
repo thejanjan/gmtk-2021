@@ -35,6 +35,20 @@ function nearest_active_hole() {
 	return nearest;
 }
 
+function init_current_velocity() {
+	previous_pos = [x, y];
+	current_pos = [x, y];
+	current_speed = 0;
+	current_velocity = [0, 0];
+}
+
+function update_current_velocity() {
+	current_velocity = vector_subtract(current_pos, previous_pos);
+	current_speed = vector_magnitude(current_velocity);
+	previous_pos = current_pos;
+	current_pos = [x, y];
+}
+
 function enemy_take_damage(_amount) {
 	hp -= _amount;
 	if hp <= 0 {
