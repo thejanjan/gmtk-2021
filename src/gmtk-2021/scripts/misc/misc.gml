@@ -77,6 +77,12 @@ function enemy_take_damage(_amount) {
 		event_perform(ev_other, ev_user10);  // Execute before death, if we need
 		instance_destroy();
 	}
+	var text = instance_create_layer(x, y, instance_layer, obj_rising_text);
+	if _amount > 0 {	
+		text.str = "-" + string(ceil(_amount));
+		text.col = c_red;
+		text.scale = 0.7;
+	}
 }
 
 function enemy_set_starting_hp(_amount) {

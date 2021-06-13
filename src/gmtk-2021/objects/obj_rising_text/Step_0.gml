@@ -6,3 +6,4 @@ if alpha > 0.0 {
 } else {
 	instance_destroy();
 }
+y -= 3;
