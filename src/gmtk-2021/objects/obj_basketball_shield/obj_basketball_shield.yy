@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_basketball_shield",
-    "path": "sprites/spr_basketball_shield/spr_basketball_shield.yy",
+    "name": "",
+    "path": "",
   },
   "solid": false,
   "visible": true,
