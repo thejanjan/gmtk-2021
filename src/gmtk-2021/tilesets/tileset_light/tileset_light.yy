@@ -1,5 +1,4 @@
 {
-  "name": "tileset_light",
   "spriteId": {
     "name": "spr_tilesetA",
     "path": "sprites/spr_tilesetA/spr_tilesetA.yy",
@@ -84,6 +83,7 @@
     "path": "folders/Sprites/Backgrounds.yy",
   },
   "resourceVersion": "1.0",
+  "name": "tileset_light",
   "tags": [],
   "resourceType": "GMTileSet",
 }

@@ -24,6 +24,9 @@ enum state {
 
 current_state = state.idle;
 target_ball = -1;
+target_ball_xstart = 0;
+target_ball_ystart = 0;
+instance_layer = layer;
 
 path = path_add();
 alarm[0] = room_speed;

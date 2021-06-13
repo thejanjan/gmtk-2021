@@ -3,14 +3,12 @@
 event_inherited();
 
 if current_state == state.eating {
-	// TODO: can still hit the ball during this state........
-	// i just hope that, if that happens, the zombie dies at the same time!
 	if !instance_exists(target_ball) {
 		current_state = state.idle;
 		target_ball = -1;
 		return;
 	}
-	target_ball.visible = false;
+	instance_destroy(target_ball);
 	if lunch_start == -1 {
 		lunch_start = current_time;
 	}
@@ -25,9 +23,8 @@ if current_state == state.eating {
 			target_ball = instance_find(obj_ball, irandom(instance_number(obj_ball) - 1));
 		}
 		else {
-			with(obj_ball) {
-				event_perform(ev_other, ev_user0);  // respawn ball
-			}
+			// Respawn ball.
+			instance_create_layer(target_ball_xstart, target_ball_ystart, instance_layer, obj_ball);
 		}
 	}
 }

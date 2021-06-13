@@ -2,6 +2,8 @@
 
 if target_ball == -1 or !instance_exists(target_ball) {
 	target_ball = instance_find(obj_ball, irandom(instance_number(obj_ball) - 1));
+	target_ball_xstart = target_ball.xstart;
+	target_ball_ystart = target_ball.ystart;
 }
 
 if (current_state == state.idle or current_state == state.moving) and instance_exists(target_ball) and

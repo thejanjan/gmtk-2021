@@ -1,5 +1,4 @@
 {
-  "name": "tileset_dark",
   "spriteId": {
     "name": "spr_tilesetB",
     "path": "sprites/spr_tilesetB/spr_tilesetB.yy",
@@ -84,6 +83,7 @@
     "path": "folders/Sprites/Backgrounds.yy",
   },
   "resourceVersion": "1.0",
+  "name": "tileset_dark",
   "tags": [],
   "resourceType": "GMTileSet",
 }
