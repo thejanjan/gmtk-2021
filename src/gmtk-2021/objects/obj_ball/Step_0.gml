@@ -83,7 +83,7 @@ if distohole < 7 {
 	}
 	CURRENT_FLAGS++;
 	instance_destroy();
-} else if distohole < bring_distance {
+} /* else if distohole < bring_distance {
 	var dir = vector_heading_to([x, y], [hole.x, hole.y]);
 	dir = vector_scale(dir, 2);
 	physics_apply_impulse(x, y, dir[0], dir[1]);

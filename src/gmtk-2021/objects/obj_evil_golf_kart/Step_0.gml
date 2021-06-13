@@ -43,10 +43,13 @@ if instance_exists(my_stinky_golfer) {
 }
 
 var dest;
-if instance_exists(obj_golfer) {
+var check = 1
+if instance_exists(path_manager)
+	if distance_to_object(obj_golfer) > path_manager.ENEMY_VISION check = 0;
+if instance_exists(obj_golfer) and check {
 	dest = [obj_golfer.x, obj_golfer.y];
 } else {
-	dest = [random(4000), random(4000)]; // Funny
+	dest = [x, y]; //[random(4000), random(4000)]; // Funny
 }
 var dir = vector_heading_to([from_instance.x, from_instance.y], dest);
 var acceleration_vector = vector_scale(dir, acceleration_magnitude);
