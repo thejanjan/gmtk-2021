@@ -12,5 +12,8 @@ function force_next_hole() {
 		if object_index = path_manager alive = 0;
 		if not alive instance_destroy();
 	}
+	with (hp_bar) {
+		ball_letters = [];
+	}
 	instance_create_layer(0, 0, "Instances", path_manager);
 }

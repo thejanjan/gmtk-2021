@@ -19,7 +19,7 @@ if current_state == state.eating {
 		wander_to_y = irandom_range(max(y - 200, 0), min(y + 200, room_height));
 		current_target_pos = [wander_to_x, wander_to_y];
 		
-		if instance_number(obj_ball) > 1 {
+		if instance_number(obj_ball) > instance_number(obj_hole) {
 			target_ball = instance_find(obj_ball, irandom(instance_number(obj_ball) - 1));
 		}
 		else {
@@ -32,14 +32,15 @@ if current_state == state.eating {
 else if !instance_exists(target_ball) {
 	if instance_number(obj_ball) > 1 {
 		target_ball = instance_find(obj_ball, irandom(instance_number(obj_ball) - 1));
+		if instance_exists(target_ball) {
+			target_ball_xstart = target_ball.xstart;
+			target_ball_ystart = target_ball.ystart;
+		}
 	}
-	else {
+	/*} else {
 		target_ball = instance_create_layer(target_ball_xstart, target_ball_ystart, instance_layer, obj_ball);
-	}
-	if instance_exists(target_ball) {
-		target_ball_xstart = target_ball.xstart;
-		target_ball_ystart = target_ball.ystart;
-	}
+	}*/
+	
 }
 
 // Heading to eat a ball
@@ -70,6 +71,3 @@ if point_distance(x, y, current_target_pos[0], current_target_pos[1]) <= 32 {
 		current_state = state.eating;
 	}
 }
-		
-	
-	

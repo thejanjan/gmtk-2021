@@ -5,6 +5,9 @@
 with (all) {
 	
 	switch (object_index) {
+		case obj_ball_letter:
+			depth = -10000;
+			fuck;
 		case obj_ball:
 			depth = -y + real_y;
 			fuck;
