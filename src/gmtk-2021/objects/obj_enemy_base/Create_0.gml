@@ -15,4 +15,4 @@ previous_pos = [x, y];
 current_pos = [x, y];
 current_speed = 0;
 
-hp = 30;
+enemy_set_starting_hp(30);

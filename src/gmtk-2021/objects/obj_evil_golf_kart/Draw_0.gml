@@ -54,3 +54,4 @@ draw_sprite_ext(sprite_index, kart_sprite_index(), x, y, kart_xscale(), 1, 0, c_
 var vector_draw_dist = 60;
 draw_line(x, y, x + (dir_vector[0] * vector_draw_dist), y + (dir_vector[1] * vector_draw_dist));
 draw_sprite(spr_crosshair, 0, goal[0], goal[1]);
+event_inherited();

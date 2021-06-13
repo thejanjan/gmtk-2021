@@ -43,6 +43,11 @@ function enemy_take_damage(_amount) {
 	}
 }
 
+function enemy_set_starting_hp(_amount) {
+	hp = _amount;
+	hp_max = _amount;
+}
+
 function debug_string(_array) {
 	var retstr = "";
 	for (var i = 0; i < array_length(_array); i++) {
