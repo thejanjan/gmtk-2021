@@ -5,7 +5,7 @@ function create_physics_link(_obj1, _obj2, _off1, _off2, _length) {
 	physics_joint_rope_create(_obj1, _obj2, _obj1.x+_off1[0], _obj1.y+_off1[1], _obj2.x+_off2[0], _obj2.y+_off2[1], _length, true);
 }
 
-audio_play_sound(snd_horn, 0, false);
+alarm[1] = 30;
 
 goal = [room_width / 2, room_height / 2];
 velocity = [0, 0];
