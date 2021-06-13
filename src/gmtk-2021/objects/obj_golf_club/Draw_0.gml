@@ -28,7 +28,7 @@ if swing = 0 {
 	if timer = 0 {
 		audio_play_sound(choose(snd_swing1, snd_swing2, snd_swing3), 0, false);
 		if place_meeting(x, y, obj_ball) {
-			audio_play_sound(choose(snd_golf1, snd_golf2, snd_golf3), 0, false);
+			//audio_play_sound(choose(snd_golf1, snd_golf2, snd_golf3), 0, false);
 		}
 		mode = not mode;
 		swing = 0;

@@ -9,6 +9,10 @@ if hit_by_club() {
 		dir = vector_heading_to([x, y], [nearest_hole.x, nearest_hole.y]);
 	}
 	club_apply_impulse(dir, 1.0);
+	if hit_timer == 0 {
+		audio_play_sound(choose(snd_golf1, snd_golf2, snd_golf3), 0, false);
+		hit_timer = 5;
+	}
 	//dir = vector_scale(dir, impulse_force);
 	//physics_apply_impulse(x, y, dir[0], dir[1]);
 }
@@ -20,6 +24,7 @@ if distohole < 7
 {
     instance_destroy();
     hole.flamming = true;
+	audio_play_sound(choose(snd_flame1, snd_flame2, snd_flame3), 0, false);
 }
 else if distohole < 15
 {
@@ -29,3 +34,7 @@ else if distohole < 15
 	phy_speed_y /= 1+0.5*(1-(distohole/15));
 	phy_speed_y /= 1+0.5*(1-(distohole/15));
 };
+
+if hit_timer > 0 {
+	hit_timer--;
+}

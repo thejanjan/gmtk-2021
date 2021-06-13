@@ -12,3 +12,4 @@ physics_fixture_bind(fixture, id);
 physics_fixture_delete(fixture);
 squash_factor = 0.75;
 stretch_factor = 1.25;
+hit_timer = 0;
