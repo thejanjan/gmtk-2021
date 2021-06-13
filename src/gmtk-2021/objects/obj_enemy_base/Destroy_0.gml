@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+instance_create_depth(x, y, -y, obj_explosion);
 var how_many_balls = irandom_range(0, round(hp_max/10));
 for (var i=0; i<how_many_balls; i++)
 {
