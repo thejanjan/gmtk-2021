@@ -6,7 +6,10 @@ with (all) {
 	
 	switch (object_index) {
 		case obj_hole:
-			depth = -y + 100;
+			depth = -y + 32;
+			fuck;
+		case obj_depth_hole:
+			depth = -y + 200;
 			fuck;
 		case obj_golf_club:
 			depth = -obj_golfer.y - 100;
