@@ -1,7 +1,7 @@
 /// @description Create camera
 if room != main_game exit;
 
-camera_destroy(view_camera[0]);
+// camera_destroy(view_camera[0]);
 global.camera_shake = 0;
 var v = [1366, 768];
 var k = obj_golf_kart;
