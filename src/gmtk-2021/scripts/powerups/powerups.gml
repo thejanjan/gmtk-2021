@@ -41,6 +41,7 @@ function create_aoe_damage(_vector_position, _radius, _amount) {
 			enemy_take_damage(_amount);
 		}
 	}
+}
 function additive_increase_player_fire_trails(_amount) {
 	global.player_fire_trails += _amount;
 }
