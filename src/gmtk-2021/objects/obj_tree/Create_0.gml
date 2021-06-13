@@ -11,3 +11,4 @@ physics_fixture_delete(fixture);
 
 image_xscale = choose(-1, 1);
 depth = -y;
+image_speed = 0;

@@ -243,6 +243,29 @@ if CURRENT_HOLE = 1 {
 	audio_play_sound(mus_late_holes_2, 1, true);
 }
 
+// update tilesets to match zone
+var zone = 1;
+if CURRENT_HOLE >= 4 zone = 2;
+if CURRENT_HOLE >= 7 zone = 3;
+
+var dark_map_id = layer_tilemap_get_id(layer_get_id("layer_dark"));
+var light_map_id = layer_tilemap_get_id(layer_get_id("layer_light"));
+var background_id = layer_background_get_id(layer_get_id("Background"));
+switch (zone) {
+	case 2:
+		tilemap_tileset(dark_map_id, tileset_dark2);
+		tilemap_tileset(light_map_id, tileset_light2);
+		with (obj_tree) image_index = 1;
+		layer_background_change(background_id, spr_bggreen2);
+		fuck;
+	case 3:
+		tilemap_tileset(dark_map_id, tileset_dark3);
+		tilemap_tileset(light_map_id, tileset_light3);
+		with (obj_tree) image_index = 2;
+		layer_background_change(background_id, spr_bggreen3);
+		fuck;
+}
+
 
 /* FURTHEST_VECTOR_MINIMUM = 20;
 FURTHEST_VECTOR_PER_HOLE = 20;
