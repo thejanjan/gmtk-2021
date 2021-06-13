@@ -14,6 +14,7 @@
     {"id":{"name":"snd_enemy_smacked","path":"sounds/snd_enemy_smacked/snd_enemy_smacked.yy",},"order":19,},
     {"id":{"name":"main_game","path":"rooms/main_game/main_game.yy",},"order":4,},
     {"id":{"name":"spr_powerup","path":"sprites/spr_powerup/spr_powerup.yy",},"order":21,},
+    {"id":{"name":"spr_basketball_shield","path":"sprites/spr_basketball_shield/spr_basketball_shield.yy",},"order":6,},
     {"id":{"name":"depth_manager","path":"objects/depth_manager/depth_manager.yy",},"order":15,},
     {"id":{"name":"spr_tilesetB2","path":"sprites/spr_tilesetB2/spr_tilesetB2.yy",},"order":8,},
     {"id":{"name":"tileset_dark","path":"tilesets/tileset_dark/tileset_dark.yy",},"order":5,},
