@@ -33,6 +33,7 @@
     {"id":{"name":"pregame_init","path":"objects/pregame_init/pregame_init.yy",},"order":17,},
     {"id":{"name":"obj_trail_drawer","path":"objects/obj_trail_drawer/obj_trail_drawer.yy",},"order":18,},
     {"id":{"name":"obj_staticparent","path":"objects/obj_staticparent/obj_staticparent.yy",},"order":1,},
+    {"id":{"name":"obj_particle_control","path":"objects/obj_particle_control/obj_particle_control.yy",},"order":19,},
     {"id":{"name":"snd_swing1","path":"sounds/snd_swing1/snd_swing1.yy",},"order":2,},
     {"id":{"name":"spr_enemy_base","path":"sprites/spr_enemy_base/spr_enemy_base.yy",},"order":1,},
     {"id":{"name":"spr_hp","path":"sprites/spr_hp/spr_hp.yy",},"order":12,},
