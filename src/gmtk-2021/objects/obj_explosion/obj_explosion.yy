@@ -25,7 +25,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Object32",
+  "name": "obj_explosion",
   "tags": [],
   "resourceType": "GMObject",
 }
