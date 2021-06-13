@@ -51,3 +51,43 @@ function debug_string(_array) {
 	clipboard_set_text(retstr);
 	show_message(retstr);
 }
+
+enum GRASS {
+	full_a = 1,
+	full_b = 2,
+	full_c = 3,
+	up_left = 4,
+	up_right = 5,
+	down_left = 6,
+	down_right = 7,
+	only_left = 8,
+	only_down_right = 9,
+	only_down_left = 10,
+	only_right = 11,
+	only_bottom = 12,
+	only_top_right = 13,
+	only_top_left = 14,
+	only_top = 15,
+	left_right = 16,
+	up_down = 17,
+	blank_a = 18,
+	blank_b = 19,
+	up_left_b = 20,
+	up_right_b = 21,
+	down_right_c = 22,
+	down_left_c = 23,
+	down_left_b = 24,
+	down_right_b = 25,
+	up_right_c = 26,
+	up_left_c = 27
+}
+
+function remove_grass_tile(_x, _y, _layer) {
+	var TILE_WIDTH = [64, 48];
+	var TILE_POS = [floor(_x / TILE_WIDTH[0]), floor(_y / TILE_WIDTH[1])]
+	
+	var lay_id = layer_get_id(_layer);
+	var map_id = layer_tilemap_get_id(lay_id);
+	var data = 0; //tilemap_get(map_id, 0, 0);
+	tilemap_set(map_id, data, TILE_POS[0], TILE_POS[1]);
+}
