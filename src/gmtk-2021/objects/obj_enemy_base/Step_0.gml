@@ -11,5 +11,5 @@ if hit_by_club() {
 	club_apply_impulse(dir, 70.0);
 	
 	var base_damage = obj_golfer.current_speed + obj_golfer.club_base_damage;
-	enemy_take_damage(base_damage * obj_golfer.damage_multiplier);
+	enemy_take_damage(base_damage * get_player_damage_multiplier());
 }

@@ -6,5 +6,5 @@ if other.current_speed < current_speed {
 	hp_deal_damage(1);
 } else {
 	// Damage self.
-	enemy_take_damage(other.current_speed * other.damage_multiplier);
+	enemy_take_damage(other.current_speed * get_player_damage_multiplier());
 }
