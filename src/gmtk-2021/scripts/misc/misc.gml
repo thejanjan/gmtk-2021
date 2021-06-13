@@ -88,33 +88,99 @@ enum GRASS {
 	up_left_c = 27
 }
 
-function set_grass_tile_matrix(_tile_x, _tile_y, _map_id, _array) {
+/*function set_grass_tile_matrix(_tile_x, _tile_y, _map_id, _array) {
 	// Sets all grass tiles around me.
 	// Sets center to none, since that's what it will generally be.
 	tilemap_set(_map_id, GRASS.empty, _tile_x, _tile_y);
 	
-	tilemap_set(_map_id, _array[0], _tile_x + 1, _tile_y + 0);
-	tilemap_set(_map_id, _array[1], _tile_x + 1, _tile_y - 1);
-	tilemap_set(_map_id, _array[2], _tile_x + 0, _tile_y - 1);
-	tilemap_set(_map_id, _array[3], _tile_x - 1, _tile_y - 1);
-	tilemap_set(_map_id, _array[4], _tile_x - 1, _tile_y + 0);
-	tilemap_set(_map_id, _array[5], _tile_x - 1, _tile_y + 1);
-	tilemap_set(_map_id, _array[6], _tile_x + 0, _tile_y + 1);
-	tilemap_set(_map_id, _array[7], _tile_x + 1, _tile_y + 1);
-}
+	if _array[0] != -1 tilemap_set(_map_id, _array[0], _tile_x + 1, _tile_y + 0);
+	if _array[0] != -1 tilemap_set(_map_id, _array[1], _tile_x + 1, _tile_y - 1);
+	if _array[0] != -1 tilemap_set(_map_id, _array[2], _tile_x + 0, _tile_y - 1);
+	if _array[0] != -1 tilemap_set(_map_id, _array[3], _tile_x - 1, _tile_y - 1);
+	if _array[0] != -1 tilemap_set(_map_id, _array[4], _tile_x - 1, _tile_y + 0);
+	if _array[0] != -1 tilemap_set(_map_id, _array[5], _tile_x - 1, _tile_y + 1);
+	if _array[0] != -1 tilemap_set(_map_id, _array[6], _tile_x + 0, _tile_y + 1);
+	if _array[0] != -1 tilemap_set(_map_id, _array[7], _tile_x + 1, _tile_y + 1);
+}*/
 
-/*function return_adjacent_grass_tiles(_tile_x, _tile_y, _map_id) {
+function return_adjacent_grass_tiles(_tile_x, _tile_y, _map_id) {
 	// Returns an array of 8, for each direction.
 	// Right, up right, up, up left, left, down left, down, down right.
 	return	   [sign(tilemap_get(_map_id, _tile_x + 1, _tile_y + 0)),
-				sign(tilemap_get(_map_id, _tile_x + 1, _tile_y + 1)),
-				sign(tilemap_get(_map_id, _tile_x + 0, _tile_y + 1)),
-				sign(tilemap_get(_map_id, _tile_x - 1, _tile_y + 1)),
-				sign(tilemap_get(_map_id, _tile_x - 1, _tile_y + 0)),
-				sign(tilemap_get(_map_id, _tile_x - 1, _tile_y - 1)),
+				sign(tilemap_get(_map_id, _tile_x + 1, _tile_y - 1)),
 				sign(tilemap_get(_map_id, _tile_x + 0, _tile_y - 1)),
-				sign(tilemap_get(_map_id, _tile_x + 1, _tile_y - 1))]
-}*/
+				sign(tilemap_get(_map_id, _tile_x - 1, _tile_y - 1)),
+				sign(tilemap_get(_map_id, _tile_x - 1, _tile_y + 0)),
+				sign(tilemap_get(_map_id, _tile_x - 1, _tile_y + 1)),
+				sign(tilemap_get(_map_id, _tile_x + 0, _tile_y + 1)),
+				sign(tilemap_get(_map_id, _tile_x + 1, _tile_y + 1))]
+}
+
+function grass_tile_update(_tile_x, _tile_y, _map_id) {
+	// Updates this grass tile. Checks the adjacent ones, then operates accordingly.
+	if not tilemap_get(_map_id, _tile_x, _tile_y) return;
+	var a = return_adjacent_grass_tiles(_tile_x, _tile_y, _map_id);
+	// debug_string(a);
+	var result = -1;
+	// Right, up right, up, up left, left, down left, down, down right.
+		 if array_equals(a, [0, 1, 1, 1, 1, 1, 1, 1]) result = GRASS.only_left;
+	else if array_equals(a, [0, 0, 1, 1, 1, 1, 1, 1]) result = GRASS.only_left;
+	else if array_equals(a, [0, 1, 1, 1, 1, 1, 1, 0]) result = GRASS.only_left;
+	else if array_equals(a, [0, 0, 1, 1, 1, 1, 1, 0]) result = GRASS.only_left;
+	else if array_equals(a, [1, 0, 1, 1, 1, 1, 1, 0]) result = GRASS.only_left;
+		 //////////////////////////////////////////////////////////////////////////
+	else if array_equals(a, [1, 0, 1, 1, 1, 1, 1, 1]) result = GRASS.down_left;
+	//////////////////////////////////////////////////////////////////////////
+	else if array_equals(a, [1, 1, 0, 1, 1, 1, 1, 1]) result = GRASS.only_down;
+	else if array_equals(a, [1, 0, 0, 1, 1, 1, 1, 1]) result = GRASS.only_down;
+	else if array_equals(a, [1, 1, 0, 0, 1, 1, 1, 1]) result = GRASS.only_down;
+	else if array_equals(a, [1, 0, 0, 0, 1, 1, 1, 1]) result = GRASS.only_down;
+	else if array_equals(a, [1, 0, 1, 0, 1, 1, 1, 1]) result = GRASS.only_down;
+	//////////////////////////////////////////////////////////////////////////
+	else if array_equals(a, [1, 1, 1, 0, 1, 1, 1, 1]) result = GRASS.down_right;
+	//////////////////////////////////////////////////////////////////////////
+	else if array_equals(a, [1, 1, 1, 1, 0, 1, 1, 1]) result = GRASS.only_right;
+	else if array_equals(a, [1, 1, 1, 0, 0, 1, 1, 1]) result = GRASS.only_right;
+	else if array_equals(a, [1, 1, 1, 0, 0, 0, 1, 1]) result = GRASS.only_right;
+	else if array_equals(a, [1, 1, 1, 1, 0, 0, 1, 1]) result = GRASS.only_right;
+	else if array_equals(a, [1, 1, 1, 0, 1, 0, 1, 1]) result = GRASS.only_right;
+	//////////////////////////////////////////////////////////////////////////
+	else if array_equals(a, [1, 1, 1, 1, 1, 0, 1, 1]) result = GRASS.up_right;
+	//////////////////////////////////////////////////////////////////////////
+	else if array_equals(a, [1, 1, 1, 1, 1, 1, 0, 1]) result = GRASS.only_up;
+	else if array_equals(a, [1, 1, 1, 1, 1, 1, 0, 0]) result = GRASS.only_up;
+	else if array_equals(a, [1, 1, 1, 1, 1, 0, 0, 1]) result = GRASS.only_up;
+	else if array_equals(a, [1, 1, 1, 1, 1, 0, 0, 0]) result = GRASS.only_up;
+	else if array_equals(a, [1, 1, 1, 1, 1, 0, 1, 0]) result = GRASS.only_up;
+	//////////////////////////////////////////////////////////////////////////
+	else if array_equals(a, [1, 1, 1, 1, 1, 1, 1, 0]) result = GRASS.up_left;
+	//////////////////////////////////////////////////////////////////////////
+	else if array_equals(a, [1, 1, 1, 1, 0, 0, 0, 1]) result = GRASS.only_up_right;
+	else if array_equals(a, [1, 1, 1, 1, 0, 0, 0, 0]) result = GRASS.only_up_right;
+	else if array_equals(a, [1, 1, 1, 0, 0, 0, 0, 0]) result = GRASS.only_up_right;
+	else if array_equals(a, [1, 1, 1, 1, 0, 0, 0, 1]) result = GRASS.only_up_right;
+	//////////////////////////////////////////////////////////////////////////
+	else if array_equals(a, [0, 1, 1, 1, 1, 1, 0, 0]) result = GRASS.only_up_left;
+	else if array_equals(a, [0, 0, 1, 1, 1, 1, 0, 0]) result = GRASS.only_up_left;
+	else if array_equals(a, [0, 1, 1, 1, 1, 0, 0, 0]) result = GRASS.only_up_left;
+	else if array_equals(a, [0, 0, 1, 1, 1, 0, 0, 0]) result = GRASS.only_up_left;
+	//////////////////////////////////////////////////////////////////////////
+	else if array_equals(a, [0, 0, 0, 1, 1, 1, 1, 1]) result = GRASS.only_down_left;
+	else if array_equals(a, [0, 0, 0, 1, 1, 1, 1, 0]) result = GRASS.only_down_left;
+	else if array_equals(a, [0, 0, 0, 0, 1, 1, 1, 1]) result = GRASS.only_down_left;
+	else if array_equals(a, [0, 0, 0, 0, 1, 1, 1, 0]) result = GRASS.only_down_left;
+	//////////////////////////////////////////////////////////////////////////
+	else if array_equals(a, [1, 1, 0, 0, 0, 1, 1, 1]) result = GRASS.only_down_right;
+	else if array_equals(a, [1, 0, 0, 0, 0, 1, 1, 1]) result = GRASS.only_down_right;
+	else if array_equals(a, [1, 1, 0, 0, 0, 0, 1, 1]) result = GRASS.only_down_right;
+	else if array_equals(a, [1, 0, 0, 0, 0, 0, 1, 1]) result = GRASS.only_down_right;
+	//////////////////////////////////////////////////////////////////////////
+	if not a[0] and not a[4] result = GRASS.empty;
+	if not a[2] and not a[6] result = GRASS.empty;
+	// Right, up right, up, up left, left, down left, down, down right.
+	
+	if result !=1 tilemap_set(_map_id, result, _tile_x, _tile_y);
+}
 
 function remove_grass_tile(_x, _y, _layer) {
 	var TILE_WIDTH = [64, 48];
@@ -125,16 +191,13 @@ function remove_grass_tile(_x, _y, _layer) {
 	var map_id = layer_tilemap_get_id(lay_id);
 	
 	// var adjacent = return_adjacent_grass_tiles(TX, TY, map_id);
-	var tile = tilemap_get(map_id, TX, TY)
-	var result = [-1];
-	
-	switch (tile) {
-		case GRASS.full_a:
-		case GRASS.full_b:
-		case GRASS.full_c:
-			result = [GRASS.only_right, GRASS.up_right, GRASS.only_up, GRASS.up_left, GRASS.only_left, GRASS.down_left, GRASS.only_down, GRASS.down_right];
-			fuck;
-	}
-	if result[0] != -1
-		set_grass_tile_matrix(TX, TY, map_id, result);
+	tilemap_set(map_id, 0, TX, TY);
+	grass_tile_update(TX + 1, TY + 1, map_id);
+	grass_tile_update(TX + 1, TY + 0, map_id);
+	grass_tile_update(TX + 1, TY - 1, map_id);
+	grass_tile_update(TX - 1, TY + 1, map_id);
+	grass_tile_update(TX - 1, TY + 0, map_id);
+	grass_tile_update(TX - 1, TY - 1, map_id);
+	grass_tile_update(TX + 0, TY - 1, map_id);
+	grass_tile_update(TX + 0, TY + 1, map_id);
 }

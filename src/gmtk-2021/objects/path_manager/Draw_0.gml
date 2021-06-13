@@ -16,6 +16,6 @@ if new_keyboard_check_pressed(global.binding_debug_two) room_restart();
 // Debug to try and remove a tile at mouse_x
 if mouse_check_button_pressed(mb_left) {
 	remove_grass_tile(mouse_x, mouse_y, "layer_dark");
-	remove_grass_tile(mouse_x + 64, mouse_y, "layer_dark");
-	remove_grass_tile(mouse_x, mouse_y, "layer_light");
+	// remove_grass_tile(mouse_x + 64, mouse_y, "layer_dark");
+	// remove_grass_tile(mouse_x, mouse_y, "layer_light");
 }
