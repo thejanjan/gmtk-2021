@@ -109,6 +109,7 @@
     {"id":{"name":"physics_helpers","path":"scripts/physics_helpers/physics_helpers.yy",},"order":6,},
     {"id":{"name":"assert","path":"scripts/assert/assert.yy",},"order":0,},
     {"id":{"name":"spr_fire_trail","path":"sprites/spr_fire_trail/spr_fire_trail.yy",},"order":23,},
+    {"id":{"name":"obj_spider","path":"objects/obj_spider/obj_spider.yy",},"order":6,},
     {"id":{"name":"obj_tree","path":"objects/obj_tree/obj_tree.yy",},"order":1,},
     {"id":{"name":"new_keyboard","path":"scripts/new_keyboard/new_keyboard.yy",},"order":1,},
     {"id":{"name":"obj_rising_text","path":"objects/obj_rising_text/obj_rising_text.yy",},"order":26,},
