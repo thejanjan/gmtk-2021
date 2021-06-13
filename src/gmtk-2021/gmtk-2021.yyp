@@ -25,6 +25,7 @@
     {"id":{"name":"snd_swing3","path":"sounds/snd_swing3/snd_swing3.yy",},"order":4,},
     {"id":{"name":"obj_golf_kart","path":"objects/obj_golf_kart/obj_golf_kart.yy",},"order":2,},
     {"id":{"name":"powerups","path":"scripts/powerups/powerups.yy",},"order":7,},
+    {"id":{"name":"obj_enemy_charger","path":"objects/obj_enemy_charger/obj_enemy_charger.yy",},"order":6,},
     {"id":{"name":"spr_enemy_wimp","path":"sprites/spr_enemy_wimp/spr_enemy_wimp.yy",},"order":0,},
     {"id":{"name":"tileset_light3","path":"tilesets/tileset_light3/tileset_light3.yy",},"order":13,},
     {"id":{"name":"obj_powerup_spawn_point","path":"objects/obj_powerup_spawn_point/obj_powerup_spawn_point.yy",},"order":23,},
