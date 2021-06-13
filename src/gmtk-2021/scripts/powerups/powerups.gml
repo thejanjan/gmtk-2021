@@ -99,6 +99,9 @@ function collect_powerup(_powerup_index) {
 	var b = instance_create_layer(x, y, instance_layer, obj_grow_fade);
 	b.sprite_index = spr_powerup;
 	b.image_index = _powerup_index;
+	var text = instance_create_layer(x, y, instance_layer, obj_rising_text);
+	text.str = get_powerup_name(_powerup_index);
+	text.col = c_blue;
 	apply_powerup(_powerup_index);
 }
 
@@ -136,5 +139,20 @@ function apply_powerup(_powerup_index) {
 		default:
 			show_message("WTF did you do??? AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 			return;
+	}
+}
+
+function get_powerup_name(_powerup_index) {
+	switch _powerup_index {
+		case 0: return "DAMAGE UP";
+		case 1: return "SPEED UP";
+		case 2: return "FLAMING HOT";
+		case 3: return "HEALTH UP";
+		case 4: return "GOLF THE EARTH";
+		case 5: return "EXPLOSIVE HOLE";
+		case 6: return "+1 SHOT";
+		case 7: return "MAGNET POWER UP";
+		case 8: return "GROWTH SPURT";
+		default: return "WTF??? HUH??? HOW?!?!?! DON'T!!!";
 	}
 }

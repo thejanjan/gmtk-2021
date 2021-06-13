@@ -445,3 +445,9 @@ function draw_text_new(_x, _y, _string, _col, _outline_col, _scale, _kerning) {
 		draw_sprite_ext(glyph, str_array[i], __x, __y, _scale, _scale, 0, _col, 1);
 	}
 }
+
+function draw_text_new_centered(_x, _y, _string, _col, _outline_col, _scale, _kerning) {
+	var str_len = string_length(_string);
+	_x = _x - (str_len * _kerning * 0.5);
+	draw_text_new(_x, _y, _string, _col, _outline_col, _scale, _kerning);
+}
