@@ -1,7 +1,8 @@
 /// @description Determine who takes damage.
 // You can write your code in this editor
 
-if other.current_speed < current_speed {
+var enemy_advantage = 3;
+if other.current_speed < current_speed + enemy_advantage {
 	// Damage player.
 	hp_deal_damage(1);
 } else {
