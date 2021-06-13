@@ -11,6 +11,7 @@ global.binding_right_arrow = vk_right;
 global.binding_left_arrow = vk_left;
 global.binding_debug = ord("P");
 global.binding_debug_two = ord("L");
+global.binding_toggle_trails = 187;
 
 function new_keyboard_check_pressed(_code) {
 	return keyboard_check_pressed(_code);

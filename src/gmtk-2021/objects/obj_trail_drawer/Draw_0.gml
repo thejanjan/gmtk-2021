@@ -2,15 +2,25 @@
 // You can write your code in this editor
 
 // IT'S TRAIL TIME
-// Treads
-if(!surface_exists(tread_surface))
-{
-	var dim = make_surface_dimensions();
-	tread_surface = surface_create( dim[0], dim[1] );
-}
-surface_set_target( tread_surface );
 
-draw_set_color(c_black);
+if new_keyboard_check_pressed(global.binding_toggle_trails)
+{
+	global.trails_activated = not global.trails_activated;
+}
+
+// Treads
+if global.trails_activated
+{
+	if(!surface_exists(tread_surface))
+	{
+		var dim = make_surface_dimensions();
+		tread_surface = surface_create( dim[0], dim[1] );
+	}
+	surface_set_target( tread_surface );
+
+	draw_set_color(c_black);
+}
+
 if point_distance(0, 0, obj_golf_kart.phy_speed_x, obj_golf_kart.phy_speed_y) >= 1
 {
 	var shortangle = 90-0; // Turns out this sucked
@@ -24,40 +34,61 @@ if point_distance(0, 0, obj_golf_kart.phy_speed_x, obj_golf_kart.phy_speed_y) >=
 	{
 		instance_create_depth(obj_golf_kart.x+lengthdir_x(dis, dir),obj_golf_kart. y+lowering+lengthdir_y(dis, dir), 1, obj_fire_trail);
 	};
-	draw_circle(obj_golf_kart.x+lengthdir_x(dis, dir),obj_golf_kart. y+lowering+lengthdir_y(dis, dir), radius, false);
-	draw_line_width(obj_golf_kart.x+lengthdir_x(dis, dir), obj_golf_kart.y+lowering+lengthdir_y(dis, dir), obj_golf_kart.xprevious+lengthdir_x(dis, dir), obj_golf_kart.yprevious+lowering+lengthdir_y(dis, dir), radius*2);
-	draw_circle(obj_golf_kart.xprevious+lengthdir_x(dis, dir),obj_golf_kart.yprevious+lowering+lengthdir_y(dis, dir), radius, false);
+	
+	if global.trails_activated
+	{
+		draw_circle(obj_golf_kart.x+lengthdir_x(dis, dir),obj_golf_kart. y+lowering+lengthdir_y(dis, dir), radius, false);
+		draw_line_width(obj_golf_kart.x+lengthdir_x(dis, dir), obj_golf_kart.y+lowering+lengthdir_y(dis, dir), obj_golf_kart.xprevious+lengthdir_x(dis, dir), obj_golf_kart.yprevious+lowering+lengthdir_y(dis, dir), radius*2);
+		draw_circle(obj_golf_kart.xprevious+lengthdir_x(dis, dir),obj_golf_kart.yprevious+lowering+lengthdir_y(dis, dir), radius, false);
+	}
+	
 	dir += longangle;
 	if global.player_fire_trails >= 2
 	{
 		instance_create_depth(obj_golf_kart.x+lengthdir_x(dis, dir),obj_golf_kart. y+lowering+lengthdir_y(dis, dir), 1, obj_fire_trail);
 	};
-	draw_circle(obj_golf_kart.x+lengthdir_x(dis, dir),obj_golf_kart. y+lowering+lengthdir_y(dis, dir), radius, false);
-	draw_line_width(obj_golf_kart.x+lengthdir_x(dis, dir), obj_golf_kart.y+lowering+lengthdir_y(dis, dir), obj_golf_kart.xprevious+lengthdir_x(dis, dir), obj_golf_kart.yprevious+lowering+lengthdir_y(dis, dir), radius*2);
-	draw_circle(obj_golf_kart.xprevious+lengthdir_x(dis, dir),obj_golf_kart.yprevious+lowering+lengthdir_y(dis, dir), radius, false);
+	
+	if global.trails_activated
+	{
+		draw_circle(obj_golf_kart.x+lengthdir_x(dis, dir),obj_golf_kart. y+lowering+lengthdir_y(dis, dir), radius, false);
+		draw_line_width(obj_golf_kart.x+lengthdir_x(dis, dir), obj_golf_kart.y+lowering+lengthdir_y(dis, dir), obj_golf_kart.xprevious+lengthdir_x(dis, dir), obj_golf_kart.yprevious+lowering+lengthdir_y(dis, dir), radius*2);
+		draw_circle(obj_golf_kart.xprevious+lengthdir_x(dis, dir),obj_golf_kart.yprevious+lowering+lengthdir_y(dis, dir), radius, false);
+	}
+	
 	dir += shortangle;
 	if global.player_fire_trails >= 3
 	{
 		instance_create_depth(obj_golf_kart.x+lengthdir_x(dis, dir),obj_golf_kart. y+lowering+lengthdir_y(dis, dir), 1, obj_fire_trail);
 	};
-	draw_circle(obj_golf_kart.x+lengthdir_x(dis, dir),obj_golf_kart. y+lowering+lengthdir_y(dis, dir), radius, false);
-	draw_line_width(obj_golf_kart.x+lengthdir_x(dis, dir), obj_golf_kart.y+lowering+lengthdir_y(dis, dir), obj_golf_kart.xprevious+lengthdir_x(dis, dir), obj_golf_kart.yprevious+lowering+lengthdir_y(dis, dir), radius*2);
-	draw_circle(obj_golf_kart.xprevious+lengthdir_x(dis, dir),obj_golf_kart.yprevious+lowering+lengthdir_y(dis, dir), radius, false);
+	
+	if global.trails_activated
+	{
+		draw_circle(obj_golf_kart.x+lengthdir_x(dis, dir),obj_golf_kart. y+lowering+lengthdir_y(dis, dir), radius, false);
+		draw_line_width(obj_golf_kart.x+lengthdir_x(dis, dir), obj_golf_kart.y+lowering+lengthdir_y(dis, dir), obj_golf_kart.xprevious+lengthdir_x(dis, dir), obj_golf_kart.yprevious+lowering+lengthdir_y(dis, dir), radius*2);
+		draw_circle(obj_golf_kart.xprevious+lengthdir_x(dis, dir),obj_golf_kart.yprevious+lowering+lengthdir_y(dis, dir), radius, false);
+	}
 	dir += longangle;
 	if global.player_fire_trails >= 4
 	{
 		instance_create_depth(obj_golf_kart.x+lengthdir_x(dis, dir),obj_golf_kart. y+lowering+lengthdir_y(dis, dir), 1, obj_fire_trail);
 	};
-	draw_circle(obj_golf_kart.x+lengthdir_x(dis, dir),obj_golf_kart. y+lowering+lengthdir_y(dis, dir), radius, false);
-	draw_line_width(obj_golf_kart.x+lengthdir_x(dis, dir), obj_golf_kart.y+lowering+lengthdir_y(dis, dir), obj_golf_kart.xprevious+lengthdir_x(dis, dir), obj_golf_kart.yprevious+lowering+lengthdir_y(dis, dir), radius*2);
-	draw_circle(obj_golf_kart.xprevious+lengthdir_x(dis, dir),obj_golf_kart.yprevious+lowering+lengthdir_y(dis, dir), radius, false);
+	
+	if global.trails_activated
+	{
+		draw_circle(obj_golf_kart.x+lengthdir_x(dis, dir),obj_golf_kart. y+lowering+lengthdir_y(dis, dir), radius, false);
+		draw_line_width(obj_golf_kart.x+lengthdir_x(dis, dir), obj_golf_kart.y+lowering+lengthdir_y(dis, dir), obj_golf_kart.xprevious+lengthdir_x(dis, dir), obj_golf_kart.yprevious+lowering+lengthdir_y(dis, dir), radius*2);
+		draw_circle(obj_golf_kart.xprevious+lengthdir_x(dis, dir),obj_golf_kart.yprevious+lowering+lengthdir_y(dis, dir), radius, false);
+	};
 };
 
-surface_reset_target();
-draw_set_color(c_white);
-if(surface_exists(tread_surface))
+if global.trails_activated
 {
-	draw_surface_ext(tread_surface, 0, 0, 1, 1, 0, c_white, 0.2);
+	surface_reset_target();
+	draw_set_color(c_white);
+	if(surface_exists(tread_surface))
+	{
+		draw_surface_ext(tread_surface, 0, 0, 1, 1, 0, c_white, 0.2);
+	}
 }
 
 // Figuring out hole sizes
@@ -75,14 +106,17 @@ var deep_hole_radius = (golfer_speed-lesser_face_grind_threshhold)*1;
 var hole_radius = deep_hole_radius+((golfer_speed-face_grind_threshhold)*1.2);
 
 // Hole surface
-if(!surface_exists(hole_surface))
+if global.trails_activated
 {
-	var dim = make_surface_dimensions();
-	hole_surface = surface_create( dim[0], dim[1] );
-}
-surface_set_target( hole_surface );
-
-draw_set_color(make_color_rgb(59, 31, 4));
+	if(!surface_exists(hole_surface))
+	{
+		var dim = make_surface_dimensions();
+		hole_surface = surface_create( dim[0], dim[1] );
+	}
+	surface_set_target( hole_surface );
+	
+	draw_set_color(make_color_rgb(59, 31, 4));
+};
 
 if hole_radius >= min_brushstroke_size
 {
@@ -91,41 +125,48 @@ if hole_radius >= min_brushstroke_size
 	{
 		instance_create_depth(obj_golfer.x, obj_golfer.y+lowering, 1, obj_fire_trail);
 	};
-	draw_circle(obj_golfer.x, obj_golfer.y+lowering, hole_radius, false);
-	draw_line_width(obj_golfer.x, obj_golfer.y+lowering, obj_golfer.xprevious, obj_golfer.yprevious+lowering, hole_radius*2);
-	draw_circle(obj_golfer.xprevious, obj_golfer.yprevious+lowering, hole_radius, false);
+	
+	if global.trails_activated
+	{
+		draw_circle(obj_golfer.x, obj_golfer.y+lowering, hole_radius, false);
+		draw_line_width(obj_golfer.x, obj_golfer.y+lowering, obj_golfer.xprevious, obj_golfer.yprevious+lowering, hole_radius*2);
+		draw_circle(obj_golfer.xprevious, obj_golfer.yprevious+lowering, hole_radius, false);
+	};
 };
 
-surface_reset_target();
-draw_set_color(c_white);
-if(surface_exists(hole_surface))
+if global.trails_activated
 {
-	draw_surface(hole_surface, 0, 0);
-}
+	surface_reset_target();
+	draw_set_color(c_white);
+	if(surface_exists(hole_surface))
+	{
+		draw_surface(hole_surface, 0, 0);
+	}
 
-// Deep hole surface
-if(!surface_exists(deep_hole_surface))
-{
-	var dim = make_surface_dimensions();
-	deep_hole_surface = surface_create( dim[0], dim[1] );
-}
-surface_set_target( deep_hole_surface );
+	// Deep hole surface
+	if(!surface_exists(deep_hole_surface))
+	{
+		var dim = make_surface_dimensions();
+		deep_hole_surface = surface_create( dim[0], dim[1] );
+	}
+	surface_set_target( deep_hole_surface );
 
-draw_set_color(make_color_rgb(39, 21, 4));
-draw_set_alpha(1);
-if deep_hole_radius >= min_brushstroke_size
-{
-    var lowering = 10;
-	draw_circle(obj_golfer.x, obj_golfer.y+lowering, deep_hole_radius, false);
-	draw_line_width(obj_golfer.x, obj_golfer.y+lowering, obj_golfer.xprevious, obj_golfer.yprevious+lowering, deep_hole_radius*2);
-	draw_circle(obj_golfer.xprevious, obj_golfer.yprevious+lowering, deep_hole_radius, false);
+	draw_set_color(make_color_rgb(39, 21, 4));
+	draw_set_alpha(1);
+	if deep_hole_radius >= min_brushstroke_size
+	{
+	    var lowering = 10;
+		draw_circle(obj_golfer.x, obj_golfer.y+lowering, deep_hole_radius, false);
+		draw_line_width(obj_golfer.x, obj_golfer.y+lowering, obj_golfer.xprevious, obj_golfer.yprevious+lowering, deep_hole_radius*2);
+		draw_circle(obj_golfer.xprevious, obj_golfer.yprevious+lowering, deep_hole_radius, false);
+	};
+
+	surface_reset_target();
+	draw_set_color(c_white);
+	if(surface_exists(deep_hole_surface))
+	{
+		draw_surface(deep_hole_surface, 0, 0);
+	}
+
+	draw_set_color(c_white);
 };
-
-surface_reset_target();
-draw_set_color(c_white);
-if(surface_exists(deep_hole_surface))
-{
-	draw_surface(deep_hole_surface, 0, 0);
-}
-
-draw_set_color(c_white);
