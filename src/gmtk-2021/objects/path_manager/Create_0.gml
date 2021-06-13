@@ -234,12 +234,12 @@ for (var i = 0; i < TOTAL_PATH_LENGTH - 1; i++) {
 // Spawn flags
 CURRENT_HOLE_COUNT = floor(min(HOLE_FLAGS + (CURRENT_HOLE * HOLE_FLAGS_PER_HOLE), MAX_FLAGS));
 for (var i = 0; i < TOTAL_PATH_LENGTH - 1; i++) {
-	if instance_number(obj_hole) >= CURRENT_HOLE_COUNT or instance_number(obj_hole) >= CURRENT_BALL_COUNT break;
+	if instance_number(obj_hole) >= CURRENT_HOLE_COUNT or instance_number(obj_hole) >= instance_number(obj_ball) break;
 	var dist_between_points = vector_magnitude(vector_subtract(TOTAL_PATH[i + 1], TOTAL_PATH[i]));
 	var flags_to_add = ceil(CURRENT_HOLE_COUNT / (TOTAL_PATH_LENGTH - 1))// min(GOLFBALLS_PER_LENGTH + (CURRENT_HOLE * GOLFBALLS_PER_LENGTH_PER_HOLE), MAX_GOLFBALLS_PER_LENGTH);
 	var percentage_to_check = 1 / (flags_to_add + 1);
 	for (var o = 1; o <= flags_to_add; o++) {
-		if instance_number(obj_hole) >= CURRENT_HOLE_COUNT or instance_number(obj_hole) >= CURRENT_BALL_COUNT break;
+		if instance_number(obj_hole) >= CURRENT_HOLE_COUNT or instance_number(obj_hole) >= instance_number(obj_ball) break;
 		var spawn_vec = vector_between(TOTAL_PATH[i], TOTAL_PATH[i + 1], o * percentage_to_check)
 		var _x = spawn_vec[0] + (choose(-1, 1) * irandom(FLAG_OFFSET));
 		var _y = spawn_vec[1] + (choose(-1, 1) * irandom(FLAG_OFFSET));
