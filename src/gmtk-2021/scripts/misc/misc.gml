@@ -230,6 +230,9 @@ function regen_grass() {
 		for (var o = 0; o < y_steps; o += 1) {
 			tilemap_set(map_ids[0], choose(1, 2, 3), i, o);
 			tilemap_set(map_ids[1], choose(1, 2, 3), i, o);
+			if (i + o) mod 2 {
+				// instance_create_layer(i * TILE_WIDTH[0], o * TILE_WIDTH[1], layer, obj_tree);
+			}
 		}
 	}
 }
