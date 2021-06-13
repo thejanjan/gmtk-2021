@@ -26,3 +26,5 @@ part_type_direction(global.p_fireburst, 0, 360, 0, 30);
 part_type_gravity(global.p_fireburst, .25, 90);
 part_type_life(global.p_fireburst, 20, 60);
 part_type_color2(global.p_fireburst, $1C55FF, $122EFF);
+
+reset_powerup_pool();
