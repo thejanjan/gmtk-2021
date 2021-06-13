@@ -41,7 +41,7 @@ else if !instance_exists(target_ball) {
 }
 
 // Heading to eat a ball
-if (current_state == state.idle or current_state == state.moving) and instance_exists(target_ball) {
+if (current_state == state.idle or current_state == state.moving) and instance_exists(target_ball)  and current_speed <= 8 {
 	current_state = state.moving;
 	current_target_pos = [target_ball.x, target_ball.y];
 	var dir = vector_normalize(vector_heading_to([x, y], current_target_pos));
