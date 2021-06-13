@@ -118,6 +118,7 @@
     {"id":{"name":"spr_restorehp","path":"sprites/spr_restorehp/spr_restorehp.yy",},"order":29,},
     {"id":{"name":"spr_basketball","path":"sprites/spr_basketball/spr_basketball.yy",},"order":6,},
     {"id":{"name":"physics_helpers","path":"scripts/physics_helpers/physics_helpers.yy",},"order":6,},
+    {"id":{"name":"obj_basketball_shield","path":"objects/obj_basketball_shield/obj_basketball_shield.yy",},"order":9,},
     {"id":{"name":"assert","path":"scripts/assert/assert.yy",},"order":0,},
     {"id":{"name":"spr_fire_trail","path":"sprites/spr_fire_trail/spr_fire_trail.yy",},"order":23,},
     {"id":{"name":"obj_spider","path":"objects/obj_spider/obj_spider.yy",},"order":6,},
