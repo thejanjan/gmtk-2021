@@ -7,6 +7,7 @@
     {"id":{"name":"snd_player_impact","path":"sounds/snd_player_impact/snd_player_impact.yy",},"order":18,},
     {"id":{"name":"glyph","path":"sprites/glyph/glyph.yy",},"order":25,},
     {"id":{"name":"gui_bars","path":"objects/gui_bars/gui_bars.yy",},"order":0,},
+    {"id":{"name":"snd_got_last_flag","path":"sounds/snd_got_last_flag/snd_got_last_flag.yy",},"order":21,},
     {"id":{"name":"obj_evil_golfer","path":"objects/obj_evil_golfer/obj_evil_golfer.yy",},"order":7,},
     {"id":{"name":"obj_dynamicparent","path":"objects/obj_dynamicparent/obj_dynamicparent.yy",},"order":0,},
     {"id":{"name":"snd_flame1","path":"sounds/snd_flame1/snd_flame1.yy",},"order":10,},

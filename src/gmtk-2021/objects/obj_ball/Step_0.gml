@@ -83,7 +83,7 @@ if distohole < 7 {
 	}
 	CURRENT_FLAGS++;
 	if CURRENT_FLAGS >= instance_number(obj_hole) {
-		// Put it right here	
+		audio_play_sound(snd_got_last_flag, 0, false);
 	}
 	instance_destroy();
 } /* else if distohole < bring_distance {
