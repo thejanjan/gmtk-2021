@@ -80,6 +80,7 @@
     {"id":{"name":"obj_fire_trail","path":"objects/obj_fire_trail/obj_fire_trail.yy",},"order":21,},
     {"id":{"name":"powerup_pool","path":"scripts/powerup_pool/powerup_pool.yy",},"order":8,},
     {"id":{"name":"rom_menu","path":"rooms/rom_menu/rom_menu.yy",},"order":2,},
+    {"id":{"name":"obj_grow_fade","path":"objects/obj_grow_fade/obj_grow_fade.yy",},"order":25,},
     {"id":{"name":"hp_bar","path":"objects/hp_bar/hp_bar.yy",},"order":9,},
     {"id":{"name":"obj_golfer","path":"objects/obj_golfer/obj_golfer.yy",},"order":5,},
     {"id":{"name":"obj_enemy_wimp","path":"objects/obj_enemy_wimp/obj_enemy_wimp.yy",},"order":1,},
