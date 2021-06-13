@@ -45,7 +45,7 @@ GOLFBALL_OFFSET = 220;
 MIN_GOLFBALL_DISTANCE = 24;
 
 HOLE_FLAGS = 2;
-HOLE_FLAGS_PER_HOLE = 0.25 * HOLE_MULTIPLY;
+HOLE_FLAGS_PER_HOLE = 0.5 * HOLE_MULTIPLY;
 MAX_FLAGS = 18;
 FLAG_OFFSET = 230;
 
@@ -266,6 +266,19 @@ CURRENT_HOLE_COUNT = instance_number(obj_hole);
 // Spawn end flag
 instance_create_layer(GOAL_VECTOR[0], GOAL_VECTOR[1], layer, obj_end_hole);
 
+// Spawn powerup
+var from_end_radius = 80;
+if FURTHEST_EXISTS {
+	var _x = FURTHEST_VECTOR[0];
+	var _y = FURTHEST_VECTOR[1];
+	if vector_equal(FURTHEST_VECTOR, GOAL_VECTOR) {
+		_x += choose(-from_end_radius, from_end_radius);
+		_y += choose(-from_end_radius, 0, from_end_radius);
+	}
+	instance_create_layer(_x, _y, layer, obj_powerup_spawn_point);
+}
+// FURTHEST_VECTOR = TOTAL_PATH[BEST_INDEX];
+// GOAL_VECTOR = TOTAL_PATH[TOTAL_PATH_LENGTH - 1];
 
 /*
 HOLE_FLAGS = 2;
