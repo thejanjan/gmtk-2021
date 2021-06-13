@@ -5,6 +5,10 @@ global.binding_up = ord("W");
 global.binding_down = ord("S");
 global.binding_right = ord("D");
 global.binding_left = ord("A");
+global.binding_up_arrow = vk_up;
+global.binding_down_arrow = vk_down;
+global.binding_right_arrow = vk_right;
+global.binding_left_arrow = vk_left;
 global.binding_debug = ord("P");
 global.binding_debug_two = ord("L");
 

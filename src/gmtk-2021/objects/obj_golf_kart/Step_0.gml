@@ -78,16 +78,16 @@ if next_level_timer > 0 {
 
 if controllable == 1 {
 	var control_vector = [0, 0];
-	if new_keyboard_check(global.binding_right) {
+	if new_keyboard_check(global.binding_right) || new_keyboard_check(global.binding_right_arrow) {
 		control_vector[0] += 1;
 	}
-	if new_keyboard_check(global.binding_left) {
+	if new_keyboard_check(global.binding_left) || new_keyboard_check(global.binding_left_arrow) {
 		control_vector[0] -= 1;
 	}
-	if new_keyboard_check(global.binding_up) {
+	if new_keyboard_check(global.binding_up) || new_keyboard_check(global.binding_up_arrow) {
 		control_vector[1] -= 1;
 	}
-	if new_keyboard_check(global.binding_down) {
+	if new_keyboard_check(global.binding_down) || new_keyboard_check(global.binding_down_arrow) {
 		control_vector[1] += 1;
 	}
 	control_vector = vector_normalize(control_vector); // Don't make the same mistake as Marble Blast...
