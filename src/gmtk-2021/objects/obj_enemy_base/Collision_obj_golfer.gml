@@ -7,4 +7,5 @@ if other.current_speed < current_speed {
 } else {
 	// Damage self.
 	enemy_take_damage(other.current_speed * get_player_damage_multiplier());
+	audio_play_sound(snd_enemy_smacked, 0, false);
 }
