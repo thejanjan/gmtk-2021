@@ -457,3 +457,15 @@ function draw_text_new_centered(_x, _y, _string, _col, _outline_col, _scale, _ke
 	_x = _x - (str_len * _kerning * 0.5);
 	draw_text_new(_x, _y, _string, _col, _outline_col, _scale, _kerning);
 }
+
+function spawn_dandruff() {
+	flake_size = 8;
+	flake_chance = 0.15;
+	for (var i = 0; i < sprite_width / 8; i++) {
+		for (var o = 0; o < sprite_height / 8; i++) {
+			if random(1) < flake_chance {
+				instance_create_layer(x + (i * 8), y + (i * 8), layer, obj_flake)
+			}
+		}
+	}
+}
