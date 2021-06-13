@@ -1,27 +1,45 @@
 /// @description physics controls
 
 update_current_velocity();
+spd = vector_magnitude(current_velocity);
+if weak and ((spd < 0.5 and spd != 0) or image_alpha != 1) {
+	image_alpha -= 1 / vanish_duration;
+	if image_alpha <= 0
+		instance_destroy();
+}
 
 var hole = nearest_active_hole();
 var enemy = nearest_alive_enemy();
 
-if hit_by_club() {
+if hit_by_club() and not weak {
 	var dir = vector_heading_to([obj_golfer.x, obj_golfer.y], [x, y]);
 	var hole_dist = 100000;
 	var enemy_dist = 100000;
-	if hole
-		hole_dist = vector_magnitude(vector_subtract([x, y], [hole.x, hole.y]))
-	if enemy
-		enemy_dist = vector_magnitude(vector_subtract([x, y], [enemy.x, enemy.y]))
-	
-	enemy_dist /= 0.01 + (global.magnet_power * 0.33);
-	
-	if hole_dist < enemy_dist
-		dir = vector_heading_to([x, y], [hole.x, hole.y]); 
-	if enemy_dist < hole_dist
-		dir = vector_heading_to([x, y], [enemy.x, enemy.y]); 
+	try {
+		if hole and instance_exists(hole) {
+			instance_activate_object(hole);
+			hole_dist = min(vector_magnitude(vector_subtract([x, y], [hole.x, hole.y])), hole_dist)
+		} if enemy and instance_exists(enemy) {
+			instance_activate_object(enemy);
+			enemy_dist = min(vector_magnitude(vector_subtract([x, y], [enemy.x, enemy.y])), enemy_dist)
+		}
+		if enemy_dist != 100000 enemy_dist /= 0.01 + (global.magnet_power * 0.33);
+		if hole_dist < enemy_dist
+			dir = vector_heading_to([x, y], [hole.x, hole.y]); 
+		if enemy_dist < hole_dist
+			dir = vector_heading_to([x, y], [enemy.x, enemy.y]); 
+	}
 	club_apply_impulse(dir, 1.0);
-	if hit_timer == 0 {
+	if hit_timer = 0 {
+		var shots = global.additional_shots;
+		if not weak and shots {
+			var shift = 0.35;
+			repeat shots {
+				var new_ball = instance_create_layer(x, y, "Instances", obj_weak_ball);
+				var new_dir = vector_add(dir, [random(shift) * choose(-1, 1), random(shift) * choose(-1, 1)]);
+				with (new_ball) club_apply_impulse(new_dir, 0.85);
+			}
+		}
 		audio_play_sound(choose(snd_golf1, snd_golf2, snd_golf3), 0, false);
 		hit_timer = 5;
 		var earth_damage = get_golf_the_earth_damage();
@@ -32,11 +50,13 @@ if hit_by_club() {
 	}
 }
 
-if not hole exit;
+if hit_timer > 0
+	hit_timer--;
+
+if not hole or weak exit;
 
 var distohole = point_distance(x, y, hole.x, hole.y);
-if distohole < 7
-{
+if distohole < 7 {
     instance_destroy();
     hole.flamming = true;
 	audio_play_sound(choose(snd_flame1, snd_flame2, snd_flame3), 0, false);
@@ -44,16 +64,10 @@ if distohole < 7
 	if hole_damage > 0 {
 		create_aoe_damage([x, y], 256, hole_damage);
 	}
-}
-else if distohole < 15
-{
+} else if distohole < 15 {
 	var dir = vector_heading_to([x, y], [hole.x, hole.y]);
 	dir = vector_scale(dir, 2);
 	physics_apply_impulse(x, y, dir[0], dir[1]);
 	phy_speed_y /= 1+0.5*(1-(distohole/15));
 	phy_speed_y /= 1+0.5*(1-(distohole/15));
-};
-
-if hit_timer > 0 {
-	hit_timer--;
 }

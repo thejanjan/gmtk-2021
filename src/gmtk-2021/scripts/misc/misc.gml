@@ -19,40 +19,40 @@ function club_apply_impulse(_vector_direction, _impulse_multiplier) {
 
 function nearest_active_hole() {
 	// Try to find a non-flaming hole
-	var nearest = 0;
-	for (var i = 0; i < instance_number(obj_hole); i++) {
+	var count = instance_number(obj_hole);
+	if count = 0 return;
+	for (var i = 0; i < count; i++) {
 		if !instance_exists(obj_hole) break;
 		var potential_hole = instance_nearest(x, y, obj_hole);
-		if not potential_hole.flamming {
-			nearest = potential_hole;
-			break;
-		}
+		if not potential_hole.flamming 
+			return potential_hole;
 		instance_deactivate_object(potential_hole);
 	}
 	// Re-activate each hole
-	if instance_exists(obj_hole)
+	// if instance_exists(obj_hole)
 		instance_activate_object(obj_hole);
+	instance_activate_all();
 	// Return our answer
-	return nearest;
+	return noone;
 }
 
 function nearest_alive_enemy() {
 	// Try to find an alive enemy
-	var nearest = 0;
-	for (var i = 0; i < instance_number(obj_enemy_base); i++) {
+	var count = instance_number(obj_enemy_base);
+	if count = 0 return;
+	for (var i = 0; i < count; i++) {
 		if !instance_exists(obj_enemy_base) break;
 		var potential_enemy = instance_nearest(x, y, obj_enemy_base);
-		if obj_enemy_base.hp > 0 {
-			nearest = potential_enemy;
-			break;
-		}
+		if potential_enemy.hp > 0 
+			return potential_enemy;
 		instance_deactivate_object(potential_enemy);
 	}
 	// Re-activate each enemy
-	if instance_exists(potential_enemy)
-		instance_activate_object(potential_enemy);
+	// if instance_exists(potential_enemy)
+	instance_activate_object(potential_enemy);
+	instance_activate_all();
 	// Return our answer
-	return nearest;
+	return noone;
 }
 
 function init_current_velocity() {

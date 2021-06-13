@@ -7,6 +7,7 @@ global.growth_spurt = 0;
 global.explosive_hole_damage = 0;
 global.player_fire_trails = 0;
 global.magnet_power = 0;
+global.additional_shots = 0;
 
 function get_player_damage_multiplier() {
 	return global.player_damage_multiplier;
@@ -85,6 +86,10 @@ function additive_increase_magnet_power(_amount) {
 	global.magnet_power += _amount;
 }
 
+function additive_increase_additional_shots(_amount) {
+	global.additional_shots += _amount;
+}
+
 function collect_powerup(_powerup_index) {
 	//show_debug_message("Collected powerup " + string(_powerup_index));
 	instance_destroy();
@@ -113,7 +118,7 @@ function apply_powerup(_powerup_index) {
 			additive_increase_explosive_hole_damage(50);
 			return;
 		case 6:
-			// Triple shot!
+			additive_increase_additional_shots(1);
 			return;
 		case 7:
 			additive_increase_magnet_power(1);

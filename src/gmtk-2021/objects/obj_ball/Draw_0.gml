@@ -20,7 +20,11 @@ function squash_n_stretch_transform(v) {
 	return [tx + x, ty + y];
 }
 
-draw_sprite(sprite_index, get_ball_shadow_index(), x, y);
+
+if weak {
+	image_index = 0;
+	draw_sprite_ext(sprite_index, 6, x, y, image_xscale, image_yscale, 0, c_white, image_alpha);
+} else draw_sprite_ext(sprite_index, get_ball_shadow_index(), x, y, image_xscale, image_yscale, 0, c_white, image_alpha);
 
 if (!phy_sleeping and os_browser != browser_not_a_browser) {
 	var hw = 12;
@@ -36,5 +40,5 @@ if (!phy_sleeping and os_browser != browser_not_a_browser) {
 									  bottomleft[0], bottomleft[1], 1);								  
 }
 else {
-	draw_sprite(sprite_index, -1, x, y);
+	draw_sprite_ext(sprite_index, -1, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
 }
