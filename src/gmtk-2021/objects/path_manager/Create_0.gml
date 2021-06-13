@@ -409,6 +409,8 @@ switch (zone) {
 }
 
 
+alarm[0] = 60 * 30;
+
 /* FURTHEST_VECTOR_MINIMUM = 20;
 FURTHEST_VECTOR_PER_HOLE = 20;
 /*
