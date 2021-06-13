@@ -14,7 +14,8 @@
   ],
   "layers": [
     {"instances":[
-        {"properties":[],"isDnd":false,"objectId":{"name":"obj_menu_button_game_end","path":"objects/obj_menu_button_game_end/obj_menu_button_game_end.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":6.140623,"scaleY":2.734375,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":898.0,"y":458.0,"resourceVersion":"1.0","name":"inst_645AEE3B","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"obj_menu_button_game_end","path":"objects/obj_menu_button_game_end/obj_menu_button_game_end.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":0.830334365,"scaleY":0.830334365,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1095.30823,"y":560.9126,"resourceVersion":"1.0","name":"inst_4D2354E5","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"obj_menu_button_game_start","path":"objects/obj_menu_button_game_start/obj_menu_button_game_start.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":0.832046747,"scaleY":0.8320468,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1095.0,"y":390.0,"resourceVersion":"1.0","name":"inst_4271D7E5","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Instances_1","tags":[],"resourceType":"GMRInstanceLayer",},
     {"assets":[
         {"spriteId":{"name":"spr_newspaper","path":"sprites/spr_newspaper/spr_newspaper.yy",},"headPosition":0.0,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"animationSpeed":1.0,"colour":4294967295,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":3.0,"y":0.0,"resourceVersion":"1.0","name":"graphic_5ECD7D94","tags":[],"resourceType":"GMRSpriteGraphic",},
@@ -26,7 +27,8 @@
   "creationCodeFile": "",
   "inheritCode": false,
   "instanceCreationOrder": [
-    {"name":"inst_645AEE3B","path":"rooms/rom_menu/rom_menu.yy",},
+    {"name":"inst_4D2354E5","path":"rooms/room_menu/room_menu.yy",},
+    {"name":"inst_4271D7E5","path":"rooms/room_menu/room_menu.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
@@ -54,7 +56,7 @@
     "path": "folders/Rooms.yy",
   },
   "resourceVersion": "1.0",
-  "name": "rom_menu",
+  "name": "room_menu",
   "tags": [],
   "resourceType": "GMRoom",
 }

@@ -31,7 +31,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_menu_button_game_end",
+  "name": "obj_menu_button_game_start",
   "tags": [],
   "resourceType": "GMObject",
 }
