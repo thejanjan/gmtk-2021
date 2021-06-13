@@ -20,7 +20,7 @@ function kart_sprite_index() {
 			return 5;
 		case 3:
 		case 5:
-			return 8;
+			return 7;
 		case 4:
 			return 8;
 		case 9:
