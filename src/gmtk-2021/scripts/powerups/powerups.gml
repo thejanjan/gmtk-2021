@@ -3,6 +3,7 @@
 global.player_damage_multiplier = 1.0;
 global.player_acceleration = 150.0;
 global.golf_the_earth_damage = 0;
+global.growth_spurt = 0;
 global.explosive_holes = false;
 global.player_fire_trails = 1;
 
@@ -26,13 +27,23 @@ function get_golf_the_earth_damage() {
 	return global.golf_the_earth_damage;
 }
 
-function additive_increase_golf_the_earth_damage(_amount) {
-	if global.golf_the_earth_damage == 0 {
-		with(obj_ball) {
-			image_index += 12;
-		}
+function get_ball_image_index() {
+	var result = global.growth_spurt;
+	if global.golf_the_earth_damage > 0 {
+		result += 12;
 	}
+	return result;
+}
+
+function update_image_index_for_all_balls() {
+	with(obj_ball) {
+		image_index = get_ball_image_index();
+	}
+}
+
+function additive_increase_golf_the_earth_damage(_amount) {
 	global.golf_the_earth_damage += _amount;
+	update_image_index_for_all_balls();
 }
 
 function create_aoe_damage(_vector_position, _radius, _amount) {
@@ -42,12 +53,18 @@ function create_aoe_damage(_vector_position, _radius, _amount) {
 		}
 	}
 }
+
+function additive_increase_growth_spurt(_amount) {
+	global.growth_spurt = max(global.growth_spurt + _amount, 5);
+	update_image_index_for_all_balls();
+}
+
 function additive_increase_player_fire_trails(_amount) {
 	global.player_fire_trails += _amount;
 }
 
 function collect_powerup(_powerup_index) {
-	show_debug_message("Collected powerup " + string(_powerup_index));
+	//show_debug_message("Collected powerup " + string(_powerup_index));
 	instance_destroy();
 	apply_powerup(_powerup_index);
 }
@@ -81,6 +98,7 @@ function apply_powerup(_powerup_index) {
 			return;
 		case 8:
 			// Growth spurt??? wtf?
+			additive_increase_growth_spurt(1);
 			return;
 		default:
 			show_message("WTF did you do??? AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
