@@ -56,7 +56,7 @@ var chain_link_count = 4;
 var chain_link_sprite_length = 40;
 var chain_link_length = 3;
 my_stinky_golfer = instance_create_layer(x, y+chain_link_count*chain_link_sprite_length, layer, obj_evil_golfer);
-var chain_link;
+chain_link = [];
 for (var i=0; i<chain_link_count; i++) {
 	chain_link[i] = instance_create_layer(x, y+half_sprite_height+i*chain_link_sprite_length, layer, obj_chain_link);
 }

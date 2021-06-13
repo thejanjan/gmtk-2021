@@ -32,6 +32,12 @@ if instance_exists(my_stinky_golfer) {
 	from_instance = my_stinky_golfer;
 } else {
 	from_instance = self;
+	// cleanup chains early if stinky golfer is dead
+	for (var i = array_length(chain_link) - 1; i >= 0; i--) {
+		if instance_exists(chain_link[i]) {
+			instance_destroy(chain_link[i]);
+		}
+	}
 }
 
 var dir = vector_heading_to([from_instance.x, from_instance.y], [obj_golfer.x, obj_golfer.y]);
