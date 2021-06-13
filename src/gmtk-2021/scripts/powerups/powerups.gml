@@ -74,7 +74,7 @@ function get_explosive_hole_damage() {
 }
 
 function additive_increase_growth_spurt(_amount) {
-	global.growth_spurt = max(global.growth_spurt + _amount, 5);
+	global.growth_spurt = min(global.growth_spurt + _amount, 5);
 	update_image_index_for_all_balls();
 }
 
