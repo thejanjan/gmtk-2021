@@ -237,6 +237,10 @@ if CURRENT_HOLE = 1 {
 	audio_stop_sound(mus_early_holes);
 	if !audio_is_playing(mus_late_holes_1)
 	audio_play_sound(mus_late_holes_1, 1, true);
+} else if CURRENT_HOLE = 7 {
+	audio_stop_sound(mus_late_holes_1);
+	if !audio_is_playing(mus_late_holes_2)
+	audio_play_sound(mus_late_holes_2, 1, true);
 }
 
 
