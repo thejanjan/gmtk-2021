@@ -34,6 +34,12 @@ FURTHEST_VECTOR_MAXIMUM = 1500;
 FURTHEST_VECTOR_PER_HOLE = 75 * HOLE_MULTIPLY;
 OPENING_HOLES_WITH_ITEMS = 5;
 
+GOLFBALLS_PER_LENGTH = 2;
+GOLFBALLS_PER_LENGTH_PER_HOLE = 0.5 * HOLE_MULTIPLY;
+MAX_GOLFBALLS_PER_LENGTH = 8;
+GOLFBALL_OFFSET = 50;
+MIN_GOLFBALL_DISTANCE = 24;
+
 ENABLE_TWISTS = true;
 ENABLE_CURVES = false;
 ENABLE_NODES = false;
@@ -175,7 +181,7 @@ for (var i = 0; i < TOTAL_PATH_LENGTH; i++) {
 
 // show_message("Current hole: "+string(CURRENT_HOLE)+"\n Path length: "+string(array_length(TOTAL_PATH))+"\n Path repr: "+path_string);
 
-// Destroy the top layer of tiles
+// Generate aesthetic tiles and trees.
 regen_grass();
 
 DARK_REMOVE_RADIUS = 400;
@@ -193,6 +199,30 @@ for (var i = 0; i < TOTAL_PATH_LENGTH - 1; i++) {
 }
 
 spawn_trees();
+
+// Spawn golfballs
+//GOLFBALLS_PER_LENGTH = 2;
+//GOLFBALLS_PER_LENGTH_PER_HOLE = 0.5 * HOLE_MULTIPLY;
+for (var i = 0; i < TOTAL_PATH_LENGTH - 1; i++) {
+	var dist_between_points = vector_magnitude(vector_subtract(TOTAL_PATH[i + 1], TOTAL_PATH[i]));
+	var balls_to_add = min(GOLFBALLS_PER_LENGTH + (CURRENT_HOLE * GOLFBALLS_PER_LENGTH_PER_HOLE), MAX_GOLFBALLS_PER_LENGTH);
+	var percentage_to_check = 1 / (balls_to_add + 1);
+	for (var o = 1; o <= balls_to_add; o++) {
+		var spawn_vec = vector_between(TOTAL_PATH[i], TOTAL_PATH[i + 1], o * percentage_to_check)
+		var _x = spawn_vec[0] + (choose(-1, 1) * irandom(GOLFBALL_OFFSET));
+		var _y = spawn_vec[1] + (choose(-1, 1) * irandom(GOLFBALL_OFFSET));
+		if instance_exists(obj_ball) {
+			repeat 5 {// Attempts to move
+				var n = instance_nearest(_x, _y, obj_ball);
+				if vector_magnitude(vector_subtract([n.x, n.y], [_x, _y])) < MIN_GOLFBALL_DISTANCE {
+					_x += choose(MIN_GOLFBALL_DISTANCE, -MIN_GOLFBALL_DISTANCE);
+					_y += choose(MIN_GOLFBALL_DISTANCE, -MIN_GOLFBALL_DISTANCE);
+				} else break;
+			}
+		}
+		instance_create_layer(_x, _y, layer, obj_ball);							
+	}
+}
 
 // spawn the player
 SPAWN_OFFSET = 100;
