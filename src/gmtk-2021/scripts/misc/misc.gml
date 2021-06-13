@@ -480,6 +480,7 @@ function spawn_dandruff() {
 
 function get_rising_text_val(_obj) {
 	// Returns -1 if not a number
+	if string_char_at(_obj.str, 1) != "-" return -1;
 	try {
 		var rising_text_str = _obj.str;
 		var string_clip = string_delete(rising_text_str, 1, 1);
