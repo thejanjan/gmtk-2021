@@ -4,7 +4,7 @@ global.player_damage_multiplier = 1.0;
 global.player_acceleration = 150.0;
 global.golf_the_earth_damage = 0;
 global.growth_spurt = 0;
-global.explosive_holes = false;
+global.explosive_hole_damage = 0;
 global.player_fire_trails = 0;
 
 function get_player_damage_multiplier() {
@@ -59,6 +59,14 @@ function create_aoe_damage(_vector_position, _radius, _amount) {
 	}
 }
 
+function additive_increase_explosive_hole_damage(_amount) {
+	global.explosive_hole_damage += _amount;
+}
+
+function get_explosive_hole_damage() {
+	return global.explosive_hole_damage;
+}
+
 function additive_increase_growth_spurt(_amount) {
 	global.growth_spurt = max(global.growth_spurt + _amount, 5);
 	update_image_index_for_all_balls();
@@ -93,7 +101,7 @@ function apply_powerup(_powerup_index) {
 			additive_increase_golf_the_earth_damage(2);
 			return;
 		case 5:
-			// Explosive holes.
+			additive_increase_explosive_hole_damage(50);
 			return;
 		case 6:
 			// Triple shot!

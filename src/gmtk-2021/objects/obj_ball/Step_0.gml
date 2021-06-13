@@ -28,6 +28,10 @@ if distohole < 7
     instance_destroy();
     hole.flamming = true;
 	audio_play_sound(choose(snd_flame1, snd_flame2, snd_flame3), 0, false);
+	var hole_damage = get_explosive_hole_damage();
+	if hole_damage > 0 {
+		create_aoe_damage([x, y], 256, hole_damage);
+	}
 }
 else if distohole < 15
 {
