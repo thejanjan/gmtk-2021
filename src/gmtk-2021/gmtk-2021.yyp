@@ -14,6 +14,7 @@
     {"id":{"name":"spr_tilesetB","path":"sprites/spr_tilesetB/spr_tilesetB.yy",},"order":2,},
     {"id":{"name":"snd_swing3","path":"sounds/snd_swing3/snd_swing3.yy",},"order":4,},
     {"id":{"name":"obj_golf_kart","path":"objects/obj_golf_kart/obj_golf_kart.yy",},"order":2,},
+    {"id":{"name":"powerups","path":"scripts/powerups/powerups.yy",},"order":7,},
     {"id":{"name":"spr_enemy_wimp","path":"sprites/spr_enemy_wimp/spr_enemy_wimp.yy",},"order":0,},
     {"id":{"name":"spr_tilesetA","path":"sprites/spr_tilesetA/spr_tilesetA.yy",},"order":1,},
     {"id":{"name":"snd_swing2","path":"sounds/snd_swing2/snd_swing2.yy",},"order":3,},
