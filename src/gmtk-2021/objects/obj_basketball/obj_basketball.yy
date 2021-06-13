@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_drone",
-    "path": "sprites/spr_drone/spr_drone.yy",
+    "name": "spr_basketball",
+    "path": "sprites/spr_basketball/spr_basketball.yy",
   },
   "solid": false,
   "visible": true,
