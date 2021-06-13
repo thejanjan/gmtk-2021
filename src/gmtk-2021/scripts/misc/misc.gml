@@ -243,13 +243,14 @@ function spawn_trees() {
 	var TILE_WIDTH = [64, 48];
 	var x_steps = ceil(room_width / TILE_WIDTH[0]);
 	var y_steps = ceil(room_height / TILE_WIDTH[1]);
-	
+	var flip = 0;
 	for (var i = 0; i < x_steps; i += 1) {
 		for (var o = 0; o < y_steps; o += 1) {
-			// if ((i + o) mod 2) continue;
+			if (i + o) mod 2 continue;
 			var tile_id = tilemap_get(map_id, i, o);
 			var offset = [-1, -1];
 			var move_amt = 120;
+			var up_reduce = 0.5;
 			switch (tile_id) {
 				case 0:
 				case 1:
@@ -261,7 +262,7 @@ function spawn_trees() {
 				case GRASS.only_up_left:
 					fuck;
 				case GRASS.only_up:
-					offset = [0, -move_amt]; fuck;
+					offset = [0, -move_amt * up_reduce]; fuck;
 				case GRASS.only_down:
 					offset = [0, move_amt]; fuck;
 				case GRASS.only_left:
@@ -269,9 +270,9 @@ function spawn_trees() {
 				case GRASS.only_right:
 					offset = [move_amt, 0]; fuck;
 				case GRASS.up_right:
-					offset = [move_amt, -move_amt]; fuck;
+					offset = [move_amt, -move_amt * up_reduce]; fuck;
 				case GRASS.up_left:
-					offset = [-move_amt, -move_amt]; fuck;
+					offset = [-move_amt, -move_amt * up_reduce]; fuck;
 				case GRASS.down_left:
 					offset = [-move_amt, move_amt]; fuck;
 				case GRASS.down_right:
