@@ -262,6 +262,10 @@ for (var i = 0; i < TOTAL_PATH_LENGTH - 1; i++) {
 	}
 }
 
+// Spawn end flag
+instance_create_layer(GOAL_VECTOR[0], GOAL_VECTOR[1], layer, obj_end_hole);
+
+
 /*
 HOLE_FLAGS = 2;
 HOLE_FLAGS_PER_HOLE = 0.25 * HOLE_MULTIPLY;

@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_flag",
-    "path": "sprites/spr_flag/spr_flag.yy",
+    "name": "spr_end_flag",
+    "path": "sprites/spr_end_flag/spr_end_flag.yy",
   },
   "solid": false,
   "visible": true,

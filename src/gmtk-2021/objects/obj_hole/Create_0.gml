@@ -11,4 +11,6 @@ image_index = 0;
 part_emitter_region(global.particle_sys, emitter, x - 8, x + 8, y - 8, y + 8, ps_shape_ellipse, ps_distr_gaussian)
 stream_timer = -1;*/
 
-instance_create_layer(x, y, layer, obj_depth_hole);
+var a = instance_create_layer(x, y, layer, obj_depth_hole);
+a.image_index = 10;
+a.image_speed = 0;

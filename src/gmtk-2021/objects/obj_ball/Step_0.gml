@@ -39,7 +39,11 @@ if hit_by_club() and not weak {
 		}
 	}
 	var hitting = 1;
-	if going_to = 1 hitting = 0.5;
+	if going_to = 1 {
+		hitting = 1.1;
+		phy_speed_x = 0;
+		phy_speed_y = 0;
+	}
 	club_apply_impulse(dir, hitting);
 	if hit_timer = 0 {
 		var shots = global.additional_shots;
@@ -83,6 +87,6 @@ if distohole < 7 {
 	var dir = vector_heading_to([x, y], [hole.x, hole.y]);
 	dir = vector_scale(dir, 2);
 	physics_apply_impulse(x, y, dir[0], dir[1]);
-	phy_speed_y /= 1+0.5*(1-(distohole/bring_distance));
+	phy_speed_x /= 1+0.5*(1-(distohole/bring_distance));
 	phy_speed_y /= 1+0.5*(1-(distohole/bring_distance));
 }

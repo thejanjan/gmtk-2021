@@ -11,6 +11,9 @@ with (all) {
 		case obj_depth_hole:
 			depth = -y + 200;
 			fuck;
+		case obj_end_hole:
+			depth = -y - 300;
+			fuck;
 		case obj_golf_club:
 			depth = -obj_golfer.y - 100;
 			fuck;
