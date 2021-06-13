@@ -239,8 +239,6 @@ for (var i = 0; i < TOTAL_PATH_LENGTH - 1; i++) {
 	}
 }
 
-spawn_trees();
-
 // Spawn golfballs
 //GOLFBALLS_PER_LENGTH = 2;
 //GOLFBALLS_PER_LENGTH_PER_HOLE = 0.5 * HOLE_MULTIPLY;
@@ -297,6 +295,9 @@ for (var i = 0; i < TOTAL_PATH_LENGTH - 1; i++) {
 	}
 }
 CURRENT_HOLE_COUNT = instance_number(obj_hole);
+
+// I hate these
+spawn_trees();
 
 // Spawn end flag
 instance_create_layer(GOAL_VECTOR[0], GOAL_VECTOR[1], layer, obj_end_hole);
