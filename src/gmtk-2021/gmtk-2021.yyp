@@ -100,6 +100,7 @@
     {"id":{"name":"rm_unit_tests","path":"rooms/rm_unit_tests/rm_unit_tests.yy",},"order":1,},
     {"id":{"name":"mus_early_holes","path":"sounds/mus_early_holes/mus_early_holes.yy",},"order":1,},
     {"id":{"name":"obj_fire_trail","path":"objects/obj_fire_trail/obj_fire_trail.yy",},"order":21,},
+    {"id":{"name":"obj_ball_letter","path":"objects/obj_ball_letter/obj_ball_letter.yy",},"order":32,},
     {"id":{"name":"mus_game_over","path":"sounds/mus_game_over/mus_game_over.yy",},"order":23,},
     {"id":{"name":"powerup_pool","path":"scripts/powerup_pool/powerup_pool.yy",},"order":8,},
     {"id":{"name":"room_menu","path":"rooms/room_menu/room_menu.yy",},"order":2,},
