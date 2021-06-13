@@ -73,6 +73,7 @@
     {"id":{"name":"mask_golf_club","path":"sprites/mask_golf_club/mask_golf_club.yy",},"order":16,},
     {"id":{"name":"physics_helpers","path":"scripts/physics_helpers/physics_helpers.yy",},"order":6,},
     {"id":{"name":"assert","path":"scripts/assert/assert.yy",},"order":0,},
+    {"id":{"name":"obj_tree","path":"objects/obj_tree/obj_tree.yy",},"order":1,},
     {"id":{"name":"new_keyboard","path":"scripts/new_keyboard/new_keyboard.yy",},"order":1,},
     {"id":{"name":"vector","path":"scripts/vector/vector.yy",},"order":2,},
     {"id":{"name":"obj_hole","path":"objects/obj_hole/obj_hole.yy",},"order":7,},
