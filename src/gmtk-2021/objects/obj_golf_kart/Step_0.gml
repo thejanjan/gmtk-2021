@@ -97,4 +97,5 @@ if global.camera_shake > 0 {
 	var xoffset = random_range(-global.camera_shake, global.camera_shake);
 	var yoffset = random_range(-global.camera_shake, global.camera_shake);
 	camera_set_view_pos(view_camera[0], x + xoffset, y + yoffset);
+	global.camera_shake -= 1;
 }
