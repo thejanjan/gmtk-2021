@@ -44,12 +44,12 @@ else if !instance_exists(target_ball) {
 if (current_state == state.idle or current_state == state.moving) and instance_exists(target_ball) {
 	current_state = state.moving;
 	current_target_pos = [target_ball.x, target_ball.y];
-	var dir = vector_heading_to([x, y], current_target_pos);
+	var dir = vector_normalize(vector_heading_to([x, y], current_target_pos));
 	var acceleration_vector = vector_scale(dir, 3);
 	physics_apply_impulse(x, y, acceleration_vector[0], acceleration_vector[1]);
 }
 // Eaten recently and wandering
-else if current_state == state.well_fed {
+else if current_state == state.well_fed and current_speed <= 8 {
 	var dir = vector_heading_to([x, y], current_target_pos);
 	var acceleration_vector = vector_scale(dir, 3);
 	physics_apply_impulse(x, y, acceleration_vector[0], acceleration_vector[1]);
