@@ -192,6 +192,8 @@ for (var i = 0; i < TOTAL_PATH_LENGTH - 1; i++) {
 	}
 }
 
+spawn_trees();
+
 // spawn the player
 SPAWN_OFFSET = 100;
 instance_create_layer(	START_VECTOR[0] + (choose(1, -1) * irandom(SPAWN_OFFSET)), START_VECTOR[1] + (choose(1, -1) * irandom(SPAWN_OFFSET)),

@@ -180,7 +180,7 @@ function grass_tile_update(_tile_x, _tile_y, _map_id) {
 	if not a[2] and not a[6] result = GRASS.empty;
 	// Right, up right, up, up left, left, down left, down, down right.
 	
-	if result !=1 tilemap_set(_map_id, result, _tile_x, _tile_y);
+	if result != 1 tilemap_set(_map_id, result, _tile_x, _tile_y);
 }
 
 function remove_grass_tile(_x, _y, _layer) {
@@ -210,7 +210,7 @@ function remove_grass_tile_radius(_x, _y, _r, _layer) {
 	var TILE_WIDTH = [64, 48];
 	var x_steps = ceil(diameter / TILE_WIDTH[0]);
 	var y_steps = ceil(diameter / TILE_WIDTH[1]);
-	
+	// Remove grass
 	for (var i = 0; i < x_steps; i += 1) {
 		for (var o = 0; o < y_steps; o += 1) {
 			if vector_magnitude([(i - (x_steps / 2)) * 64, (o - (y_steps / 2)) * 48]) < _r
@@ -232,6 +232,57 @@ function regen_grass() {
 			tilemap_set(map_ids[1], choose(1, 2, 3), i, o);
 			if (i + o) mod 2 {
 				// instance_create_layer(i * TILE_WIDTH[0], o * TILE_WIDTH[1], layer, obj_tree);
+			}
+		}
+	}
+}
+
+
+function spawn_trees() {
+	var map_id = layer_tilemap_get_id("layer_dark");
+	var TILE_WIDTH = [64, 48];
+	var x_steps = ceil(room_width / TILE_WIDTH[0]);
+	var y_steps = ceil(room_height / TILE_WIDTH[1]);
+	
+	for (var i = 0; i < x_steps; i += 1) {
+		for (var o = 0; o < y_steps; o += 1) {
+			// if ((i + o) mod 2) continue;
+			var tile_id = tilemap_get(map_id, i, o);
+			var offset = [-1, -1];
+			var move_amt = 120;
+			switch (tile_id) {
+				case 0:
+				case 1:
+				case 2:
+				case 3:
+				case GRASS.only_down_right:
+				case GRASS.only_up_right:
+				case GRASS.only_down_left:
+				case GRASS.only_up_left:
+					fuck;
+				case GRASS.only_up:
+					offset = [0, -move_amt]; fuck;
+				case GRASS.only_down:
+					offset = [0, move_amt]; fuck;
+				case GRASS.only_left:
+					offset = [-move_amt, 0]; fuck;
+				case GRASS.only_right:
+					offset = [move_amt, 0]; fuck;
+				case GRASS.up_right:
+					offset = [move_amt, -move_amt]; fuck;
+				case GRASS.up_left:
+					offset = [-move_amt, -move_amt]; fuck;
+				case GRASS.down_left:
+					offset = [-move_amt, move_amt]; fuck;
+				case GRASS.down_right:
+					offset = [move_amt, move_amt]; fuck;
+				default:
+					offset = [0, 0]; fuck;
+			}
+			if not array_equals(offset, [-1, -1]) {
+				var amount = 24;
+				var shuffle_pos = [choose(-1, 1) * irandom(amount), choose(-1, 1) * irandom(amount)];
+				instance_create_layer((i * TILE_WIDTH[0]) + shuffle_pos[0] + offset[0], (o * TILE_WIDTH[1]) + shuffle_pos[1] + offset[1], layer, obj_tree);
 			}
 		}
 	}
