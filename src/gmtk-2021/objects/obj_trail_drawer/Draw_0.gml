@@ -48,57 +48,46 @@ var golfer_speed = min(20, point_distance(0, 0, obj_golfer.phy_speed_x, obj_golf
 var deep_hole_radius = (golfer_speed-lesser_face_grind_threshhold)*1;
 var hole_radius = deep_hole_radius+((golfer_speed-face_grind_threshhold)*1.2);
 
-// Two surfaces having sex
-if(!surface_exists(both_hole_surfaces_surface))
+// Hole surface
+if(!surface_exists(hole_surface))
 {
-   both_hole_surfaces_surface = surface_create( room_width, room_height );
+   hole_surface = surface_create( room_width, room_height );
 }
-surface_set_target( both_hole_surfaces_surface );
+surface_set_target( hole_surface );
 
-	// Hole surface
-	if(!surface_exists(hole_surface))
-	{
-	   hole_surface = surface_create( room_width, room_height );
-	}
-	surface_set_target( hole_surface );
+draw_set_color(make_color_rgb(59, 31, 4));
 
-	draw_set_color(make_color_rgb(59, 31, 4));
+if hole_radius >= min_brushstroke_size
+{
+    var lowering = 10;
+	draw_circle(obj_golfer.x, obj_golfer.y+lowering, hole_radius, false);
+	draw_line_width(obj_golfer.x, obj_golfer.y+lowering, obj_golfer.xprevious, obj_golfer.yprevious+lowering, hole_radius*2);
+	draw_circle(obj_golfer.xprevious, obj_golfer.yprevious+lowering, hole_radius, false);
+};
 
-	if hole_radius >= min_brushstroke_size
-	{
-	    var lowering = 10;
-		draw_circle(obj_golfer.x, obj_golfer.y+lowering, hole_radius, false);
-		draw_line_width(obj_golfer.x, obj_golfer.y+lowering, obj_golfer.xprevious, obj_golfer.yprevious+lowering, hole_radius*2);
-		draw_circle(obj_golfer.xprevious, obj_golfer.yprevious+lowering, hole_radius, false);
-	};
-
-	surface_reset_target();
-	draw_set_color(c_white);
-	draw_surface_ext(hole_surface, 0, 0, 1, 1, 0, c_white, 1);
-
-	// Deep hole surface
-	if(!surface_exists(deep_hole_surface))
-	{
-	   deep_hole_surface = surface_create( room_width, room_height );
-	}
-	surface_set_target( deep_hole_surface );
-
-	draw_set_color(make_color_rgb(39, 21, 4));
-	draw_set_alpha(1);
-	if deep_hole_radius >= min_brushstroke_size
-	{
-	    var lowering = 10;
-		draw_circle(obj_golfer.x, obj_golfer.y+lowering, deep_hole_radius, false);
-		draw_line_width(obj_golfer.x, obj_golfer.y+lowering, obj_golfer.xprevious, obj_golfer.yprevious+lowering, deep_hole_radius*2);
-		draw_circle(obj_golfer.xprevious, obj_golfer.yprevious+lowering, deep_hole_radius, false);
-	};
-
-	surface_reset_target();
-	draw_set_color(c_white);
-	draw_surface_ext(deep_hole_surface, 0, 0, 1, 1, 0, c_white, 1);
-
-	draw_set_color(c_white);
-	
 surface_reset_target();
 draw_set_color(c_white);
-draw_surface_ext(both_hole_surfaces_surface, 0, 0, 1, 1, 0, c_white, 0.95);
+draw_surface(hole_surface, 0, 0);
+
+// Deep hole surface
+if(!surface_exists(deep_hole_surface))
+{
+   deep_hole_surface = surface_create( room_width, room_height );
+}
+surface_set_target( deep_hole_surface );
+
+draw_set_color(make_color_rgb(39, 21, 4));
+draw_set_alpha(1);
+if deep_hole_radius >= min_brushstroke_size
+{
+    var lowering = 10;
+	draw_circle(obj_golfer.x, obj_golfer.y+lowering, deep_hole_radius, false);
+	draw_line_width(obj_golfer.x, obj_golfer.y+lowering, obj_golfer.xprevious, obj_golfer.yprevious+lowering, deep_hole_radius*2);
+	draw_circle(obj_golfer.xprevious, obj_golfer.yprevious+lowering, deep_hole_radius, false);
+};
+
+surface_reset_target();
+draw_set_color(c_white);
+draw_surface(deep_hole_surface, 0, 0);
+
+draw_set_color(c_white);
