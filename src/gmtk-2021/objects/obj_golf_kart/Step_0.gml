@@ -51,6 +51,7 @@ if (abs(phy_speed_x) > 0.8 or abs(phy_speed_y) > 0.8 and keyboard_check(vk_anyke
 
 // phy_speed was annoying so screw it just do it live
 // max speed probably needs adjusting
+var max_speed = 8;
 var pspeed = vector_magnitude_squared([phy_speed_x, phy_speed_y]);
 var speed_percent = (pspeed / (max_speed * max_speed));
 // audio

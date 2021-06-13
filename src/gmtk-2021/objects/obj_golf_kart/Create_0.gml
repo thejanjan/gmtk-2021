@@ -5,7 +5,6 @@ function create_physics_link(_obj1, _obj2, _off1, _off2, _length) {
 	physics_joint_rope_create(_obj1, _obj2, _obj1.x+_off1[0], _obj1.y+_off1[1], _obj2.x+_off2[0], _obj2.y+_off2[1], _length, true);
 }
 
-speed_range = [8, 8]
 goal = [room_width / 2, room_height / 2];
 velocity = [0, 0];
 current_direction = point_direction(x, y, goal[0], goal[1]);
@@ -17,7 +16,6 @@ lag_direction = current_direction;
 acceleration_magnitude = 150;
 
 turn_speed = 8;
-max_speed = speed_range[0];
 
 dir_goal = -1;
 dir_goal_vector = [0, 0];
