@@ -13,8 +13,8 @@
   "soundFile": "mus_title_screen.ogg",
   "duration": 61.5233459,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "music",
+    "path": "folders/Sounds/music.yy",
   },
   "resourceVersion": "1.0",
   "name": "mus_title_screen",

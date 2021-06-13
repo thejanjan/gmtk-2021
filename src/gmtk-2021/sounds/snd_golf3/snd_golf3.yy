@@ -13,8 +13,8 @@
   "soundFile": "snd_golf3.wav",
   "duration": 0.258764,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "golfing",
+    "path": "folders/Sounds/golfing.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_golf3",

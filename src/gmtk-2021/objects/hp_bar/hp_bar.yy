@@ -29,8 +29,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "gui",
+    "path": "folders/Objects/gui.yy",
   },
   "resourceVersion": "1.0",
   "name": "hp_bar",

@@ -57,9 +57,29 @@ function hp_dead() {
 	}
 }
 
-function reset_game() {
-	// TODO: Make this not suck.
-	hp_bar.hp = 3;
-	hp_bar.maxhp = 3;
-	room_restart();
+function enemy_take_damage(_amount) {
+	hp -= _amount;
+	if hp <= 0 {
+		event_perform(ev_other, ev_user10);  // Execute before death, if we need
+		audio_play_sound(snd_enemy_die, 0, false);
+		instance_destroy();
+	}
+	// instance_exists(obj_golf_kart) && point_distance(x, y, obj_golf_kart.x, obj_golf_kart.y) < 1000
+	var in_x = x > camera_get_view_x(view_camera[0]) && x < camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]);
+	var in_y = y > camera_get_view_y(view_camera[0]) && y < camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]);
+	if _amount > 0 && in_x && in_y {
+		var text = instance_create_layer(x, y, instance_layer, obj_rising_text);
+		text.str = "-" + string(ceil(_amount));
+		text.col = c_red;
+		text.scale = 0.7;
+	}
+}
+
+function enemy_set_starting_hp(_amount) {
+	var true_amount = _amount;
+	if instance_exists(path_manager) {
+		true_amount *= path_manager.HP_SCALE;	
+	}
+	hp = true_amount;
+	hp_max = true_amount;
 }

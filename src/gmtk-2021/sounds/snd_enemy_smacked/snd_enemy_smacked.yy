@@ -13,8 +13,8 @@
   "soundFile": "snd_enemy_smacked.wav",
   "duration": 0.193481,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "enemy_sfx",
+    "path": "folders/Sounds/enemy_sfx.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_enemy_smacked",

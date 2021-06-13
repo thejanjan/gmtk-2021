@@ -13,8 +13,8 @@
   "soundFile": "snd_powerup.ogg",
   "duration": 1.506678,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "powerup_sfx",
+    "path": "folders/Sounds/powerup_sfx.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_powerup",

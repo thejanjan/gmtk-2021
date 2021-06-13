@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "mechanical",
+    "path": "folders/Sprites/mechanical.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_fragile_wall",

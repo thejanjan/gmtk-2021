@@ -13,8 +13,8 @@
   "soundFile": "snd_flame2.wav",
   "duration": 1.173617,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "golfing",
+    "path": "folders/Sounds/golfing.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_flame2",

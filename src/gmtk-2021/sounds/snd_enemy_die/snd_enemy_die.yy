@@ -13,8 +13,8 @@
   "soundFile": "snd_enemy_die.wav",
   "duration": 0.876293,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "enemy_sfx",
+    "path": "folders/Sounds/enemy_sfx.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_enemy_die",

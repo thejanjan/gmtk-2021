@@ -31,8 +31,8 @@
   ],
   "overriddenProperties": [],
   "parent": {
-    "name": "physics",
-    "path": "folders/Objects/physics.yy",
+    "name": "powerups",
+    "path": "folders/Objects/powerups.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_weak_ball",

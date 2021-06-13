@@ -13,8 +13,8 @@
   "soundFile": "snd_drag.wav",
   "duration": 2.37899113,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "player_sfx",
+    "path": "folders/Sounds/player_sfx.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_drag",

@@ -1,5 +1,25 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+// physics
+function impulse_towards(_vector_position, _movement_force) {
+	var dir = vector_heading_to([x, y], [_vector_position[0], _vector_position[1]]);
+	dir = vector_scale(dir, _movement_force);
+	physics_apply_impulse(x, y, dir[0], dir[1]);
+}
+
+function init_current_velocity() {
+	previous_pos = [x, y];
+	current_pos = [x, y];
+	current_speed = 0;
+	current_velocity = [0, 0];
+}
+
+function update_current_velocity() {
+	current_velocity = vector_subtract(current_pos, previous_pos);
+	current_speed = vector_magnitude(current_velocity);
+	previous_pos = current_pos;
+	current_pos = [x, y];
+}
+
+// vectors
 function vector_equal(_vec1, _vec2) {
 	// We won't need this length test since all vectors are length 2.
 	/*

@@ -6,7 +6,7 @@
     "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "powerup_pool",
+  "name": "golf_club",
   "tags": [],
   "resourceType": "GMScript",
 }

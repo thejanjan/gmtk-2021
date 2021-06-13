@@ -13,8 +13,8 @@
   "soundFile": "snd_awful_laser.wav",
   "duration": 0.862143,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "player_sfx",
+    "path": "folders/Sounds/player_sfx.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_awful_laser",
