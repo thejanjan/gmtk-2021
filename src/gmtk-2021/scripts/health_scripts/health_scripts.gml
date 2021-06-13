@@ -46,5 +46,7 @@ function hp_dead() {
 
 function reset_game() {
 	// TODO: Make this not suck.
+	hp_bar.hp = 3;
+	hp_bar.maxhp = 3;
 	room_restart();
 }
