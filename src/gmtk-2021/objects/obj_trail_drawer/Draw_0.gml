@@ -5,7 +5,8 @@
 // Treads
 if(!surface_exists(tread_surface))
 {
-   tread_surface = surface_create( room_width, room_height );
+	var dim = make_surface_dimensions();
+	tread_surface = surface_create( dim[0], dim[1] );
 }
 surface_set_target( tread_surface );
 
@@ -71,7 +72,8 @@ var hole_radius = deep_hole_radius+((golfer_speed-face_grind_threshhold)*1.2);
 // Hole surface
 if(!surface_exists(hole_surface))
 {
-   hole_surface = surface_create( room_width, room_height );
+	var dim = make_surface_dimensions();
+	hole_surface = surface_create( dim[0], dim[1] );
 }
 surface_set_target( hole_surface );
 
@@ -99,7 +101,8 @@ if(surface_exists(hole_surface))
 // Deep hole surface
 if(!surface_exists(deep_hole_surface))
 {
-   deep_hole_surface = surface_create( room_width, room_height );
+	var dim = make_surface_dimensions();
+	deep_hole_surface = surface_create( dim[0], dim[1] );
 }
 surface_set_target( deep_hole_surface );
 

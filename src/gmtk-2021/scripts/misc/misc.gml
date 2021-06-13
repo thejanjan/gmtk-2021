@@ -273,7 +273,6 @@ function regen_grass() {
 	}
 }
 
-
 function spawn_trees() {
 	var map_id = layer_tilemap_get_id("layer_dark");
 	var tile_mult = 1;
@@ -324,6 +323,10 @@ function spawn_trees() {
 			}
 		}
 	}
+}
+
+function make_surface_dimensions() {
+	return [power(2, ceil(log2(room_width))), power(2, ceil(log2(room_height)))];
 }
 
 function draw_text_new(_x, _y, _string, _col, _outline_col, _scale, _kerning) {

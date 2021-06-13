@@ -17,6 +17,7 @@ if hit_by_club() and not weak {
 	var max_travel_distance = 1200;
 	var hole_dist = max_travel_distance;
 	var enemy_dist = max_travel_distance;
+	var going_to = -1;
 	try {
 		if hole and instance_exists(hole) {
 			instance_activate_object(hole);
@@ -28,12 +29,18 @@ if hit_by_club() and not weak {
 		if enemy_dist != max_travel_distance enemy_dist /= 0.01 + (global.magnet_power * 0.33);
 		hole_dist = min(hole_dist, max_travel_distance);
 		enemy_dist = min(enemy_dist, max_travel_distance);
-		if hole_dist < enemy_dist
+		if hole_dist < enemy_dist {
 			dir = vector_heading_to([x, y], [hole.x, hole.y]); 
-		if enemy_dist < hole_dist
+			going_to = 1;
+		}
+		if enemy_dist < hole_dist {
 			dir = vector_heading_to([x, y], [enemy.x, enemy.y]); 
+			going_to = 2;
+		}
 	}
-	club_apply_impulse(dir, 1.0);
+	var hitting = 1;
+	if going_to = 1 hitting = 0.5;
+	club_apply_impulse(dir, hitting);
 	if hit_timer = 0 {
 		var shots = global.additional_shots;
 		if not weak and shots {
@@ -60,7 +67,7 @@ if hit_timer > 0
 if not hole or weak or image_alpha != 1 exit;
 
 var distohole = point_distance(x, y, hole.x, hole.y);
-var bring_distance = 70;
+var bring_distance = 30;
 
 if distohole < 7 {
     // image_alpha = 0.3;
@@ -74,7 +81,7 @@ if distohole < 7 {
 	instance_destroy();
 } else if distohole < bring_distance {
 	var dir = vector_heading_to([x, y], [hole.x, hole.y]);
-	dir = vector_scale(dir, 3);
+	dir = vector_scale(dir, 2);
 	physics_apply_impulse(x, y, dir[0], dir[1]);
 	phy_speed_y /= 1+0.5*(1-(distohole/bring_distance));
 	phy_speed_y /= 1+0.5*(1-(distohole/bring_distance));
