@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"obj_powerup","path":"objects/obj_powerup/obj_powerup.yy",},"order":20,},
     {"id":{"name":"spr_crosshair","path":"sprites/spr_crosshair/spr_crosshair.yy",},"order":4,},
     {"id":{"name":"spr_bgsand","path":"sprites/spr_bgsand/spr_bgsand.yy",},"order":3,},
     {"id":{"name":"spr_evil_golfer","path":"sprites/spr_evil_golfer/spr_evil_golfer.yy",},"order":20,},
