@@ -76,17 +76,22 @@ if AXIS_CHOOSE { // top or bottom side
 }
 
 // establish path
+MAX_PATH_LENGTH = 1000
+TOTAL_PATH = array_create(MAX_PATH_LENGTH + 1, -1);
 TOTAL_PATH = [START_POINT, END_POINT];
+TOTAL_PATH_LENGTH = 2;
 
 // add point
 function path_add_vector(_vector, _index) {
 	// Places a vector at a given index
 	// (if you place it at index 1, it'll move index 1 and everything past it forward one)
+	if TOTAL_PATH_LENGTH >= MAX_PATH_LENGTH return;
 	var len = array_length(TOTAL_PATH);
-	array_resize(TOTAL_PATH, len + 1);
+	// array_resize(TOTAL_PATH, len + 1);
 	var copy_length = len - _index;
 	array_copy(TOTAL_PATH, _index + 1, TOTAL_PATH, _index, copy_length);
 	array_set(TOTAL_PATH, _index, _vector);
+	TOTAL_PATH_LENGTH++;
 }
 
 function condense_vector(_vector) {
@@ -97,7 +102,7 @@ function condense_vector(_vector) {
 // add twists
 if ENABLE_TWISTS
 repeat (min( floor( TWISTS + (CURRENT_HOLE * TWISTS_PER_HOLE)), MAX_TWISTS )) {
-	var total_path_index = array_length(TOTAL_PATH) - 1;
+	var total_path_index = TOTAL_PATH_LENGTH - 1;
 	var left = TOTAL_PATH[total_path_index - 1];
 	var right = TOTAL_PATH[total_path_index];
 	
@@ -114,7 +119,7 @@ var true_curve_count = min(floor(CURVES_COUNT + (CURRENT_HOLE * CURVES_PER_HOLE)
 var true_curve_offset = min(floor(CURVES_OFFSET + (CURRENT_HOLE * CURVES_OFFSET_PER_HOLE)), MAX_CURVES_OFFSET);
 var curve_climb_dist = 1 / true_curve_count;
 if ENABLE_CURVES
-for (var i = array_length(TOTAL_PATH) - 1; i > 0; i--) {
+for (var i = TOTAL_PATH_LENGTH - 1; i > 0; i--) {
 	for (var o = 1; o < true_curve_count; o++) {
 		var path_vector = vector_between(TOTAL_PATH[i + (o - 1)], TOTAL_PATH[i - 1], o * curve_climb_dist);
 		path_vector = vector_add(path_vector, [choose(-1, 1) * irandom(true_curve_offset), choose(-1, 1) * irandom(true_curve_offset)]);
@@ -125,12 +130,13 @@ for (var i = array_length(TOTAL_PATH) - 1; i > 0; i--) {
 // node generation
 var true_node_offset = min(NODE_OFFSET + (CURRENT_HOLE * NODE_OFFSET_PER_HOLE), MAX_NODE_OFFSET);
 if ENABLE_NODES
-for (var i = array_length(TOTAL_PATH) - 1; i > 0; i--) {
+for (var i = TOTAL_PATH_LENGTH - 1; i > 0; i--) {
 	var dist_between_path_points = vector_distance(TOTAL_PATH[i - 1], TOTAL_PATH[i]);
 	var node_distance = max(NODE_DISTANCE + (CURRENT_HOLE * NODE_DISTANCE_PER_HOLE), NODE_MINIMUM);
 	var nodes_to_build = floor(dist_between_path_points / node_distance);
+	var compare_these = [TOTAL_PATH[i], TOTAL_PATH[i - 1]];
 	for (var o = 0; o < nodes_to_build; o++) {
-		var path_vector = vector_between(TOTAL_PATH[i + o], TOTAL_PATH[i - 1], (o + 1) * (1 / (nodes_to_build + 1)));
+		var path_vector = vector_between(compare_these[0], compare_these[1], (o + 1) * (1 / (nodes_to_build + 1)));
 		path_vector = vector_add(path_vector, [choose(-1, 1) * irandom(true_node_offset), choose(-1, 1) * irandom(true_node_offset)]);
 		path_add_vector(condense_vector(path_vector), i);
 	}
@@ -149,7 +155,7 @@ MAX_NODE_OFFSET = 10;
 START_VECTOR = TOTAL_PATH[0];
 CURRENT_DIST = 0;
 BEST_INDEX = 0;
-for (var i = 1; i < array_length(TOTAL_PATH); i++) {
+for (var i = 1; i < TOTAL_PATH_LENGTH; i++) {
 	var dist = vector_distance(START_VECTOR, TOTAL_PATH[i])
 	if dist > CURRENT_DIST {
 		CURRENT_DIST = dist;
@@ -157,7 +163,7 @@ for (var i = 1; i < array_length(TOTAL_PATH); i++) {
 	}
 }
 FURTHEST_VECTOR = TOTAL_PATH[BEST_INDEX];
-GOAL_VECTOR = TOTAL_PATH[array_length(TOTAL_PATH) - 1];
+GOAL_VECTOR = TOTAL_PATH[TOTAL_PATH_LENGTH - 1];
 
 // define if furthest exists, place a passive nearby if so
 FURTHEST_VECTOR_MINIMUM = -FURTHEST_VECTOR_PER_HOLE;
@@ -169,7 +175,7 @@ if	vector_distance(FURTHEST_VECTOR, GOAL_VECTOR) >= min(FURTHEST_VECTOR_MINIMUM 
 
 var path_string = "";
 
-for (var i = 0; i < array_length(TOTAL_PATH); i++) {
+for (var i = 0; i < TOTAL_PATH_LENGTH; i++) {
 	path_string = path_string + vector_repr(TOTAL_PATH[i]) + ", ";
 }
 
