@@ -13,8 +13,9 @@ var enemy = nearest_alive_enemy();
 
 if hit_by_club() and not weak {
 	var dir = vector_heading_to([obj_golfer.x, obj_golfer.y], [x, y]);
-	var hole_dist = 100000;
-	var enemy_dist = 100000;
+	var max_travel_distance = 1200;
+	var hole_dist = max_travel_distance;
+	var enemy_dist = max_travel_distance;
 	try {
 		if hole and instance_exists(hole) {
 			instance_activate_object(hole);
@@ -23,7 +24,9 @@ if hit_by_club() and not weak {
 			instance_activate_object(enemy);
 			enemy_dist = min(vector_magnitude(vector_subtract([x, y], [enemy.x, enemy.y])), enemy_dist)
 		}
-		if enemy_dist != 100000 enemy_dist /= 0.01 + (global.magnet_power * 0.33);
+		if enemy_dist != max_travel_distance enemy_dist /= 0.01 + (global.magnet_power * 0.33);
+		hole_dist = min(hole_dist, max_travel_distance);
+		enemy_dist = min(enemy_dist, max_travel_distance);
 		if hole_dist < enemy_dist
 			dir = vector_heading_to([x, y], [hole.x, hole.y]); 
 		if enemy_dist < hole_dist

@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
 function hit_by_club() {
-	return /*place_meeting(x, y, obj_golf_club)*/(distance_to_point(obj_golf_club.x, obj_golf_club.y) < 100) && obj_golf_club.swing;
+	return /*place_meeting(x, y, obj_golf_club)*/(distance_to_point(obj_golf_club.x, obj_golf_club.y) < 84) && obj_golf_club.swing;
 }
 
 function club_apply_impulse(_vector_direction, _impulse_multiplier) {
@@ -24,9 +24,11 @@ function nearest_active_hole() {
 	for (var i = 0; i < count; i++) {
 		if !instance_exists(obj_hole) break;
 		var potential_hole = instance_nearest(x, y, obj_hole);
-		if not potential_hole.flamming 
-			return potential_hole;
-		instance_deactivate_object(potential_hole);
+		if instance_exists(potential_hole) {
+			if not potential_hole.flamming 
+				return potential_hole;
+			instance_deactivate_object(potential_hole);
+		}
 	}
 	// Re-activate each hole
 	// if instance_exists(obj_hole)

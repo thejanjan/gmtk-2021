@@ -2,7 +2,6 @@
 
 CURRENT_HOLE++;
 
-
 if !instance_exists(obj_phys_control)
 	instance_create_layer(0, 0, layer, obj_phys_control);
 
@@ -42,8 +41,13 @@ DISTANCE_BETWEEN_TILE_REMOVAL = 130;
 GOLFBALLS_PER_LENGTH = 1;
 GOLFBALLS_PER_LENGTH_PER_HOLE = 0.3 * HOLE_MULTIPLY;
 MAX_GOLFBALLS_PER_LENGTH = 3;
-GOLFBALL_OFFSET = 300;
+GOLFBALL_OFFSET = 340;
 MIN_GOLFBALL_DISTANCE = 24;
+
+HOLE_FLAGS = 2;
+HOLE_FLAGS_PER_HOLE = 0.25 * HOLE_MULTIPLY;
+MAX_FLAGS = 18;
+FLAG_OFFSET = 230;
 
 ENABLE_TWISTS = true;
 ENABLE_CURVES = false;
@@ -205,9 +209,10 @@ spawn_trees();
 // Spawn golfballs
 //GOLFBALLS_PER_LENGTH = 2;
 //GOLFBALLS_PER_LENGTH_PER_HOLE = 0.5 * HOLE_MULTIPLY;
+CURRENT_BALL_COUNT = min(GOLFBALLS_PER_LENGTH + (CURRENT_HOLE * GOLFBALLS_PER_LENGTH_PER_HOLE), MAX_GOLFBALLS_PER_LENGTH);
 for (var i = 0; i < TOTAL_PATH_LENGTH - 1; i++) {
 	var dist_between_points = vector_magnitude(vector_subtract(TOTAL_PATH[i + 1], TOTAL_PATH[i]));
-	var balls_to_add = min(GOLFBALLS_PER_LENGTH + (CURRENT_HOLE * GOLFBALLS_PER_LENGTH_PER_HOLE), MAX_GOLFBALLS_PER_LENGTH);
+	var balls_to_add = CURRENT_BALL_COUNT;
 	var percentage_to_check = 1 / (balls_to_add + 1);
 	for (var o = 1; o <= balls_to_add; o++) {
 		var spawn_vec = vector_between(TOTAL_PATH[i], TOTAL_PATH[i + 1], o * percentage_to_check)
@@ -226,6 +231,43 @@ for (var i = 0; i < TOTAL_PATH_LENGTH - 1; i++) {
 	}
 }
 
+// Spawn flags
+CURRENT_HOLE_COUNT = min(HOLE_FLAGS + (CURRENT_HOLE * HOLE_FLAGS_PER_HOLE), MAX_FLAGS);
+for (var i = 0; i < TOTAL_PATH_LENGTH - 1; i++) {
+	if instance_number(obj_hole) >= CURRENT_HOLE_COUNT or instance_number(obj_hole) >= CURRENT_BALL_COUNT break;
+	var dist_between_points = vector_magnitude(vector_subtract(TOTAL_PATH[i + 1], TOTAL_PATH[i]));
+	var flags_to_add = ceil(CURRENT_HOLE_COUNT / (TOTAL_PATH_LENGTH - 1))// min(GOLFBALLS_PER_LENGTH + (CURRENT_HOLE * GOLFBALLS_PER_LENGTH_PER_HOLE), MAX_GOLFBALLS_PER_LENGTH);
+	var percentage_to_check = 1 / (flags_to_add + 1);
+	for (var o = 1; o <= flags_to_add; o++) {
+		if instance_number(obj_hole) >= CURRENT_HOLE_COUNT or instance_number(obj_hole) >= CURRENT_BALL_COUNT break;
+		var spawn_vec = vector_between(TOTAL_PATH[i], TOTAL_PATH[i + 1], o * percentage_to_check)
+		var _x = spawn_vec[0] + (choose(-1, 1) * irandom(FLAG_OFFSET));
+		var _y = spawn_vec[1] + (choose(-1, 1) * irandom(FLAG_OFFSET));
+		if instance_exists(obj_hole) {
+			repeat 8 {// Attempts to move
+				var n = instance_nearest(_x, _y, obj_hole);
+				if vector_magnitude(vector_subtract([n.x, n.y], [_x, _y])) < MIN_GOLFBALL_DISTANCE {
+					_x += choose(MIN_GOLFBALL_DISTANCE, -MIN_GOLFBALL_DISTANCE);
+					_y += choose(MIN_GOLFBALL_DISTANCE, -MIN_GOLFBALL_DISTANCE);
+				} else {
+					var n = instance_nearest(_x, _y, obj_ball);
+					if vector_magnitude(vector_subtract([n.x, n.y], [_x, _y])) < MIN_GOLFBALL_DISTANCE {
+						_x += choose(MIN_GOLFBALL_DISTANCE, -MIN_GOLFBALL_DISTANCE);
+						_y += choose(MIN_GOLFBALL_DISTANCE, -MIN_GOLFBALL_DISTANCE);
+					} else break;
+				}
+			}
+		}
+		instance_create_layer(_x, _y, layer, obj_hole);							
+	}
+}
+
+/*
+HOLE_FLAGS = 2;
+HOLE_FLAGS_PER_HOLE = 0.25 * HOLE_MULTIPLY;
+MAX_FLAGS = 18;
+FLAG_OFFSET = 270;
+*/
 // spawn the player
 SPAWN_OFFSET = 100;
 instance_create_layer(	START_VECTOR[0] + (choose(1, -1) * irandom(SPAWN_OFFSET)), START_VECTOR[1] + (choose(1, -1) * irandom(SPAWN_OFFSET)),
