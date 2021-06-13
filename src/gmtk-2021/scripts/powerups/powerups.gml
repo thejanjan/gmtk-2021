@@ -113,7 +113,7 @@ function apply_powerup(_powerup_index) {
 			additive_increase_player_damage_multiplier(0.6);
 			return;
 		case 1:
-			additive_increase_player_acceleration(75.0);
+			additive_increase_player_acceleration(35.0);
 			return;
 		case 2:
 			additive_increase_player_fire_trails(1);

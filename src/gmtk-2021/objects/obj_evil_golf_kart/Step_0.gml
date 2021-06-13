@@ -44,6 +44,7 @@ if instance_exists(my_stinky_golfer) {
 
 var dest;
 var check = 1
+if instance_exists(obj_golfer) {
 if instance_exists(path_manager)
 	if distance_to_object(obj_golfer) > path_manager.ENEMY_VISION check = 0;
 if instance_exists(obj_golfer) and check {
@@ -54,7 +55,7 @@ if instance_exists(obj_golfer) and check {
 var dir = vector_heading_to([from_instance.x, from_instance.y], dest);
 var acceleration_vector = vector_scale(dir, acceleration_magnitude);
 physics_apply_impulse(x, y, acceleration_vector[0], acceleration_vector[1]);
-
+}
 // Only update the cart direction if it's moving significantly fast
 // This stops it completely changing direction due to micro-adjustments in small numbers as it slows to a stop
 if abs(phy_speed_x) > 0.8 or abs(phy_speed_y) > 0.8 {

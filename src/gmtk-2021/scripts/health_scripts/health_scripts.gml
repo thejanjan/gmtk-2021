@@ -3,6 +3,7 @@
 
 function hp_deal_damage(_hp){
 	if !hp_bar_exists() return;
+	if obj_golfer.image_alpha < 1 return;
 	if hp_bar.invulnerable > 0 return;
 	hp_bar.hp -= _hp;
 	hp_bar.invulnerable = hp_bar.invulnerable_length;
@@ -21,8 +22,18 @@ function hp_increase_maxhp(_amount) {
 	hp_bar.hp = hp_bar.maxhp;
 }
 
+function hp_reset() {
+	hp_bar.maxhp = 3;
+	hp_bar.hp = hp_bar.maxhp;
+}
+
 function hp_dead() {
 	if instance_exists(obj_golfer) {
+		audio_stop_sound(mus_early_holes);
+		audio_stop_sound(mus_game_over);
+		audio_stop_sound(mus_late_holes_1);
+		audio_stop_sound(mus_late_holes_2);
+		audio_stop_sound(mus_title_screen);
 		audio_play_sound(snd_player_death, 0, false);
 		if instance_exists(obj_golf_kart) {
 			obj_golf_kart.controllable = 0;
