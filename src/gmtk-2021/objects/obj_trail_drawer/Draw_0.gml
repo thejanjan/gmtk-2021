@@ -40,7 +40,7 @@ draw_set_color(c_white);
 draw_surface_ext(tread_surface, 0, 0, 1, 1, 0, c_white, 0.2);
 
 // Figuring out hole sizes
-var lesser_face_grind_threshhold = 5;
+var lesser_face_grind_threshhold = 4.5;
 var face_grind_threshhold = 15;
 var min_brushstroke_size = 3;
 
