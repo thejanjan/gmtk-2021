@@ -12,6 +12,8 @@ if hit_by_club() {
 	
 	var base_damage = obj_golfer.current_speed + obj_golfer.club_base_damage;
 	enemy_take_damage(base_damage * get_player_damage_multiplier());
+	
+	audio_play_sound(snd_enemy_smacked, 0, false);
 }
 
 // This would be in the fire but you can't freaking access the take damage script from there...

@@ -10,8 +10,8 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "snd_enemy_smacked",
-  "duration": 0.0,
+  "soundFile": "snd_enemy_smacked.wav",
+  "duration": 0.193481,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
