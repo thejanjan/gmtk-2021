@@ -49,6 +49,39 @@ HOLE_FLAGS_PER_HOLE = 0.5 * HOLE_MULTIPLY;
 MAX_FLAGS = 18;
 FLAG_OFFSET = 230;
 
+ENEMY_PER_LENGTH = 2;
+ENEMY_PER_LENGTH_PER_HOLE = 0.4 * HOLE_MULTIPLY;
+MAX_ENEMY_PER_LENGTH = 4;
+ENEMY_OFFSET = 200;
+GRACE_RADIUS = 350;
+
+DIFFICULTY_PER_LENGTH = 1;
+DIFFICULTY_PER_LENGTH_PER_HOLE = 0.65 * HOLE_MULTIPLY;
+HORDE_CHANCE = 0;
+HORDE_CHANCE_PER_HOLE = 0.015 * HOLE_MULTIPLY;
+MAX_HORDE_CHANCE = 0.3;
+
+if random(1) < min(HORDE_CHANCE + (CURRENT_HOLE * HORDE_CHANCE_PER_HOLE), MAX_HORDE_CHANCE) {
+	ENEMY_PER_LENGTH_PER_HOLE *= 3;
+	DIFFICULTY_PER_LENGTH_PER_HOLE /= 2;
+}
+
+/*
+ENEMY_PER_LENGTH = 1;
+ENEMY_PER_LENGTH_PER_HOLE = 0.2 * HOLE_MULTIPLY;
+MAX_ENEMY_PER_LENGTH = 4;
+ENEMY_OFFSET = 200;
+
+enemy_difficulties = split_into_random_summands(current_difficulty, max_enemies_spawned_per_wave);
+var enemies_to_spawn = array_length_1d(enemy_difficulties);
+for (var i=0; i<enemies_to_spawn; i++)
+{
+	var enemy_type = get_enemy_from_difficulty(enemy_difficulties[i]);
+	instance_create_layer(64 + 64*i, 64, instance_layer_id, enemy_type);
+}
+current_difficulty += difficulty_increase_per_wave;
+*/
+
 ENABLE_TWISTS = true;
 ENABLE_CURVES = false;
 ENABLE_NODES = false;
@@ -277,6 +310,48 @@ if FURTHEST_EXISTS {
 	}
 	instance_create_layer(_x, _y, layer, obj_powerup_spawn_point);
 }
+
+// spawn the player
+SPAWN_OFFSET = 100;
+instance_create_layer(	START_VECTOR[0] + (choose(1, -1) * irandom(SPAWN_OFFSET)), START_VECTOR[1] + (choose(1, -1) * irandom(SPAWN_OFFSET)),
+						layer, obj_golf_kart)
+
+// Spawn enemy
+CURRENT_ENEMY_COUNT			= min(floor(ENEMY_PER_LENGTH + (CURRENT_HOLE * ENEMY_PER_LENGTH_PER_HOLE)), MAX_ENEMY_PER_LENGTH);
+CURRENT_DIFFICULTY_COUNT	= floor(DIFFICULTY_PER_LENGTH + (CURRENT_HOLE * DIFFICULTY_PER_LENGTH_PER_HOLE))
+//DIFFICULTY_PER_LENGTH = 1;
+//DIFFICULTY_PER_LENGTH_PER_HOLE = 0.35 * HOLE_MULTIPLY;
+for (var i = 0; i < TOTAL_PATH_LENGTH - 1; i++) {
+	var enemy_difficulties = split_into_random_summands(CURRENT_DIFFICULTY_COUNT, CURRENT_ENEMY_COUNT);
+	var enemies_to_spawn = array_length(enemy_difficulties);
+	for (var o = 0; o < enemies_to_spawn; o++) {
+		var spawn_vec = vector_random_between(TOTAL_PATH[i], TOTAL_PATH[i + 1], 0, 1)
+		var _x = spawn_vec[0] + (choose(-1, 1) * irandom(ENEMY_OFFSET));
+		var _y = spawn_vec[1] + (choose(-1, 1) * irandom(ENEMY_OFFSET));
+		if vector_distance([_x, _y], [obj_golf_kart.x, obj_golf_kart.y]) < GRACE_RADIUS continue;
+		
+		var enemy_type = get_enemy_from_difficulty(enemy_difficulties[o]);
+		instance_create_layer(_x, _y, layer, enemy_type);							
+	}
+}
+
+
+/*ENEMY_PER_LENGTH = 1;
+ENEMY_PER_LENGTH_PER_HOLE = 0.2 * HOLE_MULTIPLY;
+MAX_ENEMY_PER_LENGTH = 4;
+ENEMY_OFFSET = 200;
+
+
+enemy_difficulties = split_into_random_summands(current_difficulty, max_enemies_spawned_per_wave);
+var enemies_to_spawn = array_length_1d(enemy_difficulties);
+for (var i=0; i<enemies_to_spawn; i++)
+{
+	var enemy_type = get_enemy_from_difficulty(enemy_difficulties[i]);
+	instance_create_layer(64 + 64*i, 64, instance_layer_id, enemy_type);
+}
+current_difficulty += difficulty_increase_per_wave;
+
+
 // FURTHEST_VECTOR = TOTAL_PATH[BEST_INDEX];
 // GOAL_VECTOR = TOTAL_PATH[TOTAL_PATH_LENGTH - 1];
 
@@ -286,10 +361,7 @@ HOLE_FLAGS_PER_HOLE = 0.25 * HOLE_MULTIPLY;
 MAX_FLAGS = 18;
 FLAG_OFFSET = 270;
 */
-// spawn the player
-SPAWN_OFFSET = 100;
-instance_create_layer(	START_VECTOR[0] + (choose(1, -1) * irandom(SPAWN_OFFSET)), START_VECTOR[1] + (choose(1, -1) * irandom(SPAWN_OFFSET)),
-						layer, obj_golf_kart)
+
 
 // music handler
 if CURRENT_HOLE = 1 {

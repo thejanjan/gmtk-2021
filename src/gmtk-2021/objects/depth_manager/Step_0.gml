@@ -19,11 +19,12 @@ with (all) {
 				depth = -obj_golfer.y - 100;
 			}
 			fuck;
-		case gui_bars:
-			depth = -100000;
+		case obj_rising_text:
+			depth = -200000;
 			fuck;
+		case gui_bars:
 		case hp_bar:
-			depth = -100000;
+			depth = -1000000;
 			fuck;
 		case obj_fire_trail:
 			depth = 1;
