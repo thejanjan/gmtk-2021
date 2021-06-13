@@ -1,7 +1,8 @@
 /// @description Debug, draw path
 
-if new_keyboard_check_pressed(global.binding_debug_two) room_restart();
-
+if new_keyboard_check_pressed(global.binding_debug_two) {
+	hp_deal_damage(3);
+}
 exit;
 
 draw_set_color(c_white);

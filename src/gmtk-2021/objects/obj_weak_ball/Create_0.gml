@@ -17,6 +17,11 @@ image_speed = 0;
 image_index = get_ball_image_index();
 vanish_duration = 30;
 
+weak = 0; // Weak is used for split balls
+real_y = 0;
+real_yspeed = 0;
+real_gravity = 0.37;
+
 weak = 1; // Weak is used for split balls
 image_xscale = 0.5;
 image_yscale = 0.5;

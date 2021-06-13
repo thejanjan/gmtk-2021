@@ -5,6 +5,9 @@
 with (all) {
 	
 	switch (object_index) {
+		case obj_death_screen:
+			depth = -10000000;
+			break;
 		case obj_ball_letter:
 			depth = -10000;
 			fuck;
