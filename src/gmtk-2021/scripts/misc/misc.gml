@@ -240,13 +240,14 @@ function regen_grass() {
 
 function spawn_trees() {
 	var map_id = layer_tilemap_get_id("layer_dark");
-	var TILE_WIDTH = [64, 48];
+	var tile_mult = 1;
+	var TILE_WIDTH = [64 * tile_mult, 48 * tile_mult];
 	var x_steps = ceil(room_width / TILE_WIDTH[0]);
 	var y_steps = ceil(room_height / TILE_WIDTH[1]);
 	var flip = 0;
 	for (var i = 0; i < x_steps; i += 1) {
 		for (var o = 0; o < y_steps; o += 1) {
-			if (i + o) mod 2 continue;
+			// if (i + o) mod 2 continue;
 			var tile_id = tilemap_get(map_id, i, o);
 			var offset = [-1, -1];
 			var move_amt = 120;

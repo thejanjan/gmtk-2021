@@ -32,12 +32,16 @@ NODE_OFFSET_PER_HOLE = 0.25 * HOLE_MULTIPLY;
 MAX_NODE_OFFSET = 16;
 FURTHEST_VECTOR_MAXIMUM = 1500;
 FURTHEST_VECTOR_PER_HOLE = 75 * HOLE_MULTIPLY;
-OPENING_HOLES_WITH_ITEMS = 5;
+OPENING_HOLES_WITH_ITEMS = 2;
 
-GOLFBALLS_PER_LENGTH = 2;
-GOLFBALLS_PER_LENGTH_PER_HOLE = 0.5 * HOLE_MULTIPLY;
-MAX_GOLFBALLS_PER_LENGTH = 8;
-GOLFBALL_OFFSET = 50;
+DARK_REMOVE_RADIUS = 400;
+LIGHT_REMOVE_RADIUS = 250;
+DISTANCE_BETWEEN_TILE_REMOVAL = 130;
+
+GOLFBALLS_PER_LENGTH = 1;
+GOLFBALLS_PER_LENGTH_PER_HOLE = 0.3 * HOLE_MULTIPLY;
+MAX_GOLFBALLS_PER_LENGTH = 3;
+GOLFBALL_OFFSET = 300;
 MIN_GOLFBALL_DISTANCE = 24;
 
 ENABLE_TWISTS = true;
@@ -184,12 +188,9 @@ for (var i = 0; i < TOTAL_PATH_LENGTH; i++) {
 // Generate aesthetic tiles and trees.
 regen_grass();
 
-DARK_REMOVE_RADIUS = 400;
-LIGHT_REMOVE_RADIUS = 250;
-DISTANCE_BETWEEN_REMOVAL = 100;
 for (var i = 0; i < TOTAL_PATH_LENGTH - 1; i++) {
 	var dist_between_points = vector_magnitude(vector_subtract(TOTAL_PATH[i + 1], TOTAL_PATH[i]));
-	var points_to_check = ceil(dist_between_points / DISTANCE_BETWEEN_REMOVAL);
+	var points_to_check = ceil(dist_between_points / DISTANCE_BETWEEN_TILE_REMOVAL);
 	var percentage_to_check = 1 / points_to_check;
 	for (var o = 0; o < points_to_check; o++) {
 		var remove_vec = vector_between(TOTAL_PATH[i], TOTAL_PATH[i + 1], o * percentage_to_check)
