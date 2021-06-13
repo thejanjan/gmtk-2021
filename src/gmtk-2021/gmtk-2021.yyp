@@ -66,6 +66,7 @@
     {"id":{"name":"obj_ball","path":"objects/obj_ball/obj_ball.yy",},"order":3,},
     {"id":{"name":"obj_evil_golf_kart","path":"objects/obj_evil_golf_kart/obj_evil_golf_kart.yy",},"order":3,},
     {"id":{"name":"spr_enemy_zombie","path":"sprites/spr_enemy_zombie/spr_enemy_zombie.yy",},"order":14,},
+    {"id":{"name":"obj_top_transition","path":"objects/obj_top_transition/obj_top_transition.yy",},"order":30,},
     {"id":{"name":"snd_flame2","path":"sounds/snd_flame2/snd_flame2.yy",},"order":8,},
     {"id":{"name":"obj_flake","path":"objects/obj_flake/obj_flake.yy",},"order":29,},
     {"id":{"name":"tileset_light2","path":"tilesets/tileset_light2/tileset_light2.yy",},"order":12,},
