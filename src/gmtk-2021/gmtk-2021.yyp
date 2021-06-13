@@ -72,6 +72,7 @@
     {"id":{"name":"misc","path":"scripts/misc/misc.yy",},"order":5,},
     {"id":{"name":"tileset_light","path":"tilesets/tileset_light/tileset_light.yy",},"order":4,},
     {"id":{"name":"gameplay_testing","path":"rooms/gameplay_testing/gameplay_testing.yy",},"order":0,},
+    {"id":{"name":"snd_horn","path":"sounds/snd_horn/snd_horn.yy",},"order":14,},
     {"id":{"name":"rm_unit_tests","path":"rooms/rm_unit_tests/rm_unit_tests.yy",},"order":1,},
     {"id":{"name":"mus_early_holes","path":"sounds/mus_early_holes/mus_early_holes.yy",},"order":1,},
     {"id":{"name":"obj_fire_trail","path":"objects/obj_fire_trail/obj_fire_trail.yy",},"order":21,},
