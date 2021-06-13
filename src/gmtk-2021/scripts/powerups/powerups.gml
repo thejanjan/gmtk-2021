@@ -33,6 +33,27 @@ function apply_powerup(_powerup_index) {
 		case 1:
 			additive_increase_player_acceleration(75.0);
 			return;
+		case 2:
+			// Chili pepper?
+			return;
+		case 3:
+			hp_increase_maxhp(1);
+			return;
+		case 4:
+			// Shake the earth.
+			return;
+		case 5:
+			// Explosive holes.
+			return;
+		case 6:
+			// Triple shot!
+			return;
+		case 7:
+			// Magnet???
+			return;
+		case 8:
+			// Growth spurt??? wtf?
+			return;
 		default:
 			show_message("WTF did you do??? AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 			return;

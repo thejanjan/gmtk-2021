@@ -5,4 +5,4 @@ physics_fixture_bind(fixture, id);
 physics_fixture_delete(fixture);
 
 image_speed = 0; // Image index corresponds to powerup type.
-image_index = 1; // Look, it's breakfast.
+image_index = 2; // Look, it's breakfast.
