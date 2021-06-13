@@ -1,6 +1,6 @@
 {
   "option_windows_display_name": "Golf 2",
-  "option_windows_executable_name": "${project_name}.exe",
+  "option_windows_executable_name": "golf2.exe",
   "option_windows_version": "1.0.0.0",
   "option_windows_company_info": "",
   "option_windows_product_info": "",
