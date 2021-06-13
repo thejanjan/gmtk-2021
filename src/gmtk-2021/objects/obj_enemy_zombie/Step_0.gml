@@ -30,7 +30,12 @@ if current_state == state.eating {
 }
 // Not eating and don't know where to go
 else if !instance_exists(target_ball) {
-	target_ball = instance_find(obj_ball, irandom(instance_number(obj_ball) - 1));
+	if instance_number(obj_ball) > 1 {
+		target_ball = instance_find(obj_ball, irandom(instance_number(obj_ball) - 1));
+	}
+	else {
+		instance_create_layer(target_ball_xstart, target_ball_ystart, instance_layer, obj_ball);
+	}
 	target_ball_xstart = target_ball.xstart;
 	target_ball_ystart = target_ball.ystart;
 }
