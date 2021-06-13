@@ -26,7 +26,7 @@ function reset_powerup_pool() {
 function get_pool_powerup() {
 	var list_size = ds_list_size(global.powerup_pool_list);
 	if list_size > 0 {
-		var list_index = irandom(list_size);
+		var list_index = irandom(list_size-1);
 		var powerup_index = ds_list_find_value(global.powerup_pool_list, list_index);
 		ds_list_delete(global.powerup_pool_list, list_index);
 		return powerup_index;
