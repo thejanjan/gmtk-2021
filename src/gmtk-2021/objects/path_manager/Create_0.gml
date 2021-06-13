@@ -9,7 +9,7 @@ audio_stop_sound(snd_engine);
 
 // adjustment variables
 HOLE_MULTIPLY = 2; // Overall per hole multiplier
-BORDER = 400;
+BORDER = 700;
 MINIMUM_LENGTH = 1500;
 LENGTH_PER_HOLE = 500 * HOLE_MULTIPLY;
 TWISTS = 1;
