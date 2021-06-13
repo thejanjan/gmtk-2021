@@ -80,7 +80,7 @@ function enemy_take_damage(_amount) {
 	// instance_exists(obj_golf_kart) && point_distance(x, y, obj_golf_kart.x, obj_golf_kart.y) < 1000
 	var in_x = x > camera_get_view_x(view_camera[0]) && x < camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]);
 	var in_y = y > camera_get_view_y(view_camera[0]) && y < camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]);
-	if _amount > 0 && in_x && in_y {
+	if _amount > 0.9 && in_x && in_y {
 		var text = instance_create_layer(x, y, instance_layer, obj_rising_text);
 		text.str = "-" + string(ceil(_amount));
 		text.col = c_red;
