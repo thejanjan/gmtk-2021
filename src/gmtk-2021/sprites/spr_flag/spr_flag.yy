@@ -95,7 +95,7 @@
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
     "xorigin": 18,
-    "yorigin": 116,
+    "yorigin": 117,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_flag","path":"sprites/spr_flag/spr_flag.yy",},
