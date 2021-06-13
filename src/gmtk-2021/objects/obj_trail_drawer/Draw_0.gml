@@ -19,7 +19,7 @@ if point_distance(0, 0, obj_golf_kart.phy_speed_x, obj_golf_kart.phy_speed_y) >=
 	var dir = -obj_golf_kart.phy_rotation+(shortangle/2);
 	var radius = 3;
 	
-	if global.player_fire_trails >= 1 or true
+	if global.player_fire_trails >= 1
 	{
 		instance_create_depth(obj_golf_kart.x+lengthdir_x(dis, dir),obj_golf_kart. y+lowering+lengthdir_y(dis, dir), 1, obj_fire_trail);
 	};
