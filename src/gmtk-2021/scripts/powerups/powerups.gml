@@ -102,6 +102,7 @@ function collect_powerup(_powerup_index) {
 	var text = instance_create_layer(x, y, instance_layer, obj_rising_text);
 	text.str = get_powerup_name(_powerup_index);
 	text.col = c_blue;
+	audio_play_sound(snd_powerup, 0, false);
 	apply_powerup(_powerup_index);
 }
 
