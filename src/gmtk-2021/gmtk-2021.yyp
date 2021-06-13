@@ -57,6 +57,7 @@
     {"id":{"name":"spr_enemy_zombie","path":"sprites/spr_enemy_zombie/spr_enemy_zombie.yy",},"order":14,},
     {"id":{"name":"snd_flame2","path":"sounds/snd_flame2/snd_flame2.yy",},"order":8,},
     {"id":{"name":"tileset_light2","path":"tilesets/tileset_light2/tileset_light2.yy",},"order":12,},
+    {"id":{"name":"spr_newspaper","path":"sprites/spr_newspaper/spr_newspaper.yy",},"order":26,},
     {"id":{"name":"obj_unit_tests","path":"objects/obj_unit_tests/obj_unit_tests.yy",},"order":5,},
     {"id":{"name":"spr_bggreen2","path":"sprites/spr_bggreen2/spr_bggreen2.yy",},"order":14,},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},"order":2,},
