@@ -35,6 +35,10 @@ function get_ball_image_index() {
 	return result;
 }
 
+function get_ball_base_damage() {
+	return 1 + global.growth_spurt * 3;
+}
+
 function get_ball_shadow_index() {
 	var result = global.growth_spurt;
 	return 6 + result;

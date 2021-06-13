@@ -35,6 +35,38 @@ function nearest_active_hole() {
 	return nearest;
 }
 
+function nearest_alive_enemy() {
+	// Try to find an alive enemy
+	var nearest = 0;
+	for (var i = 0; i < instance_number(obj_enemy_base); i++) {
+		if !instance_exists(obj_enemy_base) break;
+		var potential_enemy = instance_nearest(x, y, obj_enemy_base);
+		if obj_enemy_base.hp > 0 {
+			nearest = potential_enemy;
+			break;
+		}
+		instance_deactivate_object(potential_enemy);
+	}
+	// Re-activate each enemy
+	instance_activate_object(potential_enemy);
+	// Return our answer
+	return nearest;
+}
+
+function init_current_velocity() {
+	previous_pos = [x, y];
+	current_pos = [x, y];
+	current_speed = 0;
+	current_velocity = [0, 0];
+}
+
+function update_current_velocity() {
+	current_velocity = vector_subtract(current_pos, previous_pos);
+	current_speed = vector_magnitude(current_velocity);
+	previous_pos = current_pos;
+	current_pos = [x, y];
+}
+
 function enemy_take_damage(_amount) {
 	hp -= _amount;
 	if hp <= 0 {
