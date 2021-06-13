@@ -14,6 +14,7 @@ if hit_by_club() {
 		hit_timer = 5;
 		var earth_damage = get_golf_the_earth_damage();
 		if earth_damage > 0 {
+			global.camera_shake = 10;
 			create_aoe_damage([x, y], 1000, earth_damage);
 		}
 	}

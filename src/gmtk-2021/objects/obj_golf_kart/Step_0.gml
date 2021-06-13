@@ -92,3 +92,9 @@ if point_distance(0, 0, obj_golfer.phy_speed_x, obj_golfer.phy_speed_y) >= 8
     part_particles_create(hudson_dirt_face_particle_system, obj_golfer.x, obj_golfer.y+lowering, hudson_dirt_face_particle_type, 1);
     part_particles_create(deeper_hudson_dirt_face_particle_system, obj_golfer.x, obj_golfer.y+lowering, deeper_hudson_dirt_face_particle_type, 1);
 }; */
+
+if global.camera_shake > 0 {
+	var xoffset = random_range(-global.camera_shake, global.camera_shake);
+	var yoffset = random_range(-global.camera_shake, global.camera_shake);
+	camera_set_view_pos(view_camera[0], x + xoffset, y + yoffset);
+}

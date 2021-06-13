@@ -99,3 +99,4 @@ part_type_alpha1(deeper_hudson_dirt_face_particle_type,1);
 part_type_life(deeper_hudson_dirt_face_particle_type, 60*60*1, 60*60*1);*/
 
 instance_create_layer(0, 0, layer,obj_trail_drawer);
+global.camera_shake = 0;
