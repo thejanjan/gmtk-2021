@@ -10,4 +10,4 @@ maxhp = 3;
 invulnerable_length = 100;
 invulnerable = 0;
 ball_letters = [];
-timer = -3;
+timer = -1;

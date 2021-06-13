@@ -77,7 +77,7 @@ for (var i = 0; i < string_length(draw_str); i++) {
 	//if instance_exists(obj_golf_kart.dummy)
 		//timer = -2;
 
-if timer >= -1 timer++;
+if timer >= -4 timer++;
 var ball_count = array_length(ball_letters);
 if timer = 0 {
 	var ballstring = "Hole ";
