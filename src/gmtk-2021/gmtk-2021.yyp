@@ -4,6 +4,7 @@
     {"id":{"name":"spr_crosshair","path":"sprites/spr_crosshair/spr_crosshair.yy",},"order":4,},
     {"id":{"name":"spr_bgsand","path":"sprites/spr_bgsand/spr_bgsand.yy",},"order":3,},
     {"id":{"name":"spr_evil_golfer","path":"sprites/spr_evil_golfer/spr_evil_golfer.yy",},"order":20,},
+    {"id":{"name":"glyph","path":"sprites/glyph/glyph.yy",},"order":25,},
     {"id":{"name":"gui_bars","path":"objects/gui_bars/gui_bars.yy",},"order":0,},
     {"id":{"name":"obj_evil_golfer","path":"objects/obj_evil_golfer/obj_evil_golfer.yy",},"order":7,},
     {"id":{"name":"obj_dynamicparent","path":"objects/obj_dynamicparent/obj_dynamicparent.yy",},"order":0,},
