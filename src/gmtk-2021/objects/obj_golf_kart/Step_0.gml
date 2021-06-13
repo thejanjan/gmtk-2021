@@ -67,23 +67,25 @@ if next_level_timer > 0 {
 	exit;
 }
 
-var control_vector = [0, 0];
-if new_keyboard_check(global.binding_right) {
-	control_vector[0] += 1;
-}
-if new_keyboard_check(global.binding_left) {
-	control_vector[0] -= 1;
-}
-if new_keyboard_check(global.binding_up) {
-	control_vector[1] -= 1;
-}
-if new_keyboard_check(global.binding_down) {
-	control_vector[1] += 1;
-}
-control_vector = vector_normalize(control_vector); // Don't make the same mistake as Marble Blast...
+if controllable == 1 {
+	var control_vector = [0, 0];
+	if new_keyboard_check(global.binding_right) {
+		control_vector[0] += 1;
+	}
+	if new_keyboard_check(global.binding_left) {
+		control_vector[0] -= 1;
+	}
+	if new_keyboard_check(global.binding_up) {
+		control_vector[1] -= 1;
+	}
+	if new_keyboard_check(global.binding_down) {
+		control_vector[1] += 1;
+	}
+	control_vector = vector_normalize(control_vector); // Don't make the same mistake as Marble Blast...
 
-var acceleration_vector = vector_scale(control_vector, get_player_acceleration());
-physics_apply_impulse(x, y, acceleration_vector[0], acceleration_vector[1]);
+	var acceleration_vector = vector_scale(control_vector, get_player_acceleration());
+	physics_apply_impulse(x, y, acceleration_vector[0], acceleration_vector[1]);
+}
 
 // Only update the cart direction if it's moving significantly fast
 // This stops it completely changing direction due to micro-adjustments in small numbers as it slows to a stop
