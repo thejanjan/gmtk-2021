@@ -54,6 +54,7 @@
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},"order":2,},
     {"id":{"name":"obj_enemy_zombie","path":"objects/obj_enemy_zombie/obj_enemy_zombie.yy",},"order":4,},
     {"id":{"name":"sayoris_job","path":"objects/sayoris_job/sayoris_job.yy",},"order":6,},
+    {"id":{"name":"snd_drag","path":"sounds/snd_drag/snd_drag.yy",},"order":12,},
     {"id":{"name":"spr_tree","path":"sprites/spr_tree/spr_tree.yy",},"order":8,},
     {"id":{"name":"obj_wavegen","path":"objects/obj_wavegen/obj_wavegen.yy",},"order":2,},
     {"id":{"name":"path_manager","path":"objects/path_manager/path_manager.yy",},"order":0,},
