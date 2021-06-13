@@ -1,6 +1,6 @@
 /// @description Build the path array
 
-CURRENT_HOLE++;
+CURRENT_HOLE += 13;
 
 if !instance_exists(obj_phys_control)
 	instance_create_layer(0, 0, layer, obj_phys_control);
