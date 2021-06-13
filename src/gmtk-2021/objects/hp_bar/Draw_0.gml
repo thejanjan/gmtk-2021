@@ -10,7 +10,7 @@ if debug {
 
 // Adjustment variables
 var extra_dist = 16;
-var rise_increase = 4;
+var rise_increase = 12;
 var invulnerable_offset_width = 2;
 var dist_between_my_golf_orbs = 28;
 var index_bounce_offset = 40;
@@ -20,7 +20,7 @@ var bounce_speed = 6000; // Less is faster
 if invulnerable invulnerable--;
 
 // Calculate position
-if visible y_increase /= rise_increase;
+if visible y_increase *= 0.9;
 var ypos = camera_get_view_y(view_camera[0]) + view_hport[0] + y_increase - extra_dist;
 var xpos = camera_get_view_x(view_camera[0]) + gui_bars.bar_width + extra_dist;
 var invulnerable_offset = (invulnerable / invulnerable_length) * invulnerable_offset_width;

@@ -32,6 +32,9 @@ with (all) {
 		case obj_trail_drawer:
 			depth = 2;
 			fuck;
+		case obj_top_transition:
+			depth = -100000042;
+			fuck;
 		default:
 			depth = -y;
 			fuck;
