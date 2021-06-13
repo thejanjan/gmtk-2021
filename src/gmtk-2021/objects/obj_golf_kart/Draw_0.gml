@@ -3,8 +3,9 @@
 function kart_sprite_index() {
 	slice = 360 / 16;
 	direction_val = round((current_direction mod 360) / slice);
-	draw_text(300,20,string(current_direction)+", "+string(direction_val));
-	draw_text(300,40,string(dir_vector[0])+", "+string(dir_vector[1]));
+	draw_text_new(300,20,string(current_direction)+"/"+string(direction_val), c_lime, c_blue, 1, 48);
+	draw_text_new(300,50,string(dir_vector[0])+"/"+string(dir_vector[1]), c_red, c_black, 0.5, 24);
+	draw_text_new(300,80,"the quick brown fox jumped over the lazy dog", c_black, c_white, 0.33, 48/3);
 	// draw_text(300,60,"speed: " + string(phy_speed_x) + ", " + string(phy_speed_y));
 	// 0 is right, 4 is up, 8 is left, 12 is down
 	switch (direction_val) {
