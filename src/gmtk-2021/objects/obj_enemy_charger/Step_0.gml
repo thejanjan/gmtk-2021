@@ -6,9 +6,9 @@ if instance_exists(path_manager)
 if instance_exists(obj_golfer) {
 	var impulse;
 	if current_state == charger_state.charging {
-		impulse = 150;
+		impulse = 170;
 	} else {
-		impulse = 30;
+		impulse = 25;
 	}
-	impulse_towards([obj_golfer.x, obj_golfer.y], 15);
+	impulse_towards([obj_golfer.x, obj_golfer.y], impulse);
 }
