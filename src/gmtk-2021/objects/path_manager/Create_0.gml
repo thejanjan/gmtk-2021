@@ -261,6 +261,7 @@ for (var i = 0; i < TOTAL_PATH_LENGTH - 1; i++) {
 		instance_create_layer(_x, _y, layer, obj_hole);							
 	}
 }
+CURRENT_HOLE_COUNT = instance_number(obj_hole);
 
 // Spawn end flag
 instance_create_layer(GOAL_VECTOR[0], GOAL_VECTOR[1], layer, obj_end_hole);
