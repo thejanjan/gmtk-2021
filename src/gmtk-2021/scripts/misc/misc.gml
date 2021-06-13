@@ -58,6 +58,7 @@ function debug_string(_array) {
 }
 
 enum GRASS {
+	empty = 0,
 	full_a = 1,
 	full_b = 2,
 	full_c = 3,
@@ -69,10 +70,10 @@ enum GRASS {
 	only_down_right = 9,
 	only_down_left = 10,
 	only_right = 11,
-	only_bottom = 12,
-	only_top_right = 13,
-	only_top_left = 14,
-	only_top = 15,
+	only_down = 12,
+	only_up_right = 13,
+	only_up_left = 14,
+	only_up = 15,
 	left_right = 16,
 	up_down = 17,
 	blank_a = 18,
@@ -87,12 +88,53 @@ enum GRASS {
 	up_left_c = 27
 }
 
+function set_grass_tile_matrix(_tile_x, _tile_y, _map_id, _array) {
+	// Sets all grass tiles around me.
+	// Sets center to none, since that's what it will generally be.
+	tilemap_set(_map_id, GRASS.empty, _tile_x, _tile_y);
+	
+	tilemap_set(_map_id, _array[0], _tile_x + 1, _tile_y + 0);
+	tilemap_set(_map_id, _array[1], _tile_x + 1, _tile_y + 1);
+	tilemap_set(_map_id, _array[2], _tile_x + 0, _tile_y + 1);
+	tilemap_set(_map_id, _array[3], _tile_x - 1, _tile_y + 1);
+	tilemap_set(_map_id, _array[4], _tile_x - 1, _tile_y + 0);
+	tilemap_set(_map_id, _array[5], _tile_x - 1, _tile_y - 1);
+	tilemap_set(_map_id, _array[6], _tile_x + 0, _tile_y - 1);
+	tilemap_set(_map_id, _array[7], _tile_x + 1, _tile_y - 1);
+}
+
+/*function return_adjacent_grass_tiles(_tile_x, _tile_y, _map_id) {
+	// Returns an array of 8, for each direction.
+	// Right, up right, up, up left, left, down left, down, down right.
+	return	   [sign(tilemap_get(_map_id, _tile_x + 1, _tile_y + 0)),
+				sign(tilemap_get(_map_id, _tile_x + 1, _tile_y + 1)),
+				sign(tilemap_get(_map_id, _tile_x + 0, _tile_y + 1)),
+				sign(tilemap_get(_map_id, _tile_x - 1, _tile_y + 1)),
+				sign(tilemap_get(_map_id, _tile_x - 1, _tile_y + 0)),
+				sign(tilemap_get(_map_id, _tile_x - 1, _tile_y - 1)),
+				sign(tilemap_get(_map_id, _tile_x + 0, _tile_y - 1)),
+				sign(tilemap_get(_map_id, _tile_x + 1, _tile_y - 1))]
+}*/
+
 function remove_grass_tile(_x, _y, _layer) {
 	var TILE_WIDTH = [64, 48];
-	var TILE_POS = [floor(_x / TILE_WIDTH[0]), floor(_y / TILE_WIDTH[1])]
+	var TX = floor(_x / TILE_WIDTH[0]);
+	var TY = floor(_y / TILE_WIDTH[1]);
 	
 	var lay_id = layer_get_id(_layer);
 	var map_id = layer_tilemap_get_id(lay_id);
-	var data = 0; //tilemap_get(map_id, 0, 0);
-	tilemap_set(map_id, data, TILE_POS[0], TILE_POS[1]);
+	
+	// var adjacent = return_adjacent_grass_tiles(TX, TY, map_id);
+	var tile = tilemap_get(map_id, TX, TY)
+	var result = [-1];
+	
+	switch (tile) {
+		case GRASS.full_a:
+		case GRASS.full_b:
+		case GRASS.full_c:
+			result = [GRASS.only_left, GRASS.down_left, GRASS.only_down, GRASS.down_right, GRASS.only_right, GRASS.up_right, GRASS.only_up, GRASS.only_up_left];
+			fuck;
+	}
+	if result[0] != -1
+		set_grass_tile_matrix(TX, TY, map_id, result);
 }
