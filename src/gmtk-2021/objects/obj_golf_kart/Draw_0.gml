@@ -31,7 +31,7 @@ function kart_sprite_index() {
 			return 3;
 		case 11:
 		case 13:
-			return 0;
+			return 1;
 		case 12:
 			return 0;
 	}
