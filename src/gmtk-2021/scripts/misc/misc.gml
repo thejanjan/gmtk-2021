@@ -476,3 +476,14 @@ function spawn_dandruff() {
 		}
 	}
 }
+
+function get_rising_text_val(_obj) {
+	// Returns -1 if not a number
+	try {
+		var rising_text_str = _obj.str;
+		var string_clip = string_delete(rising_text_str, 1, 1);
+		if string_clip = string(real(string_clip))
+			return real(string_clip);
+	}
+	return -1;
+}
