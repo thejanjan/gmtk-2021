@@ -1,6 +1,7 @@
 /// @description Put me in first room
 randomize();
 globalvar CURRENT_HOLE; CURRENT_HOLE = 0;
+globalvar CURRENT_FLAGS; CURRENT_FLAGS = 0;
 
 global.l_particle = layer_create(-10);
 
