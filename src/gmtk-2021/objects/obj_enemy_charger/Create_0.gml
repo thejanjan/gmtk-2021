@@ -9,5 +9,6 @@ enum charger_state {
 	charging
 }
 
+charge_frame = 0;
 current_state = charger_state.idle;
 alarm[0] = irandom(180);

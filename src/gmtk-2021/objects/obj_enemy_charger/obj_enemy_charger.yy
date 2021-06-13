@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_enemy_wimp",
-    "path": "sprites/spr_enemy_wimp/spr_enemy_wimp.yy",
+    "name": "spr_football",
+    "path": "sprites/spr_football/spr_football.yy",
   },
   "solid": false,
   "visible": true,
