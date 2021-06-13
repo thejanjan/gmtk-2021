@@ -61,6 +61,7 @@
     {"id":{"name":"spr_hp","path":"sprites/spr_hp/spr_hp.yy",},"order":12,},
     {"id":{"name":"obj_phys_control","path":"objects/obj_phys_control/obj_phys_control.yy",},"order":4,},
     {"id":{"name":"snd_engine","path":"sounds/snd_engine/snd_engine.yy",},"order":0,},
+    {"id":{"name":"spr_football","path":"sprites/spr_football/spr_football.yy",},"order":8,},
     {"id":{"name":"spr_chain","path":"sprites/spr_chain/spr_chain.yy",},"order":7,},
     {"id":{"name":"obj_enemy_base","path":"objects/obj_enemy_base/obj_enemy_base.yy",},"order":0,},
     {"id":{"name":"spr_drone_shadow","path":"sprites/spr_drone_shadow/spr_drone_shadow.yy",},"order":7,},
