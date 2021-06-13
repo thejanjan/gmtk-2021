@@ -9,6 +9,7 @@ if alpha > 0.0 {
 y -= 3;
 
 if instance_number(obj_rising_text) >= 2 {
+	if col != c_red exit;
 	var self_val = get_rising_text_val(self);
 	if self_val != -1 {
 		var check_dist = 16;
