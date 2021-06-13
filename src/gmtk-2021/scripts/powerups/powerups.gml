@@ -61,7 +61,7 @@ function apply_powerup(_powerup_index) {
 			additive_increase_player_acceleration(75.0);
 			return;
 		case 2:
-			// Chili pepper?
+			additive_increase_player_fire_trails(1);
 			return;
 		case 3:
 			hp_increase_maxhp(1);
