@@ -10,8 +10,8 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "snd_player_hurt",
-  "duration": 0.0,
+  "soundFile": "snd_player_hurt.wav",
+  "duration": 0.205727,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

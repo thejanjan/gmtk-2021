@@ -6,6 +6,7 @@ function hp_deal_damage(_hp){
 	if hp_bar.invulnerable > 0 return;
 	hp_bar.hp -= _hp;
 	hp_bar.invulnerable = hp_bar.invulnerable_length;
+	audio_play_sound(snd_player_hurt, 0, false);
 	if hp_bar.hp <= 0 hp_dead();
 }
 
