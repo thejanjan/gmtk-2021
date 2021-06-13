@@ -40,8 +40,9 @@ draw_set_color(c_white);
 draw_surface_ext(tread_surface, 0, 0, 1, 1, 0, c_white, 0.2);
 
 // Figuring out hole sizes
-var lesser_face_grind_threshhold = 7.5;
+var lesser_face_grind_threshhold = 5;
 var face_grind_threshhold = 15;
+var min_brushstroke_size = 3;
 
 var golfer_speed = min(20, point_distance(0, 0, obj_golfer.phy_speed_x, obj_golfer.phy_speed_y));
 var deep_hole_radius = (golfer_speed-lesser_face_grind_threshhold)*1;
@@ -56,7 +57,7 @@ surface_set_target( hole_surface );
 
 draw_set_color(make_color_rgb(59, 31, 4));
 
-if hole_radius > 0
+if hole_radius >= min_brushstroke_size
 {
     var lowering = 10;
 	draw_circle(obj_golfer.x, obj_golfer.y+lowering, hole_radius, false);
@@ -77,7 +78,7 @@ surface_set_target( deep_hole_surface );
 
 draw_set_color(make_color_rgb(39, 21, 4));
 draw_set_alpha(1);
-if deep_hole_radius > 0
+if deep_hole_radius >= min_brushstroke_size
 {
     var lowering = 10;
 	draw_circle(obj_golfer.x, obj_golfer.y+lowering, deep_hole_radius, false);
