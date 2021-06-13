@@ -7,12 +7,6 @@ if !instance_exists(obj_phys_control)
 
 audio_stop_sound(snd_engine);
 
-// music handler
-if CURRENT_HOLE = 1 {
-	if !audio_is_playing(mus_early_holes)
-	audio_play_sound(mus_early_holes, 1, true);
-}
-
 // adjustment variables
 HOLE_MULTIPLY = 2; // Overall per hole multiplier
 BORDER = 800;
@@ -182,6 +176,8 @@ for (var i = 0; i < TOTAL_PATH_LENGTH; i++) {
 // show_message("Current hole: "+string(CURRENT_HOLE)+"\n Path length: "+string(array_length(TOTAL_PATH))+"\n Path repr: "+path_string);
 
 // Destroy the top layer of tiles
+regen_grass();
+
 DARK_REMOVE_RADIUS = 400;
 LIGHT_REMOVE_RADIUS = 250;
 DISTANCE_BETWEEN_REMOVAL = 100;
@@ -200,6 +196,17 @@ for (var i = 0; i < TOTAL_PATH_LENGTH - 1; i++) {
 SPAWN_OFFSET = 100;
 instance_create_layer(	START_VECTOR[0] + (choose(1, -1) * irandom(SPAWN_OFFSET)), START_VECTOR[1] + (choose(1, -1) * irandom(SPAWN_OFFSET)),
 						layer, obj_golf_kart)
+
+// music handler
+if CURRENT_HOLE = 1 {
+	if !audio_is_playing(mus_early_holes)
+	audio_play_sound(mus_early_holes, 1, true);
+} else if CURRENT_HOLE = 4 {
+	audio_stop_sound(mus_early_holes);
+	if !audio_is_playing(mus_late_holes_1)
+	audio_play_sound(mus_late_holes_1, 1, true);
+}
+
 
 /* FURTHEST_VECTOR_MINIMUM = 20;
 FURTHEST_VECTOR_PER_HOLE = 20;

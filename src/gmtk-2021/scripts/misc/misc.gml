@@ -169,6 +169,7 @@ function grass_tile_update(_tile_x, _tile_y, _map_id) {
 	else if array_equals(a, [0, 0, 0, 1, 1, 1, 1, 0]) result = GRASS.only_down_left;
 	else if array_equals(a, [0, 0, 0, 0, 1, 1, 1, 1]) result = GRASS.only_down_left;
 	else if array_equals(a, [0, 0, 0, 0, 1, 1, 1, 0]) result = GRASS.only_down_left;
+	else if array_equals(a, [0, 1, 0, 0, 1, 1, 1, 0]) result = GRASS.only_down_left;
 	//////////////////////////////////////////////////////////////////////////
 	else if array_equals(a, [1, 1, 0, 0, 0, 1, 1, 1]) result = GRASS.only_down_right;
 	else if array_equals(a, [1, 0, 0, 0, 0, 1, 1, 1]) result = GRASS.only_down_right;
@@ -215,6 +216,20 @@ function remove_grass_tile_radius(_x, _y, _r, _layer) {
 			if vector_magnitude([(i - (x_steps / 2)) * 64, (o - (y_steps / 2)) * 48]) < _r
 			remove_grass_tile(	start_x + (i * TILE_WIDTH[0]),
 								start_y + (o * TILE_WIDTH[1]), _layer)
+		}
+	}
+}
+
+function regen_grass() {
+	var map_ids = [layer_tilemap_get_id("layer_dark"), layer_tilemap_get_id("layer_light")]; 
+	var TILE_WIDTH = [64, 48];
+	var x_steps = ceil(room_width / TILE_WIDTH[0]);
+	var y_steps = ceil(room_height / TILE_WIDTH[1]);
+	
+	for (var i = 0; i < x_steps; i += 1) {
+		for (var o = 0; o < y_steps; o += 1) {
+			tilemap_set(map_ids[0], choose(1, 2, 3), i, o);
+			tilemap_set(map_ids[1], choose(1, 2, 3), i, o);
 		}
 	}
 }
