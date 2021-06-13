@@ -20,6 +20,8 @@ function squash_n_stretch_transform(v) {
 	return [tx + x, ty + y];
 }
 
+draw_sprite(sprite_index, get_ball_shadow_index(), x, y);
+
 if (!phy_sleeping and os_browser != browser_not_a_browser) {
 	var hw = 12;
 	var hh = 12;

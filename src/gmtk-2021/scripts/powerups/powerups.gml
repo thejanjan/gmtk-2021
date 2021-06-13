@@ -35,6 +35,11 @@ function get_ball_image_index() {
 	return result;
 }
 
+function get_ball_shadow_index() {
+	var result = global.growth_spurt;
+	return 6 + result;
+}
+
 function update_image_index_for_all_balls() {
 	with(obj_ball) {
 		image_index = get_ball_image_index();
