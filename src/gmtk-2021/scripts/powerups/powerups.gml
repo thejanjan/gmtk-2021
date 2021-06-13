@@ -74,7 +74,7 @@ function get_explosive_hole_damage() {
 }
 
 function additive_increase_growth_spurt(_amount) {
-	global.growth_spurt = max(global.growth_spurt + _amount, 5);
+	global.growth_spurt = min(global.growth_spurt + _amount, 5);
 	update_image_index_for_all_balls();
 }
 
@@ -102,6 +102,7 @@ function collect_powerup(_powerup_index) {
 	var text = instance_create_layer(x, y, instance_layer, obj_rising_text);
 	text.str = get_powerup_name(_powerup_index);
 	text.col = c_blue;
+	audio_play_sound(snd_powerup, 0, false);
 	apply_powerup(_powerup_index);
 }
 
