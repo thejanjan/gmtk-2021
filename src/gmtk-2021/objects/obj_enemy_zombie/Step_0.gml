@@ -40,13 +40,13 @@ if (current_state == state.idle or current_state == state.moving) and instance_e
 	current_state = state.moving;
 	current_target_pos = [target_ball.x, target_ball.y];
 	var dir = vector_heading_to([x, y], current_target_pos);
-	var acceleration_vector = vector_scale(dir, 20);
+	var acceleration_vector = vector_scale(dir, 3);
 	physics_apply_impulse(x, y, acceleration_vector[0], acceleration_vector[1]);
 }
 // Eaten recently and wandering
 else if current_state == state.well_fed {
 	var dir = vector_heading_to([x, y], current_target_pos);
-	var acceleration_vector = vector_scale(dir, 30);
+	var acceleration_vector = vector_scale(dir, 3);
 	physics_apply_impulse(x, y, acceleration_vector[0], acceleration_vector[1]);
 }
 // Fallback
@@ -55,7 +55,7 @@ else if current_state != state.eating and current_state != state.dying {
 }
 
 // Are we there yet??? Mom??????
-if vector_magnitude(vector_heading_to([x, y], current_target_pos)) <= 32 {
+if point_distance(x, y, current_target_pos[0], current_target_pos[1]) <= 32 {
 	if current_state == state.well_fed {
 		current_state = state.idle;
 	}
