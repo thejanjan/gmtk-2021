@@ -25,6 +25,41 @@ phy_speed_y = velocity[1];
 current_direction = point_direction(x, y, x + velocity[0], y + velocity[1]);
 */
 
+// control next level timer stuff
+if next_level_timer > 0 {
+	var duration = 60;
+	if place_meeting(x, y, obj_end_hole) {
+		if obj_end_hole.image_index = 3 {
+			next_level_timer--;
+			
+			
+		}
+	} else next_level_timer = min(next_level_timer + 1, duration);
+	// Transition effects
+	new_col = make_color_hsv(200, 255 * (1 - (next_level_timer / duration)), 255);
+	image_blend = new_col;
+	y_offset = -(1 - (next_level_timer / duration)) * 24;
+	with (obj_chain_link) {
+		image_blend = obj_golf_kart.image_blend;
+	}
+	obj_golfer.image_blend = new_col;
+} else {
+	transition_timer++;
+	if transition_timer = 1 {
+		audio_sound_gain(snd_engine, 0, 1000);
+		image_alpha = 0;
+		with (obj_chain_link) image_alpha = 0;
+		obj_golfer.image_alpha = 0;
+		physics_apply_impulse(x, y, random_range(-1, 1), random_range(-1, 1));
+	}
+	if sound != -1 audio_sound_pitch(sound, .65 + (transition_timer * pitch_factor * 2));  
+	if transition_timer >= 59 {
+		audio_stop_sound(snd_engine);
+		audio_sound_gain(snd_engine, 1, 0);
+	}
+	exit;
+}
+
 var control_vector = [0, 0];
 if new_keyboard_check(global.binding_right) {
 	control_vector[0] += 1;
