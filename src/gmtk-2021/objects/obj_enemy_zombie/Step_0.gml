@@ -8,7 +8,7 @@ if current_state == state.eating {
 	if lunch_start == -1 {
 		lunch_start = current_time;
 		if instance_exists(target_ball) {
-			instance_destroy(target_ball);
+			with (target_ball) instance_destroy();
 		}
 	}
 	// We have chewed enough

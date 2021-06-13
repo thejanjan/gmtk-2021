@@ -53,7 +53,7 @@ ENEMY_PER_LENGTH = 2;
 ENEMY_PER_LENGTH_PER_HOLE = 0.6 * HOLE_MULTIPLY;
 MAX_ENEMY_PER_LENGTH = 12;
 ENEMY_OFFSET = 120;
-GRACE_RADIUS = 400;
+GRACE_RADIUS = 200;
 ENEMY_VISION = 650;
 
 DIFFICULTY_PER_LENGTH = 1;
@@ -314,9 +314,10 @@ if FURTHEST_EXISTS {
 }
 
 // spawn the player
-SPAWN_OFFSET = 100;
-instance_create_layer(	START_VECTOR[0] + (choose(1, -1) * irandom(SPAWN_OFFSET)), START_VECTOR[1] + (choose(1, -1) * irandom(SPAWN_OFFSET)),
-						layer, obj_golf_kart)
+SPAWN_OFFSET = 30;
+var spawn_x = START_VECTOR[0] + (choose(1, -1) * irandom(SPAWN_OFFSET));
+var spawn_y = START_VECTOR[1] + (choose(1, -1) * irandom(SPAWN_OFFSET));
+instance_create_layer(spawn_x, spawn_y, layer, obj_golf_kart)
 
 // Spawn enemy
 CURRENT_ENEMY_COUNT			= min(floor(ENEMY_PER_LENGTH + (CURRENT_HOLE * ENEMY_PER_LENGTH_PER_HOLE)), MAX_ENEMY_PER_LENGTH);
@@ -330,10 +331,14 @@ for (var i = 0; i < TOTAL_PATH_LENGTH - 1; i++) {
 		var spawn_vec = vector_random_between(TOTAL_PATH[i], TOTAL_PATH[i + 1], 0, 1)
 		var _x = spawn_vec[0] + (choose(-1, 1) * irandom(ENEMY_OFFSET));
 		var _y = spawn_vec[1] + (choose(-1, 1) * irandom(ENEMY_OFFSET));
-		if vector_distance([_x, _y], [obj_golf_kart.x, obj_golf_kart.y]) < GRACE_RADIUS continue;
+		if vector_distance([_x, _y], [spawn_x, spawn_y]) < GRACE_RADIUS continue;
 		
 		var enemy_type = get_enemy_from_difficulty(enemy_difficulties[o]);
-		instance_create_layer(_x, _y, layer, enemy_type);							
+		var enemy = instance_create_layer(_x, _y, layer, enemy_type);					
+		with (enemy) {
+			if distance_to_object(obj_golf_kart) < path_manager.GRACE_RADIUS
+				instance_destroy();
+		}
 	}
 }
 
