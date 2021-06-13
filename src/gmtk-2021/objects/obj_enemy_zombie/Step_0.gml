@@ -50,7 +50,7 @@ if (current_state == state.idle or current_state == state.moving) and instance_e
 }
 // Eaten recently and wandering
 else if current_state == state.well_fed and current_speed <= 8 {
-	var dir = vector_heading_to([x, y], current_target_pos);
+	var dir = vector_normalize(vector_heading_to([x, y], current_target_pos));
 	var acceleration_vector = vector_scale(dir, 3);
 	physics_apply_impulse(x, y, acceleration_vector[0], acceleration_vector[1]);
 }
