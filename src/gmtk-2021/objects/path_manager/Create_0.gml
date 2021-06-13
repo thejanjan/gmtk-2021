@@ -9,7 +9,7 @@ audio_stop_sound(snd_engine);
 
 // adjustment variables
 HOLE_MULTIPLY = 2; // Overall per hole multiplier
-BORDER = 800;
+BORDER = 400;
 MINIMUM_LENGTH = 1500;
 LENGTH_PER_HOLE = 500 * HOLE_MULTIPLY;
 TWISTS = 1;
@@ -232,7 +232,7 @@ for (var i = 0; i < TOTAL_PATH_LENGTH - 1; i++) {
 }
 
 // Spawn flags
-CURRENT_HOLE_COUNT = min(HOLE_FLAGS + (CURRENT_HOLE * HOLE_FLAGS_PER_HOLE), MAX_FLAGS);
+CURRENT_HOLE_COUNT = floor(min(HOLE_FLAGS + (CURRENT_HOLE * HOLE_FLAGS_PER_HOLE), MAX_FLAGS));
 for (var i = 0; i < TOTAL_PATH_LENGTH - 1; i++) {
 	if instance_number(obj_hole) >= CURRENT_HOLE_COUNT or instance_number(obj_hole) >= CURRENT_BALL_COUNT break;
 	var dist_between_points = vector_magnitude(vector_subtract(TOTAL_PATH[i + 1], TOTAL_PATH[i]));

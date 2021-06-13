@@ -57,6 +57,12 @@ if next_level_timer > 0 {
 	if transition_timer >= 59 {
 		audio_stop_sound(snd_engine);
 		audio_sound_gain(snd_engine, 1, 0);
+		if transition_timer = 59 {
+			transition_timer = 0;
+			next_level_timer = 0;
+			force_next_hole();
+			instance_destroy();
+		}
 	}
 	exit;
 }
