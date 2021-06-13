@@ -23,6 +23,7 @@
     {"id":{"name":"spr_enemy_wimp","path":"sprites/spr_enemy_wimp/spr_enemy_wimp.yy",},"order":0,},
     {"id":{"name":"tileset_light3","path":"tilesets/tileset_light3/tileset_light3.yy",},"order":13,},
     {"id":{"name":"obj_powerup_spawn_point","path":"objects/obj_powerup_spawn_point/obj_powerup_spawn_point.yy",},"order":23,},
+    {"id":{"name":"obj_end_hole","path":"objects/obj_end_hole/obj_end_hole.yy",},"order":27,},
     {"id":{"name":"spr_tilesetA","path":"sprites/spr_tilesetA/spr_tilesetA.yy",},"order":1,},
     {"id":{"name":"snd_swing2","path":"sounds/snd_swing2/snd_swing2.yy",},"order":3,},
     {"id":{"name":"spr_tilesetA2","path":"sprites/spr_tilesetA2/spr_tilesetA2.yy",},"order":6,},
