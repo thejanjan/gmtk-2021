@@ -132,6 +132,7 @@
     {"id":{"name":"spr_shield","path":"sprites/spr_shield/spr_shield.yy",},"order":5,},
     {"id":{"name":"obj_spider_deluxe","path":"objects/obj_spider_deluxe/obj_spider_deluxe.yy",},"order":7,},
     {"id":{"name":"spr_logo","path":"sprites/spr_logo/spr_logo.yy",},"order":1,},
+    {"id":{"name":"obj_basketball","path":"objects/obj_basketball/obj_basketball.yy",},"order":8,},
     {"id":{"name":"spr_tilesetA3","path":"sprites/spr_tilesetA3/spr_tilesetA3.yy",},"order":7,},
     {"id":{"name":"mus_late_holes_2","path":"sounds/mus_late_holes_2/mus_late_holes_2.yy",},"order":13,},
     {"id":{"name":"tileset_dark3","path":"tilesets/tileset_dark3/tileset_dark3.yy",},"order":11,},
