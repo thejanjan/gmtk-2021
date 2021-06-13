@@ -13,6 +13,9 @@ if hit_by_club() {
 		hole_dist = vector_magnitude(vector_subtract([x, y], [hole.x, hole.y]))
 	if enemy
 		enemy_dist = vector_magnitude(vector_subtract([x, y], [enemy.x, enemy.y]))
+	
+	enemy_dist /= 0.01 + (global.magnet_power * 0.33);
+	
 	if hole_dist < enemy_dist
 		dir = vector_heading_to([x, y], [hole.x, hole.y]); 
 	if enemy_dist < hole_dist

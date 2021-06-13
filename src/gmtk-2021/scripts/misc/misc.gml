@@ -30,7 +30,8 @@ function nearest_active_hole() {
 		instance_deactivate_object(potential_hole);
 	}
 	// Re-activate each hole
-	instance_activate_object(obj_hole);
+	if instance_exists(obj_hole)
+		instance_activate_object(obj_hole);
 	// Return our answer
 	return nearest;
 }
@@ -48,7 +49,8 @@ function nearest_alive_enemy() {
 		instance_deactivate_object(potential_enemy);
 	}
 	// Re-activate each enemy
-	instance_activate_object(potential_enemy);
+	if instance_exists(potential_enemy)
+		instance_activate_object(potential_enemy);
 	// Return our answer
 	return nearest;
 }

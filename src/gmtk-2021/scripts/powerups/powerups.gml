@@ -6,6 +6,7 @@ global.golf_the_earth_damage = 0;
 global.growth_spurt = 0;
 global.explosive_hole_damage = 0;
 global.player_fire_trails = 0;
+global.magnet_power = 0;
 
 function get_player_damage_multiplier() {
 	return global.player_damage_multiplier;
@@ -80,6 +81,10 @@ function additive_increase_player_fire_trails(_amount) {
 	global.player_fire_trails += _amount;
 }
 
+function additive_increase_magnet_power(_amount) {
+	global.magnet_power += _amount;
+}
+
 function collect_powerup(_powerup_index) {
 	//show_debug_message("Collected powerup " + string(_powerup_index));
 	instance_destroy();
@@ -111,7 +116,7 @@ function apply_powerup(_powerup_index) {
 			// Triple shot!
 			return;
 		case 7:
-			// Magnet???
+			additive_increase_magnet_power(1);
 			return;
 		case 8:
 			// Growth spurt??? wtf?
