@@ -1,6 +1,6 @@
 /// @description Debug, draw path
 
-if new_keyboard_check_pressed(global.binding_debug_two) {
+if new_keyboard_check_pressed(global.binding_debug_two) and false {
 	hp_deal_damage(3);
 }
 exit;

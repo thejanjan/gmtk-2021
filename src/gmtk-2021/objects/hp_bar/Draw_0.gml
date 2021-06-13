@@ -3,7 +3,7 @@
 // DEBUG
 var debug = 0;
 if debug {
-	if new_keyboard_check_pressed(global.binding_debug) {
+	if new_keyboard_check_pressed(global.binding_debug) and false {
 		hp_deal_damage(1);
 	}
 }
