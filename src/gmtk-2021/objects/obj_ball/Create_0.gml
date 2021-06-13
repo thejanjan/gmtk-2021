@@ -15,6 +15,7 @@ stretch_factor = 1.25;
 hit_timer = 0;
 image_speed = 0;
 image_index = get_ball_image_index();
+instance_layer = layer;
 vanish_duration = 30;
 
 weak = 0; // Weak is used for split balls

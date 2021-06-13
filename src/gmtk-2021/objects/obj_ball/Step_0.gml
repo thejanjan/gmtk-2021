@@ -80,6 +80,7 @@ if distohole < 7 {
 	var hole_damage = get_explosive_hole_damage();
 	if hole_damage > 0 {
 		create_aoe_damage([x, y], 256, hole_damage);
+		instance_create_layer(x, y, instance_layer, obj_explosion);
 	}
 	CURRENT_FLAGS++;
 	if CURRENT_FLAGS >= instance_number(obj_hole) {
