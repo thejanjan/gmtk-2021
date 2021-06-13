@@ -5,6 +5,11 @@ event_inherited();
 if current_state == state.eating {
 	// TODO: can still hit the ball during this state........
 	// i just hope that, if that happens, the zombie dies at the same time!
+	if !instance_exists(target_ball) {
+		current_state = state.idle;
+		target_ball = -1;
+		return;
+	}
 	target_ball.visible = false;
 	if lunch_start == -1 {
 		lunch_start = current_time;
