@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
 function hit_by_club() {
-	return place_meeting(x, y, obj_golf_club) && obj_golf_club.swing;
+	return /*place_meeting(x, y, obj_golf_club)*/(distance_to_point(obj_golf_club.x, obj_golf_club.y) < 100) && obj_golf_club.swing;
 }
 
 function club_apply_impulse(_vector_direction, _impulse_multiplier) {
