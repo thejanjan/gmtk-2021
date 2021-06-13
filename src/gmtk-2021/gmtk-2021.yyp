@@ -20,6 +20,7 @@
     {"id":{"name":"spr_golf_club","path":"sprites/spr_golf_club/spr_golf_club.yy",},"order":18,},
     {"id":{"name":"spr_end_flag","path":"sprites/spr_end_flag/spr_end_flag.yy",},"order":27,},
     {"id":{"name":"spr_tilesetB","path":"sprites/spr_tilesetB/spr_tilesetB.yy",},"order":2,},
+    {"id":{"name":"snd_player_death","path":"sounds/snd_player_death/snd_player_death.yy",},"order":20,},
     {"id":{"name":"snd_swing3","path":"sounds/snd_swing3/snd_swing3.yy",},"order":4,},
     {"id":{"name":"obj_golf_kart","path":"objects/obj_golf_kart/obj_golf_kart.yy",},"order":2,},
     {"id":{"name":"powerups","path":"scripts/powerups/powerups.yy",},"order":7,},
