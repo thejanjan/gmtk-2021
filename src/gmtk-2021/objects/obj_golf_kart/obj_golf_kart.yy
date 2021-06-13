@@ -4,7 +4,7 @@
     "path": "sprites/spr_golf_kart/spr_golf_kart.yy",
   },
   "solid": false,
-  "visible": false,
+  "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
