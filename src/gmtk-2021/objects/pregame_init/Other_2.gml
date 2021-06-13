@@ -2,9 +2,14 @@
 randomize();
 globalvar CURRENT_HOLE; CURRENT_HOLE = 0;
 
+global.l_particle = layer_create(-10);
+
+enum layers {
+	particle = lparticle
+}
+
 // particles
-// TODO: use a layer
-global.particle_sys = part_system_create();
+global.particle_sys = part_system_create_layer(layers.particle, false);
 
 global.p_fire = part_type_create();
 // fire
