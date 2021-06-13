@@ -36,8 +36,10 @@ else if !instance_exists(target_ball) {
 	else {
 		instance_create_layer(target_ball_xstart, target_ball_ystart, instance_layer, obj_ball);
 	}
-	target_ball_xstart = target_ball.xstart;
-	target_ball_ystart = target_ball.ystart;
+	if instance_exists(target_ball) {
+		target_ball_xstart = target_ball.xstart;
+		target_ball_ystart = target_ball.ystart;
+	}
 }
 
 // Heading to eat a ball
