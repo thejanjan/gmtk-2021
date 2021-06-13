@@ -40,7 +40,7 @@ if new_keyboard_check(global.binding_down) {
 }
 control_vector = vector_normalize(control_vector); // Don't make the same mistake as Marble Blast...
 
-var acceleration_vector = vector_scale(control_vector, acceleration_magnitude);
+var acceleration_vector = vector_scale(control_vector, get_player_acceleration());
 physics_apply_impulse(x, y, acceleration_vector[0], acceleration_vector[1]);
 
 // Only update the cart direction if it's moving significantly fast

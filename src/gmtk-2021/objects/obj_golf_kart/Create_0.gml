@@ -12,9 +12,6 @@ current_direction = point_direction(x, y, goal[0], goal[1]);
 proposed_direction = current_direction;
 lag_direction = current_direction;
 
-//acceleration = 1;
-acceleration_magnitude = 150;
-
 turn_speed = 8;
 
 dir_goal = -1;
