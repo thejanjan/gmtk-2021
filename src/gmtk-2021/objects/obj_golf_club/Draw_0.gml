@@ -1,6 +1,7 @@
 /// @description Draw the club
 
 var dad = obj_golfer;
+if !instance_exists(dad) return;
 x = dad.x;
 y = dad.y;
 

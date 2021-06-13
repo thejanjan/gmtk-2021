@@ -65,7 +65,12 @@ var lesser_face_grind_threshhold = 4.5;
 var face_grind_threshhold = 15;
 var min_brushstroke_size = 3;
 
-var golfer_speed = min(20, point_distance(0, 0, obj_golfer.phy_speed_x, obj_golfer.phy_speed_y));
+var golfer_speed;
+if instance_exists(obj_golfer) {
+	golfer_speed = min(20, point_distance(0, 0, obj_golfer.phy_speed_x, obj_golfer.phy_speed_y));
+} else {
+	golfer_speed = 0;
+}
 var deep_hole_radius = (golfer_speed-lesser_face_grind_threshhold)*1;
 var hole_radius = deep_hole_radius+((golfer_speed-face_grind_threshhold)*1.2);
 

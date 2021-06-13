@@ -42,7 +42,13 @@ if instance_exists(my_stinky_golfer) {
 	//}
 }
 
-var dir = vector_heading_to([from_instance.x, from_instance.y], [obj_golfer.x, obj_golfer.y]);
+var dest;
+if instance_exists(obj_golfer) {
+	dest = [obj_golfer.x, obj_golfer.y];
+} else {
+	dest = [random(4000), random(4000)]; // Funny
+}
+var dir = vector_heading_to([from_instance.x, from_instance.y], dest);
 var acceleration_vector = vector_scale(dir, acceleration_magnitude);
 physics_apply_impulse(x, y, acceleration_vector[0], acceleration_vector[1]);
 

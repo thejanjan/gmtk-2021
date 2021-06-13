@@ -40,7 +40,9 @@ if next_level_timer > 0 {
 	with (obj_chain_link) {
 		image_blend = obj_golf_kart.image_blend;
 	}
-	obj_golfer.image_blend = new_col;
+	if instance_exists(obj_golfer) {
+		obj_golfer.image_blend = new_col;
+	}
 } else {
 	transition_timer++;
 	if transition_timer = 1 {

@@ -21,5 +21,30 @@ function hp_increase_maxhp(_amount) {
 }
 
 function hp_dead() {
-	// todo	
+	if instance_exists(obj_golfer) {
+		if instance_exists(obj_golf_kart) {
+			obj_golf_kart.controllable = 0;
+			obj_golf_kart.alarm[0] = 300;
+		}
+		with (obj_golfer) {
+			instance_destroy();
+			instance_create_depth(x, y, -y, obj_explosion);
+			var how_many_balls = 20;
+			for (var i=0; i<how_many_balls; i++)
+			{
+				o = instance_create_depth(x, y, -y, obj_ball);
+				with(o)
+				{
+					var dir = vector_heading_to([0, 0], [random_range(-10, 10), random_range(-10, 10)]);
+					var acceleration_vector = vector_scale(dir, random_range(10, 25));
+					physics_apply_impulse(x, y, acceleration_vector[0], acceleration_vector[1]);
+				}
+			}
+		}
+	}
+}
+
+function reset_game() {
+	// TODO: Make this not suck.
+	room_restart();
 }

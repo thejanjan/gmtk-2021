@@ -10,6 +10,7 @@ audio_play_sound(snd_horn, 0, false);
 goal = [room_width / 2, room_height / 2];
 velocity = [0, 0];
 current_direction = point_direction(x, y, goal[0], goal[1]);
+controllable = 1;
 
 proposed_direction = current_direction;
 lag_direction = current_direction;

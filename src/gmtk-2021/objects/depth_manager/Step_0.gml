@@ -15,7 +15,9 @@ with (all) {
 			depth = -y - 300;
 			fuck;
 		case obj_golf_club:
-			depth = -obj_golfer.y - 100;
+			if instance_exists(obj_golfer) {
+				depth = -obj_golfer.y - 100;
+			}
 			fuck;
 		case gui_bars:
 			depth = -100000;
