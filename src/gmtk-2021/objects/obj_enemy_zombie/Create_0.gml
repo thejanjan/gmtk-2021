@@ -27,7 +27,7 @@ enum state {
 
 sprite_eating = false;
 current_state = state.idle;
-target_ball = -1;
+target_ball = -4;
 target_ball_xstart = 0;
 target_ball_ystart = 0;
 instance_layer = layer;
