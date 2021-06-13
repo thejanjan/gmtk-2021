@@ -44,6 +44,7 @@
     {"id":{"name":"obj_old_useless_menu_controller","path":"objects/obj_old_useless_menu_controller/obj_old_useless_menu_controller.yy",},"order":4,},
     {"id":{"name":"snd_golf1","path":"sounds/snd_golf1/snd_golf1.yy",},"order":5,},
     {"id":{"name":"obj_chain_link","path":"objects/obj_chain_link/obj_chain_link.yy",},"order":6,},
+    {"id":{"name":"transition","path":"scripts/transition/transition.yy",},"order":10,},
     {"id":{"name":"spr_bggreen","path":"sprites/spr_bggreen/spr_bggreen.yy",},"order":0,},
     {"id":{"name":"spr_player_drag","path":"sprites/spr_player_drag/spr_player_drag.yy",},"order":9,},
     {"id":{"name":"spr_fragile_wall","path":"sprites/spr_fragile_wall/spr_fragile_wall.yy",},"order":11,},
