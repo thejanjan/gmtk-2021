@@ -16,7 +16,6 @@ current_pos = [x, y];
 current_speed = 0;
 current_velocity = [0, 0];
 
-damage_multiplier = 1.0;
 club_base_damage = 5;
 
 club = instance_create_layer(x, y, layer, obj_golf_club);
