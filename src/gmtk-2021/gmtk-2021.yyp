@@ -104,6 +104,7 @@
     {"id":{"name":"obj_ball_letter","path":"objects/obj_ball_letter/obj_ball_letter.yy",},"order":32,},
     {"id":{"name":"mus_game_over","path":"sounds/mus_game_over/mus_game_over.yy",},"order":23,},
     {"id":{"name":"powerup_pool","path":"scripts/powerup_pool/powerup_pool.yy",},"order":8,},
+    {"id":{"name":"obj_death_screen","path":"objects/obj_death_screen/obj_death_screen.yy",},"order":33,},
     {"id":{"name":"room_menu","path":"rooms/room_menu/room_menu.yy",},"order":2,},
     {"id":{"name":"obj_grow_fade","path":"objects/obj_grow_fade/obj_grow_fade.yy",},"order":25,},
     {"id":{"name":"hp_bar","path":"objects/hp_bar/hp_bar.yy",},"order":9,},

@@ -26,7 +26,7 @@ function hp_dead() {
 		audio_play_sound(snd_player_death, 0, false);
 		if instance_exists(obj_golf_kart) {
 			obj_golf_kart.controllable = 0;
-			obj_golf_kart.alarm[0] = 300;
+			obj_golf_kart.alarm[2] = 100;
 		}
 		with (obj_golfer) {
 			instance_destroy();
