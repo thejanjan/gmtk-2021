@@ -45,7 +45,13 @@ if next_level_timer > 0 {
 	obj_golfer.image_blend = new_col;
 } else {
 	transition_timer++;
-	if transition_timer = 1 audio_sound_gain(snd_engine, 0, 1000);
+	if transition_timer = 1 {
+		audio_sound_gain(snd_engine, 0, 1000);
+		image_alpha = 0;
+		with (obj_chain_link) image_alpha = 0;
+		obj_golfer.image_alpha = 0;
+		physics_apply_impulse(x, y, random_range(-1, 1), random_range(-1, 1));
+	}
 	if sound != -1 audio_sound_pitch(sound, .65 + (transition_timer * pitch_factor * 2));  
 	if transition_timer >= 59 {
 		audio_stop_sound(snd_engine);
