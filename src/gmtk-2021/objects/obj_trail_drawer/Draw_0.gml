@@ -4,6 +4,7 @@
 // IT'S TRAIL TIME
 
 if new_keyboard_check_pressed(global.binding_toggle_trails)
+|| new_keyboard_check_pressed(global.binding_toggle_trails_also)
 {
 	global.trails_activated = not global.trails_activated;
 }
