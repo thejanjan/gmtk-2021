@@ -60,6 +60,8 @@ if hit_timer > 0
 if not hole or weak or image_alpha != 1 exit;
 
 var distohole = point_distance(x, y, hole.x, hole.y);
+var bring_distance = 25;
+
 if distohole < 7 {
     // image_alpha = 0.3;
     hole.flamming = true;
@@ -69,10 +71,10 @@ if distohole < 7 {
 		create_aoe_damage([x, y], 256, hole_damage);
 	}
 	instance_destroy();
-} else if distohole < 15 {
+} else if distohole < bring_distance {
 	var dir = vector_heading_to([x, y], [hole.x, hole.y]);
 	dir = vector_scale(dir, 2);
 	physics_apply_impulse(x, y, dir[0], dir[1]);
-	phy_speed_y /= 1+0.5*(1-(distohole/15));
-	phy_speed_y /= 1+0.5*(1-(distohole/15));
+	phy_speed_y /= 1+0.5*(1-(distohole/bring_distance));
+	phy_speed_y /= 1+0.5*(1-(distohole/bring_distance));
 }
