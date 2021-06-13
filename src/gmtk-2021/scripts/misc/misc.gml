@@ -86,8 +86,12 @@ function enemy_take_damage(_amount) {
 }
 
 function enemy_set_starting_hp(_amount) {
-	hp = _amount;
-	hp_max = _amount;
+	var true_amount = _amount;
+	if instance_exists(path_manager) {
+		true_amount *= path_manager.HP_SCALE;	
+	}
+	hp = true_amount;
+	hp_max = true_amount;
 }
 
 function debug_string(_array) {
