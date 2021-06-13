@@ -10,4 +10,4 @@ enum charger_state {
 }
 
 current_state = charger_state.idle;
-alarm[0] = 60;
+alarm[0] = irandom(180);
