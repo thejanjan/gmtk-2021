@@ -47,7 +47,8 @@ if(!surface_exists(hole_surface))
 surface_set_target( hole_surface );
 
 draw_set_color(make_color_rgb(59, 31, 4));
-if point_distance(0, 0, obj_golfer.phy_speed_x, obj_golfer.phy_speed_y) >= 8
+var face_grind_threshhold = 16;
+if point_distance(0, 0, obj_golfer.phy_speed_x, obj_golfer.phy_speed_y) >= face_grind_threshhold
 {
     var lowering = 10;
 	var radius = 20;
@@ -69,7 +70,7 @@ surface_set_target( deep_hole_surface );
 
 draw_set_color(make_color_rgb(39, 21, 4));
 draw_set_alpha(1);
-if point_distance(0, 0, obj_golfer.phy_speed_x, obj_golfer.phy_speed_y) >= 8
+if point_distance(0, 0, obj_golfer.phy_speed_x, obj_golfer.phy_speed_y) >= face_grind_threshhold
 {
     var lowering = 10;
 	var radius = 14;
