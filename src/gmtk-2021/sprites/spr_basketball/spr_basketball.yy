@@ -2,20 +2,20 @@
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
-  "origin": 0,
+  "origin": 4,
   "preMultiplyAlpha": false,
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 0,
+  "bbox_right": 25,
   "bbox_top": 0,
-  "bbox_bottom": 0,
+  "bbox_bottom": 25,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 64,
-  "height": 64,
+  "width": 26,
+  "height": 26,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,9 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"b58f5c95-2942-4060-bc99-91f0d771077d","path":"sprites/spr_basketball/spr_basketball.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"b58f5c95-2942-4060-bc99-91f0d771077d","path":"sprites/spr_basketball/spr_basketball.yy",},"LayerId":{"name":"75f80be2-6bc9-4ba0-b956-bb23db54eaa0","path":"sprites/spr_basketball/spr_basketball.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_basketball","path":"sprites/spr_basketball/spr_basketball.yy",},"resourceVersion":"1.0","name":"b58f5c95-2942-4060-bc99-91f0d771077d","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"a9327577-4fe8-4158-90ac-9d57c279a39b","path":"sprites/spr_basketball/spr_basketball.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"a9327577-4fe8-4158-90ac-9d57c279a39b","path":"sprites/spr_basketball/spr_basketball.yy",},"LayerId":{"name":"d124b920-a5a4-4f09-b7f0-c16509974a6e","path":"sprites/spr_basketball/spr_basketball.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_basketball","path":"sprites/spr_basketball/spr_basketball.yy",},"resourceVersion":"1.0","name":"a9327577-4fe8-4158-90ac-9d57c279a39b","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"bf23471e-d0ee-4854-bdbb-11b234c96b01","path":"sprites/spr_basketball/spr_basketball.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"bf23471e-d0ee-4854-bdbb-11b234c96b01","path":"sprites/spr_basketball/spr_basketball.yy",},"LayerId":{"name":"d124b920-a5a4-4f09-b7f0-c16509974a6e","path":"sprites/spr_basketball/spr_basketball.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_basketball","path":"sprites/spr_basketball/spr_basketball.yy",},"resourceVersion":"1.0","name":"bf23471e-d0ee-4854-bdbb-11b234c96b01","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_basketball","path":"sprites/spr_basketball/spr_basketball.yy",},
@@ -36,12 +39,13 @@
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
-    "length": 1.0,
+    "length": 2.0,
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"d259e491-0481-4d8e-a8fa-96d441bb7ead","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b58f5c95-2942-4060-bc99-91f0d771077d","path":"sprites/spr_basketball/spr_basketball.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"0d8ee262-3efb-4d78-bfc1-dbfa2e220dc1","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a9327577-4fe8-4158-90ac-9d57c279a39b","path":"sprites/spr_basketball/spr_basketball.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"01700e54-8682-42fa-9c47-d8a2f490ac7e","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"bf23471e-d0ee-4854-bdbb-11b234c96b01","path":"sprites/spr_basketball/spr_basketball.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -54,8 +58,8 @@
     "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 0,
-    "yorigin": 0,
+    "xorigin": 13,
+    "yorigin": 13,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_basketball","path":"sprites/spr_basketball/spr_basketball.yy",},
@@ -65,7 +69,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"75f80be2-6bc9-4ba0-b956-bb23db54eaa0","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"d124b920-a5a4-4f09-b7f0-c16509974a6e","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
