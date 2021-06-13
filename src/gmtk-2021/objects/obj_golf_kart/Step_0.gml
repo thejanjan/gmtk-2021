@@ -31,8 +31,6 @@ if next_level_timer > 0 {
 	if place_meeting(x, y, obj_end_hole) {
 		if obj_end_hole.image_index = 3 {
 			next_level_timer--;
-			
-			
 		}
 	} else next_level_timer = min(next_level_timer + 1, duration);
 	// Transition effects
@@ -47,9 +45,10 @@ if next_level_timer > 0 {
 	transition_timer++;
 	if transition_timer = 1 {
 		audio_sound_gain(snd_engine, 0, 1000);
-		image_alpha = 0;
-		with (obj_chain_link) image_alpha = 0;
-		obj_golfer.image_alpha = 0;
+		image_alpha = 0; spawn_dandruff();
+		with (obj_chain_link) {image_alpha = 0; spawn_dandruff();}
+		with (obj_golfer) {image_alpha = 0; spawn_dandruff();}
+		obj_golf_club.image_alpha = 0;
 		physics_apply_impulse(x, y, random_range(-1, 1), random_range(-1, 1));
 	}
 	if sound != -1 audio_sound_pitch(sound, .65 + (transition_timer * pitch_factor * 2));  
