@@ -105,6 +105,7 @@
     {"id":{"name":"mus_late_holes_1","path":"sounds/mus_late_holes_1/mus_late_holes_1.yy",},"order":11,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":3,},
     {"id":{"name":"mask_golf_club","path":"sprites/mask_golf_club/mask_golf_club.yy",},"order":16,},
+    {"id":{"name":"spr_basketball","path":"sprites/spr_basketball/spr_basketball.yy",},"order":6,},
     {"id":{"name":"physics_helpers","path":"scripts/physics_helpers/physics_helpers.yy",},"order":6,},
     {"id":{"name":"assert","path":"scripts/assert/assert.yy",},"order":0,},
     {"id":{"name":"spr_fire_trail","path":"sprites/spr_fire_trail/spr_fire_trail.yy",},"order":23,},
