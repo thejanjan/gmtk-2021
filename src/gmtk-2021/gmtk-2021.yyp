@@ -125,6 +125,7 @@
     {"id":{"name":"spr_golf_kart","path":"sprites/spr_golf_kart/spr_golf_kart.yy",},"order":0,},
     {"id":{"name":"obj_grid","path":"objects/obj_grid/obj_grid.yy",},"order":5,},
     {"id":{"name":"spr_shield","path":"sprites/spr_shield/spr_shield.yy",},"order":5,},
+    {"id":{"name":"obj_spider_deluxe","path":"objects/obj_spider_deluxe/obj_spider_deluxe.yy",},"order":7,},
     {"id":{"name":"spr_logo","path":"sprites/spr_logo/spr_logo.yy",},"order":1,},
     {"id":{"name":"spr_tilesetA3","path":"sprites/spr_tilesetA3/spr_tilesetA3.yy",},"order":7,},
     {"id":{"name":"mus_late_holes_2","path":"sounds/mus_late_holes_2/mus_late_holes_2.yy",},"order":13,},

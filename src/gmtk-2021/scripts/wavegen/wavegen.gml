@@ -27,6 +27,8 @@ function get_enemy_from_difficulty(_difficulty) {
 		case 4:
 			return obj_evil_golf_kart;
 		case 5:
+			return obj_spider_deluxe;
+		case 6:
 		default:
 			return obj_enemy_charger;
 	}
