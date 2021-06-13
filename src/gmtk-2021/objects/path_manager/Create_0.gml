@@ -42,7 +42,7 @@ OPENING_HOLES_WITH_ITEMS = 5;
 
 ENABLE_TWISTS = true;
 ENABLE_CURVES = false;
-ENABLE_NODES = true;
+ENABLE_NODES = false;
 
 // make start and end point
 MAXIMUM_LENGTH = min(room_width, room_height) - (2 * BORDER);
@@ -180,6 +180,21 @@ for (var i = 0; i < TOTAL_PATH_LENGTH; i++) {
 }
 
 // show_message("Current hole: "+string(CURRENT_HOLE)+"\n Path length: "+string(array_length(TOTAL_PATH))+"\n Path repr: "+path_string);
+
+// Destroy the top layer of tiles
+DARK_REMOVE_RADIUS = 400;
+LIGHT_REMOVE_RADIUS = 250;
+DISTANCE_BETWEEN_REMOVAL = 100;
+for (var i = 0; i < TOTAL_PATH_LENGTH - 1; i++) {
+	var dist_between_points = vector_magnitude(vector_subtract(TOTAL_PATH[i + 1], TOTAL_PATH[i]));
+	var points_to_check = ceil(dist_between_points / DISTANCE_BETWEEN_REMOVAL);
+	var percentage_to_check = 1 / points_to_check;
+	for (var o = 0; o < points_to_check; o++) {
+		var remove_vec = vector_between(TOTAL_PATH[i], TOTAL_PATH[i + 1], o * percentage_to_check)
+		remove_grass_tile_radius(remove_vec[0], remove_vec[1], DARK_REMOVE_RADIUS, "layer_dark");
+		remove_grass_tile_radius(remove_vec[0], remove_vec[1], LIGHT_REMOVE_RADIUS, "layer_light");
+	}
+}
 
 // spawn the player
 SPAWN_OFFSET = 100;
