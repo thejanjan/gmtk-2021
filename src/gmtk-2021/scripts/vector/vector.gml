@@ -40,7 +40,7 @@ function vector_normalize(_vec) {
 	if magnitude == 0 {
 		return _vec;
 	} else {
-		var divisor = 1 / vector_magnitude(_vec);
+		var divisor = 1 / magnitude;
 		return [_vec[0] * divisor, _vec[1] * divisor];
 	}
 }
