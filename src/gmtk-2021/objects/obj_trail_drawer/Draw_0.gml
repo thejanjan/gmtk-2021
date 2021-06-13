@@ -54,7 +54,10 @@ if point_distance(0, 0, obj_golf_kart.phy_speed_x, obj_golf_kart.phy_speed_y) >=
 
 surface_reset_target();
 draw_set_color(c_white);
-draw_surface_ext(tread_surface, 0, 0, 1, 1, 0, c_white, 0.2);
+if(surface_exists(tread_surface))
+{
+	draw_surface_ext(tread_surface, 0, 0, 1, 1, 0, c_white, 0.2);
+}
 
 // Figuring out hole sizes
 var lesser_face_grind_threshhold = 4.5;
@@ -88,7 +91,10 @@ if hole_radius >= min_brushstroke_size
 
 surface_reset_target();
 draw_set_color(c_white);
-draw_surface(hole_surface, 0, 0);
+if(surface_exists(hole_surface))
+{
+	draw_surface(hole_surface, 0, 0);
+}
 
 // Deep hole surface
 if(!surface_exists(deep_hole_surface))
@@ -109,6 +115,9 @@ if deep_hole_radius >= min_brushstroke_size
 
 surface_reset_target();
 draw_set_color(c_white);
-draw_surface(deep_hole_surface, 0, 0);
+if(surface_exists(deep_hole_surface))
+{
+	draw_surface(deep_hole_surface, 0, 0);
+}
 
 draw_set_color(c_white);
