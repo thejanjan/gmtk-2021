@@ -4,6 +4,7 @@ current_speed = vector_magnitude(vector_subtract(current_pos, previous_pos));
 previous_pos = current_pos;
 current_pos = [x, y];
 
+if instance_exists(obj_golfer)
 if hit_by_club() {
 	//show_debug_message("Enemy hit by club at " + string(current_time));
 	

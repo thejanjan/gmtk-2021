@@ -19,7 +19,7 @@ if current_state == state.eating {
 		wander_to_y = irandom_range(max(y - 200, 0), min(y + 200, room_height));
 		current_target_pos = [wander_to_x, wander_to_y];
 		
-		if instance_number(obj_ball) > instance_number(obj_hole) {
+		if instance_number(obj_ball) > (instance_number(obj_hole) + 1) {
 			target_ball = instance_find(obj_ball, irandom(instance_number(obj_ball) - 1));
 		}
 		else {
