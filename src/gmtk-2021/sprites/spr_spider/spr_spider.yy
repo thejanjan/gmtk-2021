@@ -2,7 +2,7 @@
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
-  "origin": 0,
+  "origin": 4,
   "preMultiplyAlpha": false,
   "edgeFiltering": false,
   "collisionTolerance": 0,
@@ -84,6 +84,9 @@
     {"compositeImage":{"FrameId":{"name":"14874107-127d-4ef8-8d5a-f831137d93ba","path":"sprites/spr_spider/spr_spider.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"14874107-127d-4ef8-8d5a-f831137d93ba","path":"sprites/spr_spider/spr_spider.yy",},"LayerId":{"name":"f22755d3-ecf2-42e8-9102-a3e62e638137","path":"sprites/spr_spider/spr_spider.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_spider","path":"sprites/spr_spider/spr_spider.yy",},"resourceVersion":"1.0","name":"14874107-127d-4ef8-8d5a-f831137d93ba","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"59471888-a506-4bb2-ab09-7db69c4df25c","path":"sprites/spr_spider/spr_spider.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"59471888-a506-4bb2-ab09-7db69c4df25c","path":"sprites/spr_spider/spr_spider.yy",},"LayerId":{"name":"f22755d3-ecf2-42e8-9102-a3e62e638137","path":"sprites/spr_spider/spr_spider.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_spider","path":"sprites/spr_spider/spr_spider.yy",},"resourceVersion":"1.0","name":"59471888-a506-4bb2-ab09-7db69c4df25c","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_spider","path":"sprites/spr_spider/spr_spider.yy",},
@@ -93,7 +96,7 @@
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
-    "length": 20.0,
+    "length": 21.0,
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
@@ -118,6 +121,7 @@
             {"id":"02dbfe8a-badd-45ae-bb93-d68541bda0d7","Key":17.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"37deb4d6-14ec-4d2b-b2dc-3508a01c4dff","path":"sprites/spr_spider/spr_spider.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"cc52dfbb-5635-4275-9011-5cc95460ae94","Key":18.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"2387c5b0-d516-41c3-bb46-e50d4f933a78","path":"sprites/spr_spider/spr_spider.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"20665e6e-49bd-4d0a-b151-fb80323dc5aa","Key":19.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"14874107-127d-4ef8-8d5a-f831137d93ba","path":"sprites/spr_spider/spr_spider.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"5be0cbef-e7c0-4943-b081-2602e9d6c495","Key":20.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"59471888-a506-4bb2-ab09-7db69c4df25c","path":"sprites/spr_spider/spr_spider.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -130,8 +134,8 @@
     "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 0,
-    "yorigin": 0,
+    "xorigin": 24,
+    "yorigin": 24,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_spider","path":"sprites/spr_spider/spr_spider.yy",},
