@@ -76,7 +76,7 @@ if next_level_timer > 0 {
 	exit;
 }
 
-if controllable == 1 {
+if controllable == 1 and not instance_exists(dummy) {
 	var control_vector = [0, 0];
 	if new_keyboard_check(global.binding_right) || new_keyboard_check(global.binding_right_arrow) {
 		control_vector[0] += 1;

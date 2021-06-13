@@ -5,7 +5,7 @@ function create_physics_link(_obj1, _obj2, _off1, _off2, _length) {
 	physics_joint_rope_create(_obj1, _obj2, _obj1.x+_off1[0], _obj1.y+_off1[1], _obj2.x+_off2[0], _obj2.y+_off2[1], _length, true);
 }
 
-alarm[1] = 30;
+alarm[1] = 25;
 
 goal = [room_width / 2, room_height / 2];
 velocity = [0, 0];
@@ -24,6 +24,28 @@ dir_vector = [0, 0];
 next_level_timer = 60;
 transition_timer = 0;
 y_offset = 0;
+
+// Camera stuff
+x_car_offset = -600;
+reduce_offset = 0.88;
+
+if room != main_game exit;
+
+camera_destroy(view_camera[0]);
+global.camera_shake = 0;
+var v = [1366, 768];
+
+dummy = instance_create_layer(x + x_car_offset, y, "Instances", obj_depth_hole);
+dummy.visible = 0;
+var k = self;
+view_camera[0] = camera_create_view(k.x - (v[0] / 2), k.y - (v[1] / 2), v[0], v[1], 0, k, -1, -1, v[0] / 2, v[1] / 2);
+var k = dummy;
+view_camera[1] = camera_create_view(k.x - (v[0] / 2), k.y - (v[1] / 2), v[0], v[1], 0, k, -1, -1, v[0] / 2, v[1] / 2);
+
+visible = 1;
+camera_set_default(view_camera[1]);
+camera_set_view_target(view_camera[0], dummy);
+camera_set_view_target(view_camera[1], dummy);
 
 // sound
 sound = audio_play_sound(snd_engine, 0, true);
