@@ -65,6 +65,7 @@
     {"id":{"name":"obj_wavegen","path":"objects/obj_wavegen/obj_wavegen.yy",},"order":2,},
     {"id":{"name":"path_manager","path":"objects/path_manager/path_manager.yy",},"order":0,},
     {"id":{"name":"tileset_dark2","path":"tilesets/tileset_dark2/tileset_dark2.yy",},"order":10,},
+    {"id":{"name":"Object32","path":"objects/Object32/Object32.yy",},"order":22,},
     {"id":{"name":"spr_evil_golf_kart","path":"sprites/spr_evil_golf_kart/spr_evil_golf_kart.yy",},"order":2,},
     {"id":{"name":"misc","path":"scripts/misc/misc.yy",},"order":5,},
     {"id":{"name":"tileset_light","path":"tilesets/tileset_light/tileset_light.yy",},"order":4,},
