@@ -12,9 +12,11 @@ if hit_by_club() {
 	if hit_timer == 0 {
 		audio_play_sound(choose(snd_golf1, snd_golf2, snd_golf3), 0, false);
 		hit_timer = 5;
+		var earth_damage = get_golf_the_earth_damage();
+		if earth_damage > 0 {
+			create_aoe_damage([x, y], 1000, earth_damage);
+		}
 	}
-	//dir = vector_scale(dir, impulse_force);
-	//physics_apply_impulse(x, y, dir[0], dir[1]);
 }
 
 if not hole exit;

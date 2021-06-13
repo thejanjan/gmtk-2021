@@ -2,6 +2,8 @@
 
 global.player_damage_multiplier = 1.0;
 global.player_acceleration = 150.0;
+global.golf_the_earth_damage = 0;
+global.explosive_holes = false;
 
 function get_player_damage_multiplier() {
 	return global.player_damage_multiplier;
@@ -19,7 +21,29 @@ function additive_increase_player_acceleration(_amount) {
 	global.player_acceleration += _amount;
 }
 
+function get_golf_the_earth_damage() {
+	return global.golf_the_earth_damage;
+}
+
+function additive_increase_golf_the_earth_damage(_amount) {
+	if global.golf_the_earth_damage == 0 {
+		with(obj_ball) {
+			image_index += 12;
+		}
+	}
+	global.golf_the_earth_damage += _amount;
+}
+
+function create_aoe_damage(_vector_position, _radius, _amount) {
+	with(obj_enemy_base) {
+		if vector_distance([x, y], _vector_position) < _radius {
+			enemy_take_damage(_amount);
+		}
+	}
+}
+
 function collect_powerup(_powerup_index) {
+	show_debug_message("Collected powerup " + string(_powerup_index));
 	instance_destroy();
 	apply_powerup(_powerup_index);
 }
@@ -40,7 +64,7 @@ function apply_powerup(_powerup_index) {
 			hp_increase_maxhp(1);
 			return;
 		case 4:
-			// Shake the earth.
+			additive_increase_golf_the_earth_damage(2);
 			return;
 		case 5:
 			// Explosive holes.
