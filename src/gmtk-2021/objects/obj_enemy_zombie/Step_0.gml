@@ -7,9 +7,9 @@ if current_state == state.eating {
 	// Haven't started eating yet
 	if lunch_start == -1 {
 		lunch_start = current_time;
-		if instance_exists(target_ball) {
+		// if instance_exists(target_ball) {
 			with (target_ball) instance_destroy();
-		}
+		// }
 	}
 	// We have chewed enough
 	else if current_time - lunch_start > lunch_duration {
@@ -34,7 +34,7 @@ else if !instance_exists(target_ball) {
 		target_ball = instance_find(obj_ball, irandom(instance_number(obj_ball) - 1));
 	}
 	else {
-		instance_create_layer(target_ball_xstart, target_ball_ystart, instance_layer, obj_ball);
+		target_ball = instance_create_layer(target_ball_xstart, target_ball_ystart, instance_layer, obj_ball);
 	}
 	if instance_exists(target_ball) {
 		target_ball_xstart = target_ball.xstart;
