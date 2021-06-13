@@ -414,6 +414,10 @@ function draw_text_new(_x, _y, _string, _col, _outline_col, _scale, _kerning) {
 				index = 37; fuck;
 			case "/":
 				index = 38; fuck;
+			case "@":
+				index = 39; fuck;
+			case "#":
+				index = 40; fuck;
 		}
 		str_array[i] = index;
 	}
@@ -425,14 +429,16 @@ function draw_text_new(_x, _y, _string, _col, _outline_col, _scale, _kerning) {
 		var offset = 4 * _scale;
 		if str_array[i] = -1 continue;
 		
-		draw_sprite_ext(glyph, str_array[i], __x-offset, __y+offset, _scale, _scale, 0, _outline_col, 1);
-		draw_sprite_ext(glyph, str_array[i], __x-offset, __y+0, _scale, _scale, 0, _outline_col, 1);
-		draw_sprite_ext(glyph, str_array[i], __x-offset, __y-offset, _scale, _scale, 0, _outline_col, 1);
-		draw_sprite_ext(glyph, str_array[i], __x+0, __y+offset, _scale, _scale, 0, _outline_col, 1);
-		draw_sprite_ext(glyph, str_array[i], __x+0, __y-offset, _scale, _scale, 0, _outline_col, 1);
-		draw_sprite_ext(glyph, str_array[i], __x+offset, __y+offset, _scale, _scale, 0, _outline_col, 1);
-		draw_sprite_ext(glyph, str_array[i], __x+offset, __y+0, _scale, _scale, 0, _outline_col, 1);
-		draw_sprite_ext(glyph, str_array[i], __x+offset, __y-offset, _scale, _scale, 0, _outline_col, 1);
+		if str_array[i] != 39 and str_array[i] != 40 {
+			draw_sprite_ext(glyph, str_array[i], __x-offset, __y+offset, _scale, _scale, 0, _outline_col, 1);
+			draw_sprite_ext(glyph, str_array[i], __x-offset, __y+0, _scale, _scale, 0, _outline_col, 1);
+			draw_sprite_ext(glyph, str_array[i], __x-offset, __y-offset, _scale, _scale, 0, _outline_col, 1);
+			draw_sprite_ext(glyph, str_array[i], __x+0, __y+offset, _scale, _scale, 0, _outline_col, 1);
+			draw_sprite_ext(glyph, str_array[i], __x+0, __y-offset, _scale, _scale, 0, _outline_col, 1);
+			draw_sprite_ext(glyph, str_array[i], __x+offset, __y+offset, _scale, _scale, 0, _outline_col, 1);
+			draw_sprite_ext(glyph, str_array[i], __x+offset, __y+0, _scale, _scale, 0, _outline_col, 1);
+			draw_sprite_ext(glyph, str_array[i], __x+offset, __y-offset, _scale, _scale, 0, _outline_col, 1);
+		}
 		draw_sprite_ext(glyph, str_array[i], __x, __y, _scale, _scale, 0, _col, 1);
 	}
 }

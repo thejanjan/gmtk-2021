@@ -1,7 +1,7 @@
 /// @description Draw HP meter
 
 // DEBUG
-var debug = 1;
+var debug = 0;
 if debug {
 	if new_keyboard_check_pressed(global.binding_debug) {
 		hp_deal_damage(1);
@@ -42,6 +42,10 @@ for (var i = 0; i < maxhp; i++) {
 	var bounce_offset = round(bounce_size * sin(degtorad( ((i + 1) * index_bounce_offset) + round(get_timer() / bounce_speed) )));
 	draw_sprite(sprite_index, 2 + empty, xpos + (i * dist_between_my_golf_orbs), ypos + bounce_offset);
 }
+
+// Draw flags collected
+var flags = CURRENT_FLAGS;
+var maxflags = path_manager.CURRENT_HOLE_COUNT;
 
 
 /*
