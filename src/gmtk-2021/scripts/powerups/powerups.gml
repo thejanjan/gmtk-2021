@@ -93,6 +93,12 @@ function additive_increase_additional_shots(_amount) {
 function collect_powerup(_powerup_index) {
 	//show_debug_message("Collected powerup " + string(_powerup_index));
 	instance_destroy();
+	var a = instance_create_layer(x, y, instance_layer, obj_grow_fade);
+	a.sprite_index = spr_ball;
+	a.image_index = 4;
+	var b = instance_create_layer(x, y, instance_layer, obj_grow_fade);
+	b.sprite_index = spr_powerup;
+	b.image_index = _powerup_index;
 	apply_powerup(_powerup_index);
 }
 

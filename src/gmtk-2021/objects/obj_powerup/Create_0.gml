@@ -7,3 +7,4 @@ physics_fixture_delete(fixture);
 image_speed = 0;
 powerup_index = 4; // Look, it's breakfast.
 image_index = powerup_index;
+instance_layer = layer;
