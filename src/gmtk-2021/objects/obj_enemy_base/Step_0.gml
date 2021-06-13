@@ -13,3 +13,16 @@ if hit_by_club() {
 	var base_damage = obj_golfer.current_speed + obj_golfer.club_base_damage;
 	enemy_take_damage(base_damage * get_player_damage_multiplier());
 }
+
+// This would be in the fire but you can't freaking access the take damage script from there...
+if instance_exists(obj_fire_trail)
+{
+	var near_fire = instance_nearest(x, y, obj_fire_trail);
+	if distance_to_object(near_fire) <= 10 {
+		with (near_fire)
+		{
+			instance_destroy();
+		};
+		enemy_take_damage(0.1);
+	}
+};

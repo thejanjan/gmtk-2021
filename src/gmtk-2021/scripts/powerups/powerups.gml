@@ -5,7 +5,7 @@ global.player_acceleration = 150.0;
 global.golf_the_earth_damage = 0;
 global.growth_spurt = 0;
 global.explosive_holes = false;
-global.player_fire_trails = 1;
+global.player_fire_trails = 0;
 
 function get_player_damage_multiplier() {
 	return global.player_damage_multiplier;
