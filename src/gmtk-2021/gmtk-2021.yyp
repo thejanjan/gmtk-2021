@@ -60,6 +60,7 @@
     {"id":{"name":"snd_engine","path":"sounds/snd_engine/snd_engine.yy",},"order":0,},
     {"id":{"name":"spr_chain","path":"sprites/spr_chain/spr_chain.yy",},"order":7,},
     {"id":{"name":"obj_enemy_base","path":"objects/obj_enemy_base/obj_enemy_base.yy",},"order":0,},
+    {"id":{"name":"spr_drone_shadow","path":"sprites/spr_drone_shadow/spr_drone_shadow.yy",},"order":7,},
     {"id":{"name":"snd_flame3","path":"sounds/snd_flame3/snd_flame3.yy",},"order":9,},
     {"id":{"name":"wavegen","path":"scripts/wavegen/wavegen.yy",},"order":4,},
     {"id":{"name":"snd_golf2","path":"sounds/snd_golf2/snd_golf2.yy",},"order":6,},
