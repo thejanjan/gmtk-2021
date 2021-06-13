@@ -75,6 +75,7 @@ function enemy_take_damage(_amount) {
 	hp -= _amount;
 	if hp <= 0 {
 		event_perform(ev_other, ev_user10);  // Execute before death, if we need
+		audio_play_sound(snd_enemy_die, 0, false);
 		instance_destroy();
 	}
 	// instance_exists(obj_golf_kart) && point_distance(x, y, obj_golf_kart.x, obj_golf_kart.y) < 1000
