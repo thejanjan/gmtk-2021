@@ -94,13 +94,13 @@ function set_grass_tile_matrix(_tile_x, _tile_y, _map_id, _array) {
 	tilemap_set(_map_id, GRASS.empty, _tile_x, _tile_y);
 	
 	tilemap_set(_map_id, _array[0], _tile_x + 1, _tile_y + 0);
-	tilemap_set(_map_id, _array[1], _tile_x + 1, _tile_y + 1);
-	tilemap_set(_map_id, _array[2], _tile_x + 0, _tile_y + 1);
-	tilemap_set(_map_id, _array[3], _tile_x - 1, _tile_y + 1);
+	tilemap_set(_map_id, _array[1], _tile_x + 1, _tile_y - 1);
+	tilemap_set(_map_id, _array[2], _tile_x + 0, _tile_y - 1);
+	tilemap_set(_map_id, _array[3], _tile_x - 1, _tile_y - 1);
 	tilemap_set(_map_id, _array[4], _tile_x - 1, _tile_y + 0);
-	tilemap_set(_map_id, _array[5], _tile_x - 1, _tile_y - 1);
-	tilemap_set(_map_id, _array[6], _tile_x + 0, _tile_y - 1);
-	tilemap_set(_map_id, _array[7], _tile_x + 1, _tile_y - 1);
+	tilemap_set(_map_id, _array[5], _tile_x - 1, _tile_y + 1);
+	tilemap_set(_map_id, _array[6], _tile_x + 0, _tile_y + 1);
+	tilemap_set(_map_id, _array[7], _tile_x + 1, _tile_y + 1);
 }
 
 /*function return_adjacent_grass_tiles(_tile_x, _tile_y, _map_id) {
@@ -132,7 +132,7 @@ function remove_grass_tile(_x, _y, _layer) {
 		case GRASS.full_a:
 		case GRASS.full_b:
 		case GRASS.full_c:
-			result = [GRASS.only_left, GRASS.down_left, GRASS.only_down, GRASS.down_right, GRASS.only_right, GRASS.up_right, GRASS.only_up, GRASS.only_up_left];
+			result = [GRASS.only_right, GRASS.up_right, GRASS.only_up, GRASS.up_left, GRASS.only_left, GRASS.down_left, GRASS.only_down, GRASS.down_right];
 			fuck;
 	}
 	if result[0] != -1
