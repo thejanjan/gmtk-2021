@@ -38,6 +38,27 @@ if point_distance(0, 0, obj_golf_kart.phy_speed_x, obj_golf_kart.phy_speed_y) >=
 surface_reset_target();
 draw_set_color(c_white);
 draw_surface_ext(tread_surface, 0, 0, 1, 1, 0, c_white, 0.2);
+// Lesser grind surface
+if(!surface_exists(lesser_surface))
+{
+   lesser_surface = surface_create( room_width, room_height );
+}
+surface_set_target( lesser_surface );
+
+draw_set_color(make_color_rgb(59, 31, 4));
+var lesser_face_grind_threshhold = 8;
+if point_distance(0, 0, obj_golfer.phy_speed_x, obj_golfer.phy_speed_y) >= lesser_face_grind_threshhold
+{
+    var lowering = 10;
+	var radius = random_range(5, 6);
+	draw_circle(obj_golfer.x, obj_golfer.y+lowering, radius, false);
+	draw_line_width(obj_golfer.x, obj_golfer.y+lowering, obj_golfer.xprevious, obj_golfer.yprevious+lowering, radius*2);
+	draw_circle(obj_golfer.xprevious, obj_golfer.yprevious+lowering, radius, false);
+};
+
+surface_reset_target();
+draw_set_color(c_white);
+draw_surface_ext(lesser_surface, 0, 0, 1, 1, 0, c_white, 0.6);
 
 // Hole surface
 if(!surface_exists(hole_surface))
@@ -48,16 +69,6 @@ surface_set_target( hole_surface );
 
 draw_set_color(make_color_rgb(59, 31, 4));
 var face_grind_threshhold = 16;
-var lesser_face_grind_threshhold = 8;
-
-if point_distance(0, 0, obj_golfer.phy_speed_x, obj_golfer.phy_speed_y) >= lesser_face_grind_threshhold
-{
-    var lowering = 10;
-	var radius = 10;
-	draw_circle(obj_golfer.x, obj_golfer.y+lowering, radius, false);
-	draw_line_width(obj_golfer.x, obj_golfer.y+lowering, obj_golfer.xprevious, obj_golfer.yprevious+lowering, radius*2);
-	draw_circle(obj_golfer.xprevious, obj_golfer.yprevious+lowering, radius, false);
-};
 
 if point_distance(0, 0, obj_golfer.phy_speed_x, obj_golfer.phy_speed_y) >= face_grind_threshhold
 {
