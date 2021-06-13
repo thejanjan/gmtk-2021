@@ -10,6 +10,7 @@ if weak and ((spd < 0.5 and spd != 0) or image_alpha != 1) {
 
 var hole = nearest_active_hole();
 var enemy = nearest_alive_enemy();
+instance_activate_all();
 
 if hit_by_club() and not weak {
 	var dir = vector_heading_to([obj_golfer.x, obj_golfer.y], [x, y]);
@@ -23,7 +24,7 @@ if hit_by_club() and not weak {
 		} if enemy and instance_exists(enemy) {
 			instance_activate_object(enemy);
 			enemy_dist = min(vector_magnitude(vector_subtract([x, y], [enemy.x, enemy.y])), enemy_dist)
-		}
+		}		
 		if enemy_dist != max_travel_distance enemy_dist /= 0.01 + (global.magnet_power * 0.33);
 		hole_dist = min(hole_dist, max_travel_distance);
 		enemy_dist = min(enemy_dist, max_travel_distance);
@@ -56,17 +57,18 @@ if hit_by_club() and not weak {
 if hit_timer > 0
 	hit_timer--;
 
-if not hole or weak exit;
+if not hole or weak or image_alpha != 1 exit;
 
 var distohole = point_distance(x, y, hole.x, hole.y);
 if distohole < 7 {
-    instance_destroy();
+    // image_alpha = 0.3;
     hole.flamming = true;
 	audio_play_sound(choose(snd_flame1, snd_flame2, snd_flame3), 0, false);
 	var hole_damage = get_explosive_hole_damage();
 	if hole_damage > 0 {
 		create_aoe_damage([x, y], 256, hole_damage);
 	}
+	instance_destroy();
 } else if distohole < 15 {
 	var dir = vector_heading_to([x, y], [hole.x, hole.y]);
 	dir = vector_scale(dir, 2);
