@@ -72,11 +72,35 @@ if chain_link_count > 1 {
 create_physics_link(chain_link[chain_link_count-1], golfer, [0, 10], [0, 0], 40);
 
 // Set up particles
+/*
 trail_particle_system = part_system_create();
+part_system_depth(trail_particle_system,8);
+
 trail_particle_type = part_type_create();
 part_type_shape(trail_particle_type,pt_shape_disk);
 part_type_color1(trail_particle_type,c_black);
 part_type_size(trail_particle_type,0.1,0.1,0,0);
 part_type_alpha1(trail_particle_type,0.1);
-part_type_life(trail_particle_type, 60*3, 60*3);
-part_system_depth(trail_particle_system,9);
+part_type_life(trail_particle_type, 60*60*2, 60*60*2);
+
+hudson_dirt_face_particle_system = part_system_create();
+part_system_depth(hudson_dirt_face_particle_system,10);
+
+hudson_dirt_face_particle_type = part_type_create();
+part_type_shape(hudson_dirt_face_particle_type,pt_shape_disk);
+part_type_color1(hudson_dirt_face_particle_type, make_color_rgb(59, 31, 4));
+part_type_size(hudson_dirt_face_particle_type,0.5,0.5,0,0);
+part_type_alpha1(hudson_dirt_face_particle_type,1);
+part_type_life(hudson_dirt_face_particle_type, 60*60*1, 60*60*1);
+
+deeper_hudson_dirt_face_particle_system = part_system_create();
+part_system_depth(deeper_hudson_dirt_face_particle_system,9);
+
+deeper_hudson_dirt_face_particle_type = part_type_create();
+part_type_shape(deeper_hudson_dirt_face_particle_type,pt_shape_disk);
+part_type_color1(deeper_hudson_dirt_face_particle_type, make_color_rgb(39, 21, 4));
+part_type_size(deeper_hudson_dirt_face_particle_type,0.3,0.3,0,0);
+part_type_alpha1(deeper_hudson_dirt_face_particle_type,1);
+part_type_life(deeper_hudson_dirt_face_particle_type, 60*60*1, 60*60*1);*/
+
+instance_create_layer(0, 0, layer,obj_trail_drawer);
