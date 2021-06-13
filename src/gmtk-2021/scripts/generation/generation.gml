@@ -38,6 +38,13 @@ function regenerate_holes() {
 	global.player_fire_trails = 0;
 	global.magnet_power = 0;
 	global.additional_shots = 0;
+	var dark_map_id = layer_tilemap_get_id(layer_get_id("layer_dark"));
+	var light_map_id = layer_tilemap_get_id(layer_get_id("layer_light"));
+	var background_id = layer_background_get_id(layer_get_id("Background"));
+	tilemap_tileset(dark_map_id, tileset_dark);
+	tilemap_tileset(light_map_id, tileset_light);
+	with (obj_tree) image_index = 0;
+	layer_background_change(background_id, spr_bggreen);
 	reset_powerup_pool();
 	hp_reset();
 	instance_create_layer(0, 0, "Instances", path_manager);
