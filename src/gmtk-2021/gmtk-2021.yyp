@@ -23,6 +23,7 @@
     {"id":{"name":"spr_tilesetA","path":"sprites/spr_tilesetA/spr_tilesetA.yy",},"order":1,},
     {"id":{"name":"snd_swing2","path":"sounds/snd_swing2/snd_swing2.yy",},"order":3,},
     {"id":{"name":"spr_tilesetA2","path":"sprites/spr_tilesetA2/spr_tilesetA2.yy",},"order":6,},
+    {"id":{"name":"spr_explosion","path":"sprites/spr_explosion/spr_explosion.yy",},"order":24,},
     {"id":{"name":"obj_fragile_wall","path":"objects/obj_fragile_wall/obj_fragile_wall.yy",},"order":8,},
     {"id":{"name":"obj_menu_button_game_end","path":"objects/obj_menu_button_game_end/obj_menu_button_game_end.yy",},"order":3,},
     {"id":{"name":"spr_flag","path":"sprites/spr_flag/spr_flag.yy",},"order":5,},
