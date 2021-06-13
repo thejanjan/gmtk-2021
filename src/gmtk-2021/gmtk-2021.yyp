@@ -146,10 +146,10 @@
     "children": [],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"gameplay_testing","path":"rooms/gameplay_testing/gameplay_testing.yy",},},
-    {"roomId":{"name":"main_game","path":"rooms/main_game/main_game.yy",},},
-    {"roomId":{"name":"rm_unit_tests","path":"rooms/rm_unit_tests/rm_unit_tests.yy",},},
     {"roomId":{"name":"room_menu","path":"rooms/room_menu/room_menu.yy",},},
+    {"roomId":{"name":"main_game","path":"rooms/main_game/main_game.yy",},},
+    {"roomId":{"name":"gameplay_testing","path":"rooms/gameplay_testing/gameplay_testing.yy",},},
+    {"roomId":{"name":"rm_unit_tests","path":"rooms/rm_unit_tests/rm_unit_tests.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "Folders": [
