@@ -10,7 +10,7 @@ if(!surface_exists(tread_surface))
 surface_set_target( tread_surface );
 
 draw_set_color(c_black);
-if point_distance(0, 0, obj_golf_kart.phy_speed_x, obj_golf_kart.phy_speed_y) >= 40 or true
+if point_distance(0, 0, obj_golf_kart.phy_speed_x, obj_golf_kart.phy_speed_y) >= 8
 {
 	var shortangle = 90-0; // Turns out this sucked
 	var longangle = 180-shortangle;
