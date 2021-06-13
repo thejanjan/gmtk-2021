@@ -2,30 +2,65 @@
 
 event_inherited();
 
+// Eating
 if current_state == state.eating {
-	if !instance_exists(target_ball) {
-		current_state = state.idle;
-		target_ball = -1;
-		return;
-	}
-	instance_destroy(target_ball);
+	// Haven't started eating yet
 	if lunch_start == -1 {
 		lunch_start = current_time;
+		if instance_exists(target_ball) {
+			instance_destroy(target_ball);
+		}
 	}
+	// We have chewed enough
 	else if current_time - lunch_start > lunch_duration {
 		lunch_start = -1;
-		current_state = state.well_fed;  // we want to get away from the ball if at its respawn point
+		current_state = state.well_fed;
 		wander_to_x = irandom_range(max(x - 200, 0), min(x + 200, room_width));
 		wander_to_y = irandom_range(max(y - 200, 0), min(y + 200, room_height));
+		current_target_pos = [wander_to_x, wander_to_y];
 		
-		if instance_exists(target_ball) and instance_number(obj_ball) > 1 {
-			instance_destroy(target_ball);
+		if instance_number(obj_ball) > 1 {
 			target_ball = instance_find(obj_ball, irandom(instance_number(obj_ball) - 1));
 		}
 		else {
 			// Respawn ball.
 			instance_create_layer(target_ball_xstart, target_ball_ystart, instance_layer, obj_ball);
 		}
+	}
+}
+// Not eating and don't know where to go
+else if !instance_exists(target_ball) {
+	target_ball = instance_find(obj_ball, irandom(instance_number(obj_ball) - 1));
+	target_ball_xstart = target_ball.xstart;
+	target_ball_ystart = target_ball.ystart;
+}
+
+// Heading to eat a ball
+if (current_state == state.idle or current_state == state.moving) and instance_exists(target_ball) {
+	current_state = state.moving;
+	current_target_pos = [target_ball.x, target_ball.y];
+	var dir = vector_heading_to([x, y], current_target_pos);
+	var acceleration_vector = vector_scale(dir, 20);
+	physics_apply_impulse(x, y, acceleration_vector[0], acceleration_vector[1]);
+}
+// Eaten recently and wandering
+else if current_state == state.well_fed {
+	var dir = vector_heading_to([x, y], current_target_pos);
+	var acceleration_vector = vector_scale(dir, 30);
+	physics_apply_impulse(x, y, acceleration_vector[0], acceleration_vector[1]);
+}
+// Fallback
+else if current_state != state.eating and current_state != state.dying {
+	current_state = state.idle;
+}
+
+// Are we there yet??? Mom??????
+if vector_magnitude(vector_heading_to([x, y], current_target_pos)) <= 32 {
+	if current_state == state.well_fed {
+		current_state = state.idle;
+	}
+	else if current_state == state.moving {
+		current_state = state.eating;
 	}
 }
 		

@@ -7,9 +7,10 @@ current_speed = 0;
 
 var fixture = physics_fixture_create();
 physics_fixture_set_box_shape(fixture, sprite_width / 2, sprite_height / 2);
-physics_fixture_set_collision_group(fixture, collision_groups.never);
-physics_fixture_set_density(fixture, 0);
-physics_fixture_set_restitution(fixture, 0.1);
+physics_fixture_set_density(fixture, 0.8);
+physics_fixture_set_restitution(fixture, 0.9);
+physics_fixture_set_linear_damping(fixture, 0.6);
+physics_fixture_set_angular_damping(fixture, 0.6);
 physics_fixture_set_friction(fixture, 0.2);
 physics_fixture_bind(fixture, id);
 physics_fixture_delete(fixture);
@@ -17,23 +18,24 @@ physics_fixture_delete(fixture);
 enum state {
 	idle,
 	moving,
+	physicsing,
 	well_fed,
 	eating,
 	dying
 }
 
+sprite_eating = false;
 current_state = state.idle;
 target_ball = -1;
 target_ball_xstart = 0;
 target_ball_ystart = 0;
 instance_layer = layer;
 
-path = path_add();
-alarm[0] = room_speed;
+current_target_pos = [0, 0];
 wander_to_x = 0;
 wander_to_y = 0;
 
 lunch_start = -1;
 lunch_duration = 2000;
 
-hp = 50;
+enemy_set_starting_hp(30);
