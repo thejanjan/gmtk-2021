@@ -4,6 +4,7 @@ global.player_damage_multiplier = 1.0;
 global.player_acceleration = 150.0;
 global.golf_the_earth_damage = 0;
 global.explosive_holes = false;
+global.player_fire_trails = 1;
 
 function get_player_damage_multiplier() {
 	return global.player_damage_multiplier;
@@ -40,6 +41,8 @@ function create_aoe_damage(_vector_position, _radius, _amount) {
 			enemy_take_damage(_amount);
 		}
 	}
+function additive_increase_player_fire_trails(_amount) {
+	global.player_fire_trails += _amount;
 }
 
 function collect_powerup(_powerup_index) {

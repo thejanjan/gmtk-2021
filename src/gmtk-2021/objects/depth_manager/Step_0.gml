@@ -17,6 +17,12 @@ with (all) {
 		case hp_bar:
 			depth = -100000;
 			fuck;
+		case obj_fire_trail:
+			depth = 1;
+			fuck;
+		case obj_trail_drawer:
+			depth = 2;
+			fuck;
 		default:
 			depth = -y;
 			fuck;
