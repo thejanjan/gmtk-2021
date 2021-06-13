@@ -21,10 +21,12 @@ function get_enemy_from_difficulty(_difficulty) {
 		case 1:
 			return obj_enemy_zombie;
 		case 2:
-			return obj_enemy_wimp;
+			return obj_spider;
 		case 3:
-			return obj_evil_golf_kart;
+			return obj_enemy_wimp;
 		case 4:
+			return obj_evil_golf_kart;
+		case 5:
 		default:
 			return obj_enemy_charger;
 	}
