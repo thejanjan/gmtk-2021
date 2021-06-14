@@ -12,7 +12,7 @@ with (all) {
 			depth = -10000;
 			fuck;
 		case obj_ball:
-			depth = -y + real_y;
+			depth = -y - real_y;
 			fuck;
 		case obj_hole:
 			depth = -y + 32;

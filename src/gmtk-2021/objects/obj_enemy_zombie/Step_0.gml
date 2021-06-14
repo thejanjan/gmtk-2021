@@ -24,7 +24,8 @@ if current_state == state.eating {
 		}
 		else {
 			// Respawn ball.
-			instance_create_layer(target_ball_xstart, target_ball_ystart, instance_layer, obj_ball);
+			var ball = instance_create_layer(x, y + 8, instance_layer, obj_ball);
+			ball.real_y = 50;
 		}
 	}
 }
