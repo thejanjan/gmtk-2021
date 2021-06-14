@@ -70,5 +70,12 @@ if point_distance(x, y, current_target_pos[0], current_target_pos[1]) <= 32 {
 	}
 	else if current_state == state.moving {
 		current_state = state.eating;
+		if global.growth_spurt >= ball_too_big {
+			lunch_start = -1;
+			current_state = state.well_fed;
+			wander_to_x = irandom_range(max(x - 200, 0), min(x + 200, room_width));
+			wander_to_y = irandom_range(max(y - 200, 0), min(y + 200, room_height));
+			current_target_pos = [wander_to_x, wander_to_y];
+		}
 	}
 }

@@ -36,6 +36,8 @@ current_target_pos = [0, 0];
 wander_to_x = 0;
 wander_to_y = 0;
 
+ball_too_big = 3;
+
 lunch_start = -1;
 lunch_duration = 2000;
 
