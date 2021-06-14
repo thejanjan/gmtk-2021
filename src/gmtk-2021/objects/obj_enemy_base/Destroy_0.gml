@@ -13,3 +13,10 @@ for (var i=0; i<how_many_balls; i++)
 		physics_apply_impulse(x, y, acceleration_vector[0], acceleration_vector[1]);
 	}
 }
+
+if object_index = obj_enemy_zombie {
+	if current_state = state.eating {
+		var ball = instance_create_layer(x, y + 2, instance_layer, obj_ball);
+		ball.real_y = 50;	
+	}
+}
