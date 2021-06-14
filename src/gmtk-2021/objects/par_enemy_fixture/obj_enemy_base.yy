@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "par_enemy_fixture",
-    "path": "objects/par_enemy_fixture/par_enemy_fixture.yy",
+    "name": "obj_dynamicparent",
+    "path": "objects/obj_dynamicparent/obj_dynamicparent.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

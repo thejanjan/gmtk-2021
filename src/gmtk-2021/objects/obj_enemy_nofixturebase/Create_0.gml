@@ -7,11 +7,11 @@ if distance_to_object_new(obj_golf_kart) < path_manager.GRACE_RADIUS {
 	exit;
 }
 
-event_inherited();
-
 previous_pos = [x, y];
 current_pos = [x, y];
 current_speed = 0;
 instance_layer = layer;
+
+hit_by_ball_cooldown = 10;
 
 enemy_set_starting_hp(30);
