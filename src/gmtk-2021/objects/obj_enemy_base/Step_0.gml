@@ -15,6 +15,12 @@ if hit_by_club() {
 	enemy_take_damage(base_damage * get_player_damage_multiplier());
 	
 	audio_play_sound(snd_enemy_smacked, 0, false);
+	
+	if object_index = obj_enemy_charger {
+		if current_state = charger_state.warning {
+			alarm[2] = 1;
+		}
+	}
 }
 
 // This would be in the fire but you can't freaking access the take damage script from there...
