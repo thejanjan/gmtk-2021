@@ -153,7 +153,7 @@ function get_powerup_name(_powerup_index) {
 		case 4: return "GOLF THE EARTH";
 		case 5: return "EXPLOSIVE HOLE";
 		case 6: return "+1 SHOT";
-		case 7: return "MAGNET POWER UP";
+		case 7: return "ENEMIES ATTRACT GOLF";
 		case 8: return "GROWTH SPURT";
 		default: return "WTF??? HUH??? HOW?!?!?! DON'T!!!";
 	}
