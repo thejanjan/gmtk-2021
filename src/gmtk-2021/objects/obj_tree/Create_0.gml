@@ -13,5 +13,5 @@ image_xscale = choose(-1, 1);
 depth = -y;
 image_speed = 0;
 
-if distance_to_object(obj_hole) < 120 or distance_to_object(obj_end_hole) < 120
+if distance_to_object_new(obj_hole) < 120 or distance_to_object_new(obj_end_hole) < 120
 	instance_destroy();

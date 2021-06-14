@@ -337,7 +337,7 @@ for (var i = 0; i < TOTAL_PATH_LENGTH - 1; i++) {
 		var enemy_type = get_enemy_from_difficulty(enemy_difficulties[o]);
 		var enemy = instance_create_layer(_x, _y, layer, enemy_type);					
 		with (enemy) {
-			if distance_to_object(obj_golf_kart) < path_manager.GRACE_RADIUS
+			if distance_to_object_new(obj_golf_kart) < path_manager.GRACE_RADIUS
 				instance_destroy();
 		}
 	}

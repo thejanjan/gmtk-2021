@@ -21,7 +21,7 @@ if hit_by_club() {
 if instance_exists(obj_fire_trail)
 {
 	var near_fire = instance_nearest(x, y, obj_fire_trail);
-	if distance_to_object(near_fire) <= 10 {
+	if distance_to_object_new(near_fire) <= 10 {
 		with (near_fire)
 		{
 			instance_destroy();

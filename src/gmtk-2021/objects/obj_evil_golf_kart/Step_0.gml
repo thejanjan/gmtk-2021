@@ -46,7 +46,7 @@ var dest;
 var check = 1
 if instance_exists(obj_golfer) {
 if instance_exists(path_manager)
-	if distance_to_object(obj_golfer) > path_manager.ENEMY_VISION check = 0;
+	if distance_to_object_new(obj_golfer) > path_manager.ENEMY_VISION check = 0;
 if instance_exists(obj_golfer) and check {
 	dest = [obj_golfer.x, obj_golfer.y];
 } else {

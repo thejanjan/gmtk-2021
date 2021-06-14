@@ -25,3 +25,10 @@ function spawn_dandruff() {
 		}
 	}
 }
+
+function distance_to_object_new(_obj) {
+	// Clean version of distance_to_object.	
+	// Will return infinite if instance does not exist (the distance is too great).
+	if !instance_exists(_obj) return infinity;
+	return distance_to_object(_obj);
+}
