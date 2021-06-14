@@ -26,8 +26,8 @@ if hit_by_club() and not weak {
 		} if enemy and instance_exists(enemy) {
 			instance_activate_object(enemy);
 			enemy_dist = min(vector_magnitude(vector_subtract([x, y], [enemy.x, enemy.y])), enemy_dist)
+			enemy_dist /= 0.4 + (global.magnet_power * 0.7);
 		}		
-		if enemy_dist != max_travel_distance enemy_dist /= 0.01 + (global.magnet_power * 0.33);
 		hole_dist = min(hole_dist, max_travel_distance);
 		enemy_dist = min(enemy_dist, max_travel_distance);
 		if hole_dist < enemy_dist {
