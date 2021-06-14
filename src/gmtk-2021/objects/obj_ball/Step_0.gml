@@ -73,6 +73,9 @@ if hit_by_club() and not weak {
 	}
 }
 
+var _sign = sign(phy_speed_x) != 0 ? sign(phy_speed_x) : choose(-1, 1);
+_angle -= _sign * 2 * vector_magnitude([phy_speed_x, phy_speed_y]);
+
 if hit_timer > 0
 	hit_timer--;
 
