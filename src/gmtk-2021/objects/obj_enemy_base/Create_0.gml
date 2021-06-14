@@ -10,10 +10,10 @@ hit_by_ball_cooldown = 10;
 
 enemy_set_starting_hp(30);
 
+event_inherited();
+
 if instance_exists(path_manager)
 if distance_to_object_new(obj_golf_kart) < path_manager.GRACE_RADIUS {
 	instance_destroy();
 	exit;
 }
-
-event_inherited();
