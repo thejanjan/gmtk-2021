@@ -20,11 +20,30 @@ function squash_n_stretch_transform(v) {
 	return [tx + x, ty + y];
 }
 
+var golfball_shadow_max_height = 140;
+var shadow_scale = max(0.3, 1 - (real_y / golfball_shadow_max_height));
+var shadow_alpha = max(0.3, 1 - (real_y / golfball_shadow_max_height));
+var golfball_shadow_height = 10;
+switch (global.growth_spurt) {
+	case 1:
+		golfball_shadow_height = 14; break;
+	case 2:
+		golfball_shadow_height = 18; break;
+	case 3:
+		golfball_shadow_height = 26; break;
+	case 4:
+		golfball_shadow_height = 34; break;
+	case 5:
+		golfball_shadow_height = 42; break;
+}
+
+golfball_shadow_height *= (1 - shadow_scale) * image_xscale;
+golfball_shadow_height = floor(golfball_shadow_height);
 
 if weak {
 	image_index = 0;
-	draw_sprite_ext(sprite_index, 6, x, y, image_xscale, image_yscale, 0, c_white, image_alpha);
-} else draw_sprite_ext(sprite_index, get_ball_shadow_index(), x, y, image_xscale, image_yscale, 0, c_white, image_alpha);
+	draw_sprite_ext(sprite_index, 6, x, y + golfball_shadow_height, image_xscale * shadow_scale, image_yscale * shadow_scale, 0, c_white, image_alpha * shadow_alpha);
+} else draw_sprite_ext(sprite_index, get_ball_shadow_index(), x, y + golfball_shadow_height, image_xscale * shadow_scale, image_yscale * shadow_scale, 0, c_white, image_alpha * shadow_alpha);
 
 if (!phy_sleeping and os_browser != browser_not_a_browser) {
 	var hw = 12;
