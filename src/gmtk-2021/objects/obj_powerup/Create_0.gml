@@ -5,6 +5,6 @@ physics_fixture_bind(fixture, id);
 physics_fixture_delete(fixture);
 
 image_speed = 0;
-powerup_index = 4; // Look, it's breakfast.
+powerup_index = 3; // Look, it's breakfast.
 image_index = powerup_index;
 instance_layer = layer;
