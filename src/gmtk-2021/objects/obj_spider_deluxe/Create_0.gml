@@ -21,7 +21,7 @@ current_pos = [x, y];
 current_speed = 0;
 instance_layer = layer;
 
-enemy_set_starting_hp(150);
+enemy_set_starting_hp(120);
 
 phy_linear_damping = 2;
 phy_angular_damping = 10;

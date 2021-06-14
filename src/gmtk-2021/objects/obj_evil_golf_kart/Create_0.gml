@@ -11,7 +11,7 @@ current_pos = [x, y];
 current_speed = 0;
 instance_layer = layer;
 
-enemy_set_starting_hp(40);
+enemy_set_starting_hp(50);
 
 function create_physics_link(_obj1, _obj2, _off1, _off2, _length) {
 	// _obj2.attachment_target = _obj1;
