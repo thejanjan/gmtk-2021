@@ -123,29 +123,6 @@ current_direction = point_direction(x, y, goal[0], goal[1]);
 
 acceleration = 0.1;*/
 
-// Draw trails actually jk
-/*
-if pspeed >= 40
-{
-	var shortangle = 90-0; // Turns out this sucked
-	var longangle = 180-shortangle;
-	var lowering = 22;
-	var dis = 25;
-	var dir = -phy_rotation+(shortangle/2);
-	part_particles_create(trail_particle_system, x+lengthdir_x(dis, dir), y+lowering+lengthdir_y(dis, dir), trail_particle_type, 1);
-	dir += longangle;
-	part_particles_create(trail_particle_system, x+lengthdir_x(dis, dir), y+lowering+lengthdir_y(dis, dir), trail_particle_type, 1);
-	dir += shortangle;
-	part_particles_create(trail_particle_system, x+lengthdir_x(dis, dir), y+lowering+lengthdir_y(dis, dir), trail_particle_type, 1);
-	dir += longangle;
-	part_particles_create(trail_particle_system, x+lengthdir_x(dis, dir), y+lowering+lengthdir_y(dis, dir), trail_particle_type, 1);
-};
-if point_distance(0, 0, obj_golfer.phy_speed_x, obj_golfer.phy_speed_y) >= 8
-{
-    var lowering = 10;
-    part_particles_create(hudson_dirt_face_particle_system, obj_golfer.x, obj_golfer.y+lowering, hudson_dirt_face_particle_type, 1);
-    part_particles_create(deeper_hudson_dirt_face_particle_system, obj_golfer.x, obj_golfer.y+lowering, deeper_hudson_dirt_face_particle_type, 1);
-}; */
 
 if global.camera_shake > 0 {
 	var xoffset = random_range(-global.camera_shake, global.camera_shake);
