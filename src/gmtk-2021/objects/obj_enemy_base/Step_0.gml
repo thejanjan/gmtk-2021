@@ -23,6 +23,28 @@ if hit_by_club() {
 	}
 }
 
+// Hit by ball
+if hit_by_ball_cooldown <= 0 {
+	if place_meeting(x, y, obj_ball) {
+		var lets_go = 1;
+		if (object_index = obj_enemy_zombie) {
+			if current_state != state.eating
+				lets_go = 0;
+		}
+		if lets_go {
+			hit_by_ball_cooldown = 10;
+			var that_ball = instance_nearest(x, y, obj_ball);
+			var min_speed_for_damage = 1;
+			if that_ball.current_speed > min_speed_for_damage {
+				var damage_mult = that_ball.current_speed;
+				if that_ball.weak damage_mult *= 0.5;
+				enemy_take_damage(get_ball_base_damage() * damage_mult);
+				audio_play_sound(snd_enemy_smacked, 0, false);
+			}
+		}
+	} 
+} else if (hit_by_ball_cooldown > 0) hit_by_ball_cooldown--;
+
 // This would be in the fire but you can't freaking access the take damage script from there...
 if instance_exists(obj_fire_trail)
 {
