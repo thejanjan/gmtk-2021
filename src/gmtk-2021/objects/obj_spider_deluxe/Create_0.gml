@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-event_inherited();
+
 
 var fixture = physics_fixture_create();
 physics_fixture_set_circle_shape(fixture, sprite_width);
@@ -23,3 +23,5 @@ phy_active = false;
 awake = 0;
 t = 0;
 image_speed = 0.5;
+
+event_inherited();

@@ -1,6 +1,6 @@
 /// @description initiate golf kart variables
 
-event_inherited();
+
 
 enemy_set_starting_hp(50);
 
@@ -70,3 +70,5 @@ if chain_link_count > 1 {
 }
 // link last chain to golfer
 create_physics_link(chain_link[chain_link_count-1], my_stinky_golfer, [0, 10], [0, 0], 40);
+
+event_inherited();

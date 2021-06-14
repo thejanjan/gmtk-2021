@@ -1,6 +1,6 @@
 /// @description Insert description here
 
-event_inherited();
+
 
 var fixture = physics_fixture_create();
 physics_fixture_set_collision_group(fixture, collision_groups.never);
@@ -39,3 +39,5 @@ lunch_start = -1;
 lunch_duration = 2000;
 
 enemy_set_starting_hp(30);
+
+event_inherited();
