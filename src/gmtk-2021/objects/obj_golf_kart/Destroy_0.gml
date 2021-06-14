@@ -3,4 +3,3 @@
 
 // This mildly breaks HTML5, for some reason
 camera_destroy(view_camera[0]);
-camera_destroy(view_camera[1]);

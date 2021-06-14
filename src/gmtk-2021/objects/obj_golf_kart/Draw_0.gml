@@ -49,7 +49,22 @@ function kart_xscale() {
 	return 1;
 }
 
-draw_sprite_ext(sprite_index, kart_sprite_index(), x, y + y_offset, kart_xscale(), 1, 0, image_blend, image_alpha);
+x_car_offset *= reduce_offset;
+
+if x_car_offset < -1 {
+	current_direction = 0;
+	dummy.x = x + x_car_offset;
+	dummy.y = y;
+} else if instance_exists(dummy) {
+	camera_set_view_target(view_camera[0], self);
+	with (dummy) instance_destroy();
+	if instance_number(hp_bar) = 0 {
+		instance_create_layer(0, 0, "Instances", hp_bar);	
+	}
+}
+
+draw_sprite_ext(sprite_index, kart_sprite_index(), x + x_car_offset, y + y_offset, kart_xscale(), 1, 0, image_blend, image_alpha);
+
 
 // DEBUG: shows the vector to the crosshair
 // var vector_draw_dist = 60;
