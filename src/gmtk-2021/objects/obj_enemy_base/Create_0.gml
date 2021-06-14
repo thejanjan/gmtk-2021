@@ -1,6 +1,12 @@
 /// @description Initialize variables.
 /// This is the base enemy. Inherit from it to define your own enemies.
 
+if instance_exists(path_manager)
+if distance_to_object_new(obj_golf_kart) < path_manager.GRACE_RADIUS {
+	instance_destroy();
+	exit;
+}
+
 var fixture = physics_fixture_create();
 physics_fixture_set_circle_shape(fixture, sprite_width / 2);
 physics_fixture_set_density(fixture, 0.8);
