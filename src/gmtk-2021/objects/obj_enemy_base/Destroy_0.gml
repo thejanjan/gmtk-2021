@@ -6,10 +6,11 @@ var how_many_balls = irandom_range(0, min(round(hp_max/50), 2));
 for (var i=0; i<how_many_balls; i++)
 {
 	o = instance_create_depth(x, y, -y, obj_ball);
-	with(o)
-	{
-		var dir = vector_heading_to([0, 0], [random_range(-10, 10), random_range(-10, 10)]);
+	with (o) {
+		var dir = vector_make_from_direction(irandom(360));
 		var acceleration_vector = vector_scale(dir, random_range(10, 25));
+		real_y = 20;
+		real_yspeed = -random(2);
 		physics_apply_impulse(x, y, acceleration_vector[0], acceleration_vector[1]);
 	}
 }
