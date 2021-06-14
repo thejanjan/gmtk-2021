@@ -51,8 +51,8 @@ if hit_by_club() and not weak {
 	
 	if hit_timer = 0 {
 		var shots = global.additional_shots;
-		if going_to = 1 real_yspeed -= (powered / 3);
-		else real_yspeed -= (powered / 2);
+		if going_to = 1 real_yspeed -= (powered / 4);
+		else real_yspeed -= (powered / 3);
 		if hole {
 			var distohole = point_distance(x, y, hole.x, hole.y);
 			if distohole < 140 {
