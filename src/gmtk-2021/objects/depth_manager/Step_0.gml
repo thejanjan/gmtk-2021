@@ -5,9 +5,12 @@
 with (all) {
 	
 	switch (object_index) {
+		case obj_chain_link:
+			depth = -y + 100;
+			fuck;
 		case obj_death_screen:
 			depth = -10000000;
-			break;
+			fuck;
 		case obj_ball_letter:
 			depth = -10000;
 			fuck;
