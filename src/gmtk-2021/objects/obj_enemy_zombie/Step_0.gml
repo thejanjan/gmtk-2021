@@ -61,6 +61,15 @@ else if current_state != state.eating and current_state != state.dying {
 	current_state = state.idle;
 }
 
+// Catch and eat a fastball
+if distance_to_object_new(obj_ball) < 3 and current_state != state.eating {
+	var that_ball = instance_nearest(x, y, obj_ball);
+	if that_ball.current_speed > 2 {
+		target_ball = that_ball;
+		current_target_pos = [target_ball.x, target_ball.y];
+	}
+}
+
 if current_state = state.moving and instance_exists(target_ball)
 current_target_pos = [target_ball.x, target_ball.y];
 
