@@ -44,9 +44,7 @@ function get_rising_text_val(_obj) {
 	return -1;
 }
 
-function draw_text_new(_x, _y, _string, _col, _outline_col, _scale, _kerning) {
-	// Draws text using glyphs.
-	
+function string_to_glyph_array(_string) {
 	// Step one: convert string to array.
 	var str_len = string_length(_string);
 	var str_array = array_create(str_len, -1);
@@ -139,8 +137,12 @@ function draw_text_new(_x, _y, _string, _col, _outline_col, _scale, _kerning) {
 		}
 		str_array[i] = index;
 	}
-	// Step two: draw the sprite.
-	// var kerning = 48 * _scale;
+	return str_array;
+}
+
+function draw_text_new(_x, _y, _string, _col, _outline_col, _scale, _kerning) {
+	// Draws text using glyphs.
+	var str_array = string_to_glyph_array(_string);
 	for (var i = 0; i < array_length(str_array); i++) {
 		var __x = _x + (i * _kerning);
 		var __y = _y;
@@ -161,8 +163,38 @@ function draw_text_new(_x, _y, _string, _col, _outline_col, _scale, _kerning) {
 	}
 }
 
+function draw_text_new_wave(_x, _y, _string, _col, _outline_col, _scale, _kerning, _dist, _speed) {
+	// Draws text using glyphs.
+	var str_array = string_to_glyph_array(_string);
+	for (var i = 0; i < array_length(str_array); i++) {
+		var __x = _x + (i * _kerning);
+		var __y = _y;
+		var offset = 4 * _scale;
+		var x_offset = _dist * sin(degtorad((i * 40) + (_speed * (get_timer() / 1000000))));
+		if str_array[i] = -1 continue;
+		
+		if str_array[i] != 39 and str_array[i] != 40 {
+			draw_sprite_ext(glyph, str_array[i], __x-offset+x_offset, __y+offset, _scale, _scale, 0, _outline_col, 1);
+			draw_sprite_ext(glyph, str_array[i], __x-offset+x_offset, __y+0, _scale, _scale, 0, _outline_col, 1);
+			draw_sprite_ext(glyph, str_array[i], __x-offset+x_offset, __y-offset, _scale, _scale, 0, _outline_col, 1);
+			draw_sprite_ext(glyph, str_array[i], __x+x_offset, __y+offset, _scale, _scale, 0, _outline_col, 1);
+			draw_sprite_ext(glyph, str_array[i], __x+x_offset, __y-offset, _scale, _scale, 0, _outline_col, 1);
+			draw_sprite_ext(glyph, str_array[i], __x+offset+x_offset, __y+offset, _scale, _scale, 0, _outline_col, 1);
+			draw_sprite_ext(glyph, str_array[i], __x+offset+x_offset, __y+0, _scale, _scale, 0, _outline_col, 1);
+			draw_sprite_ext(glyph, str_array[i], __x+offset+x_offset, __y-offset, _scale, _scale, 0, _outline_col, 1);
+		}
+		draw_sprite_ext(glyph, str_array[i], __x+x_offset, __y, _scale, _scale, 0, _col, 1);
+	}
+}
+
 function draw_text_new_centered(_x, _y, _string, _col, _outline_col, _scale, _kerning) {
 	var str_len = string_length(_string);
 	_x = _x - (str_len * _kerning * 0.5);
 	draw_text_new(_x, _y, _string, _col, _outline_col, _scale, _kerning);
+}
+
+function draw_text_new_centered_wave(_x, _y, _string, _col, _outline_col, _scale, _kerning, _dist, _speed) {
+	var str_len = string_length(_string);
+	_x = _x - (str_len * _kerning * 0.5);
+	draw_text_new_wave(_x, _y, _string, _col, _outline_col, _scale, _kerning, _dist, _speed);
 }
