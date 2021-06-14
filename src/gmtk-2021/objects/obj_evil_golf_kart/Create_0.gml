@@ -3,6 +3,7 @@
 
 
 enemy_set_starting_hp(50);
+event_inherited();
 
 function create_physics_link(_obj1, _obj2, _off1, _off2, _length) {
 	// _obj2.attachment_target = _obj1;
@@ -71,4 +72,3 @@ if chain_link_count > 1 {
 // link last chain to golfer
 create_physics_link(chain_link[chain_link_count-1], my_stinky_golfer, [0, 10], [0, 0], 40);
 
-event_inherited();

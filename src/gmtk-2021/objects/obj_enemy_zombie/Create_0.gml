@@ -1,7 +1,9 @@
 /// @description Insert description here
 
 
+enemy_set_starting_hp(30);
 
+event_inherited();
 var fixture = physics_fixture_create();
 physics_fixture_set_collision_group(fixture, collision_groups.never);
 physics_fixture_set_box_shape(fixture, sprite_width / 2, sprite_height / 2);
@@ -38,6 +40,3 @@ ball_too_big = 3;
 lunch_start = -1;
 lunch_duration = 2000;
 
-enemy_set_starting_hp(30);
-
-event_inherited();
