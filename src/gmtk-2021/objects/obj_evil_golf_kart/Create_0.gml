@@ -1,5 +1,11 @@
 /// @description initiate golf kart variables
 
+if instance_exists(path_manager)
+if distance_to_object_new(obj_golf_kart) < path_manager.GRACE_RADIUS {
+	instance_destroy();
+	exit;
+}
+
 previous_pos = [x, y];
 current_pos = [x, y];
 current_speed = 0;

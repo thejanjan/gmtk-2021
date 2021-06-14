@@ -1,5 +1,11 @@
 /// @description Insert description here
 
+if instance_exists(path_manager)
+if distance_to_object_new(obj_golf_kart) < path_manager.GRACE_RADIUS {
+	instance_destroy();
+	exit;
+}
+
 // event_inherited();  // jk you can't unbind physics fixtures! lol!!!
 previous_pos = [x, y];
 current_pos = [x, y];
