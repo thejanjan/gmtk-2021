@@ -25,8 +25,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "powerups",
-    "path": "folders/Objects/powerups.yy",
+    "name": "visual",
+    "path": "folders/Objects/visual.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_rising_text",
