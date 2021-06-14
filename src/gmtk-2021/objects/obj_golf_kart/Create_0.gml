@@ -31,20 +31,25 @@ reduce_offset = 0.88;
 
 if room != main_game exit;
 
-camera_destroy(view_camera[0]);
-global.camera_shake = 0;
 var v = [1366, 768];
 
 dummy = instance_create_layer(x + x_car_offset, y, "Instances", obj_depth_hole);
 dummy.visible = 0;
+camera_obj = instance_create_layer(dummy.x, dummy.y, "Instances", obj_depth_hole);
+camera_obj.visible = 0;
 global.camera_shake = 0;
 var k = dummy;
+
+camera_destroy(view_camera[0]);
+// view_camera[0] = camera_create_view(k.x - (v[0] / 2), k.y - (v[1] / 2), v[0], v[1]);
 view_camera[0] = camera_create_view(k.x - (v[0] / 2), k.y - (v[1] / 2), v[0], v[1], 0, k, -1, -1, v[0] / 2, v[1] / 2);
 // view_camera[1] = camera_create_view(k.x - (v[0] / 2), k.y - (v[1] / 2), v[0], v[1], 0, k, -1, -1, v[0] / 2, v[1] / 2);
 
 // camera_set_default(view_camera[1]);
 camera_set_view_target(view_camera[0], dummy);
 camera_set_default(view_camera[0]);
+camera_apply(view_camera[0]);
+view_set_camera(0, view_camera[0]);
 // camera_set_view_target(view_camera[1], dummy);
 
 // sound

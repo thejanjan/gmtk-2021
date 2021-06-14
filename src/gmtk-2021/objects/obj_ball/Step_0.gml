@@ -67,7 +67,7 @@ if hit_by_club() and not weak {
 		hit_timer = 5;
 		var earth_damage = get_golf_the_earth_damage();
 		if earth_damage > 0 {
-			global.camera_shake = 10;
+			global.camera_shake = 6;
 			create_aoe_damage([x, y], 500, earth_damage);
 		}
 	}

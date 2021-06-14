@@ -56,7 +56,13 @@ if x_car_offset < -1 {
 	dummy.x = x + x_car_offset;
 	dummy.y = y;
 } else if instance_exists(dummy) {
-	camera_set_view_target(view_camera[0], self);
+	// camera_set_view_target(view_camera[0], camera_obj);
+	camera_destroy(view_camera[0]);
+	// view_camera[0] = camera_create_view(k.x - (v[0] / 2), k.y - (v[1] / 2), v[0], v[1]);
+	var k = camera_obj;
+	var v = [1366, 768];
+	view_camera[0] = camera_create_view(k.x - (v[0] / 2), k.y - (v[1] / 2), v[0], v[1], 0, k, -1, -1, v[0] / 2, v[1] / 2);
+
 	with (dummy) instance_destroy();
 	if instance_number(hp_bar) = 0 {
 		instance_create_layer(0, 0, "Instances", hp_bar);	
@@ -65,6 +71,26 @@ if x_car_offset < -1 {
 
 draw_sprite_ext(sprite_index, kart_sprite_index(), x + x_car_offset, y + y_offset, kart_xscale(), 1, 0, image_blend, image_alpha);
 
+hello = view_camera[0];
+goodbye = camera_get_active();
+weird = view_get_camera(0);
+um = camera_get_view_x(hello);
+ok = camera_get_view_y(hello);
+
+var _obj = self;
+if instance_exists(dummy) _obj = dummy;
+var camera_x, camera_y;
+camera_x = _obj.x;
+camera_y = _obj.y;
+
+if global.camera_shake > 0 {
+	camera_x += random_range(-global.camera_shake, global.camera_shake);
+	camera_y += random_range(-global.camera_shake, global.camera_shake);
+	global.camera_shake *= 0.7;
+}
+
+camera_obj.x = camera_x;
+camera_obj.y = camera_y;
 
 // DEBUG: shows the vector to the crosshair
 // var vector_draw_dist = 60;

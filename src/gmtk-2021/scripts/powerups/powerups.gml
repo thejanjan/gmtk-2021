@@ -193,3 +193,7 @@ function get_pool_powerup() {
 		return choose(0, 1, 4, 5);
 	}
 }
+
+apply_powerup(4);
+apply_powerup(4);
+apply_powerup(4);
