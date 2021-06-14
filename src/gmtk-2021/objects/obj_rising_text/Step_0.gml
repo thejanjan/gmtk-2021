@@ -8,12 +8,13 @@ if alpha > 0.0 {
 }
 y -= 3;
 
-if instance_number(obj_rising_text) >= 2 {
+var text_count = instance_number(obj_rising_text);
+if text_count >= 2 {
 	if col != c_red exit;
 	if col = c_blue exit;
 	var self_val = get_rising_text_val(self);
 	if self_val != -1 {
-		var check_dist = 16;
+		var check_dist = 12 + (text_count * 2);
 		y -= check_dist;
 		var nearest_text = instance_nearest(x, y + check_dist, obj_rising_text);
 		y += check_dist;
