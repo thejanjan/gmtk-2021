@@ -33,6 +33,9 @@
     {"compositeImage":{"FrameId":{"name":"7349db1c-8629-41d3-88d9-f66d5dbeda99","path":"sprites/spr_enemy_zombie/spr_enemy_zombie.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"7349db1c-8629-41d3-88d9-f66d5dbeda99","path":"sprites/spr_enemy_zombie/spr_enemy_zombie.yy",},"LayerId":{"name":"2f45de73-7996-4cdd-bc4a-d505dff4a56e","path":"sprites/spr_enemy_zombie/spr_enemy_zombie.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_enemy_zombie","path":"sprites/spr_enemy_zombie/spr_enemy_zombie.yy",},"resourceVersion":"1.0","name":"7349db1c-8629-41d3-88d9-f66d5dbeda99","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"6ba67f26-5fc0-4ac4-9606-5bd73e61c400","path":"sprites/spr_enemy_zombie/spr_enemy_zombie.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"6ba67f26-5fc0-4ac4-9606-5bd73e61c400","path":"sprites/spr_enemy_zombie/spr_enemy_zombie.yy",},"LayerId":{"name":"2f45de73-7996-4cdd-bc4a-d505dff4a56e","path":"sprites/spr_enemy_zombie/spr_enemy_zombie.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_enemy_zombie","path":"sprites/spr_enemy_zombie/spr_enemy_zombie.yy",},"resourceVersion":"1.0","name":"6ba67f26-5fc0-4ac4-9606-5bd73e61c400","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_enemy_zombie","path":"sprites/spr_enemy_zombie/spr_enemy_zombie.yy",},
@@ -42,7 +45,7 @@
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
-    "length": 3.0,
+    "length": 4.0,
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
@@ -50,6 +53,7 @@
             {"id":"0b7abbf1-7cd6-4b31-89a0-4a26429e5f3d","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6724fb48-a9e8-449f-a469-3a4b72ad83b4","path":"sprites/spr_enemy_zombie/spr_enemy_zombie.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"d87f8b9b-40f4-4fce-a5e8-0312ae819c64","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7f3ca21a-7a17-4bce-b76e-a5ce0dbdefd1","path":"sprites/spr_enemy_zombie/spr_enemy_zombie.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"9a5fa67a-de43-48cf-a501-a02207dc3584","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7349db1c-8629-41d3-88d9-f66d5dbeda99","path":"sprites/spr_enemy_zombie/spr_enemy_zombie.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"7bd11be6-6318-4f19-933d-a6eb5cc93ea1","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6ba67f26-5fc0-4ac4-9606-5bd73e61c400","path":"sprites/spr_enemy_zombie/spr_enemy_zombie.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
