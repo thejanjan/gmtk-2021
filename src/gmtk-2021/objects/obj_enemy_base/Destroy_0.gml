@@ -2,7 +2,7 @@
 // You can write your code in this editor
 // hello = object_get_name(object_index);
 instance_create_layer(x, y, "Instances", obj_explosion);
-var how_many_balls = irandom_range(0, min(round(hp_max/50), 2));
+var how_many_balls = irandom_range(1, min(round(hp_max/35), 4));
 for (var i=0; i<how_many_balls; i++)
 {
 	o = instance_create_depth(x, y, -y, obj_ball);
