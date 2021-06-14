@@ -23,7 +23,7 @@ function squash_n_stretch_transform(v) {
 
 if weak {
 	image_index = 0;
-	draw_sprite_ext(sprite_index, 6, x, y, image_xscale, image_yscale, _angle, c_white, image_alpha);
+	draw_sprite_ext(sprite_index, 6, x, y, image_xscale, image_yscale, 0, c_white, image_alpha);
 } else draw_sprite_ext(sprite_index, get_ball_shadow_index(), x, y, image_xscale, image_yscale, 0, c_white, image_alpha);
 
 if (!phy_sleeping and os_browser != browser_not_a_browser) {
