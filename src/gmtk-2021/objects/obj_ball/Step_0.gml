@@ -40,12 +40,15 @@ if hit_by_club() and not weak {
 		}
 	}
 	var hitting = 1;
+	var powered = 0;
 	if going_to = 1 {
-		hitting = 1.1;
+		hitting = 0.7;
+		var current_impulse = vector_magnitude([phy_speed_x, phy_speed_y]);
 		phy_speed_x = 0;
 		phy_speed_y = 0;
-	}
-	var powered = club_apply_impulse(dir, hitting);
+		powered = club_apply_impulse(dir, hitting + (current_impulse / 8));
+	} else powered = club_apply_impulse(dir, hitting);
+	
 	if hit_timer = 0 {
 		var shots = global.additional_shots;
 		real_yspeed = -powered / 2;
