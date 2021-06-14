@@ -6,7 +6,13 @@ if alpha > 0.0 {
 } else {
 	instance_destroy();
 }
-y -= 3;
+if rise y -= 3;
+else {
+	_vspeed += _gravity;
+	x += _hspeed;
+	y += _vspeed;
+	if y > (camera_get_view_y(view_camera[0]) + view_hport[0] + 200) instance_destroy();
+}
 
 var text_count = instance_number(obj_rising_text);
 if text_count >= 2 {
