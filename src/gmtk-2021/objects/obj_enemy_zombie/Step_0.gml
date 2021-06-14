@@ -31,17 +31,15 @@ if current_state == state.eating {
 }
 // Not eating and don't know where to go
 else if !instance_exists(target_ball) {
-	if instance_number(obj_ball) > 1 {
+	if instance_number(obj_ball) > 0 {
 		target_ball = instance_find(obj_ball, irandom(instance_number(obj_ball) - 1));
 		if instance_exists(target_ball) {
 			target_ball_xstart = target_ball.xstart;
 			target_ball_ystart = target_ball.ystart;
 		}
+	} else {
+		current_target_pos = [x + (choose(-1, 1) * 20), y +  + (choose(-1, 1) * 20)];
 	}
-	/*} else {
-		target_ball = instance_create_layer(target_ball_xstart, target_ball_ystart, instance_layer, obj_ball);
-	}*/
-	
 }
 
 // Heading to eat a ball
@@ -62,6 +60,9 @@ else if current_state == state.well_fed and current_speed <= 8 {
 else if current_state != state.eating and current_state != state.dying {
 	current_state = state.idle;
 }
+
+if current_state = state.moving and instance_exists(target_ball)
+current_target_pos = [target_ball.x, target_ball.y];
 
 // Are we there yet??? Mom??????
 if point_distance(x, y, current_target_pos[0], current_target_pos[1]) <= 32 {
