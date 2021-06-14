@@ -13,7 +13,7 @@ var hole = nearest_active_hole();
 var enemy = nearest_alive_enemy();
 instance_activate_all();
 
-if hit_by_club() and not weak {
+if hit_by_club() and not weak and instance_exists(obj_golfer) {
 	var dir = vector_heading_to([obj_golfer.x, obj_golfer.y], [x, y]);
 	var max_travel_distance = 1200;
 	var hole_dist = max_travel_distance;
