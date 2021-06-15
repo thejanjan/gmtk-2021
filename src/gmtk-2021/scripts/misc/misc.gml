@@ -26,6 +26,27 @@ function spawn_dandruff() {
 	}
 }
 
+function camera_make(_size) {
+	// Builds the camera at the kart.
+	if !instance_exists(obj_golf_kart) exit;
+	with (obj_golf_kart) {
+		camera_destroy(view_camera[0]);
+		var k = camera_obj;
+		var v = _size; // [view_wport[0], view_hport[0]];
+		if _size[0] = -1 or _size[1] = -1
+			v = [window_get_width(), window_get_height()];
+		if instance_exists(dummy) k = dummy;
+		view_camera[0] = camera_create_view(k.x - (v[0] / 2), k.y - (v[1] / 2), v[0], v[1], 0, k, -1, -1, v[0] / 2, v[1] / 2);
+		camera_set_view_target(view_camera[0], camera_obj);
+		if instance_exists(dummy) camera_set_view_target(view_camera[0], dummy);
+		camera_set_default(view_camera[0]);
+		camera_apply(view_camera[0]);
+		view_set_camera(0, view_camera[0]);	
+		
+		surface_resize(application_surface, v[0], v[1]);
+	}
+}
+
 function distance_to_object_new(_obj) {
 	// Clean version of distance_to_object.	
 	// Will return infinite if instance does not exist (the distance is too great).

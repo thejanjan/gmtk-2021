@@ -14,6 +14,7 @@ global.binding_debug = ord("P");
 global.binding_debug_two = ord("L");
 global.binding_toggle_trails = 187;
 global.binding_toggle_trails_also = ord("T");
+global.binding_toggle_fullscren = vk_f4;
 
 function new_keyboard_check_pressed(_code) {
 	return keyboard_check_pressed(_code);
