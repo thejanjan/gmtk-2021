@@ -5,6 +5,8 @@
 enemy_set_starting_hp(50);
 event_inherited();
 
+if !instance_exists(self) exit;
+
 function create_physics_link(_obj1, _obj2, _off1, _off2, _length) {
 	// _obj2.attachment_target = _obj1;
 	physics_joint_rope_create(_obj1, _obj2, _obj1.x+_off1[0], _obj1.y+_off1[1], _obj2.x+_off2[0], _obj2.y+_off2[1], _length, true);
